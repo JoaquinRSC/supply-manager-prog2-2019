@@ -1,0 +1,63 @@
+public class INSUMO INFORMATICO{
+
+- private
++ public
+# protected
+
+public static final TIPO_DATO NOM_DATO = VALOR
+   +   static final   String    nom    =  ""
+
+---------------------------------------------------------------------------------------------------
+
+//ATRIBUTOS DE InsumoInformatico:
+private idIns:String = null
+private model:String = null
+private brand:String = null
+private description:String = null	
+private ivaIns:double = 0.21 // No es el Porcentaje
+private subTotalPrice:double = 0.0 //USD
+private totalPrice:double = 0.0 //USD
+private priceIns:double = 0.0  //USD
+private workedHours:double = 0.30 //H
+private insQuantity:int = 1
+
+//-----------ATRIBUTOS DE Network:
+private kindNet:String = "Hogarenio"
+private kindCable:String = "RJ45"
+private dataPlan:String = "Estándar"
+private cableLenght:double = 1.0 //meters
+private speedUp:double = 10.0 //Mb
+private speedDown:double = 60.0 //Mb
+private routerQuantity:int = 1
+private connectorRJ45Quantity:int = 1
+
+//-----------ATRIBUTOS DE CPU
+private cpuFrec:double = 1.0 //GHz
+private cpuCores:long = 1 //Cant
+private cpuThread:long = 0 //Cant
+private cpuCacheL1:String = "1.0" //Mb
+private cpuCacheL2:String = null //Mb
+private cpuCacheL3:String = null //Mb
+
+//-----------ATRIBUTOS DE MemRAM:
+private interface:String = "DIMM"
+private kindRAM:String = "DDR3"
+private memRAM:int = 512 //MB
+private ramFrec:int = 1333 //MHz
+
+//-----------ATRIBUTOS DE SecoundaryMEM:
+private storage:int = 1 //GB identificar si es >= 1000 => es 1TB
+private kindDisk:String = "HDD"
+
+//-----------ATRIBUTOS DE Case:
+private fromFactor:String = "MediaTorre"
+private 
+
+
+
+
+
+
+
+
+
