@@ -1,17 +1,20 @@
-//@authors Joaquin_Rossi,Yorel_Acosta | 2°BC
+//@authors: | Joaquin_Rossi | Yorel_Acosta | 2°BC | ESI-BUCEO
 package Logical;
 
 public abstract class InsumoInformatico {
     //ATRIBUTOS:
-    private String idInsumo = Constantes.idIns;
-    private String descripcion = Constantes.descripcion;
-    private double precioIns = Constantes.precioIns;
-    
+    protected String idInsumo = Constantes.idIns;
+    protected String descripcion = Constantes.descripcion;
+    protected double precioIns = Constantes.precioIns;
+    protected double precioBase = Constantes.precioBase;
+
+        
     //CONSTRUCTOR:
-    public InsumoInformatico(String idInsumo, String descripcion, double precioIns) {
+    public InsumoInformatico(String idInsumo, String descripcion, double precioIns,double precioBase) {
     this.idInsumo = idInsumo;
     this.descripcion = descripcion;
     this.precioIns = precioIns;
+    this.precioBase = precioBase;
     }// End constructor completo
     
     //GETTERS:
@@ -36,10 +39,9 @@ public abstract class InsumoInformatico {
         this.precioIns = precioIns;
     }
     
-    
     //LIBRERIA DE COMPORTAMIENTOS:
-    
-    
+
+  
     
     
 }// End class

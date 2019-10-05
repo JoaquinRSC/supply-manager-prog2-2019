@@ -1,4 +1,4 @@
-//@authors Joaquin_Rossi,Yorel_Acosta | 2°BC
+//@authors: | Joaquin_Rossi | Yorel_Acosta | 2°BC | ESI-BUCEO 
 package Logical;
 
 public class Software extends InsumoInformatico{

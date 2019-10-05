@@ -1,17 +1,17 @@
-//@authors Joaquin_Rossi,Yorel_Acosta | 2°BC
+//@authors: | Joaquin_Rossi | Yorel_Acosta | 2°BC | ESI-BUCEO
 package Logical;
 
 import Logical.Constantes;
 
 public abstract class Presupuesto {
     //ATRIBUTOS:
-    private String idPresupuesto = Constantes.idPresupuesto;
-    private int cantIns = Constantes.cantIns;
-    private double manoObra = Constantes.manoObra;
-    private double  iva = Constantes.iva;
-    private double subTotal = Constantes.subTotal;   
-    private double total = Constantes.total;
-    private double horasTrabajadas = Constantes.horasTrabajadas;
+    protected String idPresupuesto = Constantes.idPresupuesto;
+    protected int cantIns = Constantes.cantIns;
+    protected double manoObra = Constantes.manoObra;
+    protected double  iva = Constantes.iva;
+    protected double subTotal = Constantes.subTotal;   
+    protected double total = Constantes.total;
+    protected double horasTrabajadas = Constantes.horasTrabajadas;
     
     //CONSTRUCTOR:    
     public Presupuesto(String idPresupuesto, int cantIns, double manoObra, double iva,double subTotal, double total, double horasTrabajadas) {
