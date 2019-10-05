@@ -25,16 +25,16 @@ private insQuantity:int = 1
 private kindNet:String = "Hogarenio"
 private kindCable:String = "RJ45"
 private dataPlan:String = "Estándar"
-private cableLenght:double = 1.0 //meters
-private speedUp:double = 10.0 //Mb
-private speedDown:double = 60.0 //Mb
+private cableLenght:String = 1.0 //meters
+private speedUp:String = 10.0 //Mb
+private speedDown:String = 60.0 //Mb
 private routerQuantity:int = 1
 private connectorRJ45Quantity:int = 1
 
 //-----------ATRIBUTOS DE CPU
-private cpuFrec:double = 1.0 //GHz
-private cpuCores:long = 1 //Cant
-private cpuThread:long = 0 //Cant
+private cpuFrec:String = 1.0 //GHz
+private cpuCores:String = 1 //Cant
+private cpuThread:String = 0 //Cant
 private cpuCacheL1:String = "1.0" //Mb
 private cpuCacheL2:String = null //Mb
 private cpuCacheL3:String = null //Mb
@@ -42,16 +42,24 @@ private cpuCacheL3:String = null //Mb
 //-----------ATRIBUTOS DE MemRAM:
 private interface:String = "DIMM"
 private kindRAM:String = "DDR3"
-private memRAM:int = 512 //MB
-private ramFrec:int = 1333 //MHz
+private memRAM:String = 512 //MB
+private ramFrec:String = 1333 //MHz
 
 //-----------ATRIBUTOS DE SecoundaryMEM:
-private storage:int = 1 //GB identificar si es >= 1000 => es 1TB
+private storage:String = 1 //GB identificar si es >= 1000 => es 1TB
 private kindDisk:String = "HDD"
 
 //-----------ATRIBUTOS DE Case:
-private fromFactor:String = "MediaTorre"
-private 
+private kindCase:String = "MediaTorre"
+
+//-----------ATRIBUTOS DE Graphic:
+private kindGphc:String = "NVIDIA"
+private gphcClock:String = "1000" //MHz
+private gphcMem:String = "1" //GB
+private gphcQuantity:String = "1"
+
+//-----------ATRIBUTOS DE MotherB:
+private kindGphc:String = "NVIDIA"
 
 
 
