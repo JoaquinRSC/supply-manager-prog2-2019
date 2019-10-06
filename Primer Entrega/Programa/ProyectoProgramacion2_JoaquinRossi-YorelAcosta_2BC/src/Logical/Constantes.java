@@ -27,7 +27,7 @@ public class Constantes {
     
     //---------------------------------------------------------ArmadoPc:
     public static final String proposito = "Workstation"; //Puede ser [Gaming;Standar]
-
+    
     //---------------------------------------------------------Hardware:
     public static final String modelo = null;
     public static final String fabricante = null;
@@ -36,17 +36,19 @@ public class Constantes {
     public static final int frecRAM = 1333; //Unidad en MHz
     public static final short fromFactorCase = 3; //Puede ser [1=Rack;2=Modding;3=Sobremesa;4=Mini Torre]
     public static final int wattsFuente = 500; //Unidad en watts
-    public static final int capacidadAlmacenamiento = 1000; //Unidad en GB 1TB = 1000GB
-    public static final int capaciadGrafica = 1; //Unidad en GB
+    public static final int capacidadHDD = 1000; //Unidad en GB 1TB = 1000GB
+    public static final String techHDD = "HDD";
+    public static final short capaciadGrafica = 1; //Unidad en GB
     public static final int nucleoCPU = 1; //Es la cantidad de nucleos que pude tener un CPU
     public static final double frecCPU = 1.0; //Es la frecuencaia de un CPU medidad en GHz
+    public static final boolean rgbMB = false;
+            
     
     //---------------------------------------------------------Software:
     public static final boolean pago = true;
     public static final String version = "10:Pro";
     public static final String desarrollador = "Windows";
     
-    //---------------------------------------------------------Domestica:
     
 
 }// End class
