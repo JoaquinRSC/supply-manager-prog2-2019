@@ -1,5 +1,5 @@
 //@authors: | Joaquin_Rossi | Yorel_Acosta | 2°BC | ESI-BUCEO
-package Logical;
+package Logica;
 
 public class Constantes {
     //---------------------------------------------------------Insumo:
@@ -10,6 +10,8 @@ public class Constantes {
 
     //---------------------------------------------------------Presupuesto:
     public static final String idPresupuesto = null;
+    public static final String idCliente = null;
+    public static final String nomCliente = null;
     public static final double iva = 0.21; //No es el porcentaje
     public static final double subTotal = 0.0; //USD; Es el Precio por la cantidad 
     public static final double total = 1.0; //USD

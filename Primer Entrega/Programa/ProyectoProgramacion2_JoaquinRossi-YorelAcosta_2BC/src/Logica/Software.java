@@ -1,5 +1,5 @@
 //@authors: | Joaquin_Rossi | Yorel_Acosta | 2°BC | ESI-BUCEO 
-package Logical;
+package Logica;
 
 public class Software extends InsumoInformatico{
     //ATRIBUTOS:
@@ -8,8 +8,8 @@ public class Software extends InsumoInformatico{
     private String desarrollador = Constantes.desarrollador;
     
     //CONSTRUCTOR:
-    public Software(String idInsumo, String descripcion, double precioIns, boolean pago, String version, String desarrollador) {
-        super(idInsumo, descripcion, precioIns);
+    public Software(String idInsumo, String descripcion, double precioIns,double precioBase ,boolean pago, String version, String desarrollador) {
+        super(idInsumo, descripcion, precioIns,precioBase);
         this.pago = pago;
         this.version = version;
         this.desarrollador = desarrollador;

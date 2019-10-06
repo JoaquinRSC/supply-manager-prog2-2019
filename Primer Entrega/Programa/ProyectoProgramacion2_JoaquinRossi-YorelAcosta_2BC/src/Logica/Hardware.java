@@ -1,5 +1,5 @@
 //@authors: | Joaquin_Rossi | Yorel_Acosta | 2°BC | ESI-BUCEO
-package Logical;
+package Logica;
 
 public class Hardware extends InsumoInformatico {
     //ATRIBUTOS:
@@ -39,12 +39,12 @@ public class Hardware extends InsumoInformatico {
     }// End constructor MEMORIA HDD
 
     //CONSTRUCTOR: CASE
-    public Hardware(String idInsumo, String descripcion, double precioIns,double precioBase,short fromFactorCase, String marca, String modelo) {
+    public Hardware(String idInsumo, String descripcion, double precioIns,double precioBase,String modelo,short fromFactorCase, String marca ) {
         super(idInsumo, descripcion, precioIns,precioBase);
         this.precioIns = calcularPrecioCASE(fromFactorCase,precioBase);
+        this.modelo = modelo;
         this.fromFactorCase = fromFactorCase;
         this.marca = marca;
-        this.modelo = modelo;
     }// End constructor CASE
     
     //CONSTRUCTOR: FUENTE
@@ -57,17 +57,18 @@ public class Hardware extends InsumoInformatico {
     }// End constructor FUENTE
     
     //CONSTRUCTOR: GPU
-    public Hardware(String idInsumo, String descripcion, double precioIns,double precioBase,String marca,short capaciadGrafica,String modelo) {
+    public Hardware(String idInsumo, String descripcion, double precioIns,double precioBase,String marca,String modelo,short capaciadGrafica) {
         super(idInsumo, descripcion, precioIns,precioBase);
         this.precioIns = calcularPrecioGPU(capaciadGrafica,precioBase);
         this.marca = marca;
-        this.capaciadGrafica=capaciadGrafica;
         this.modelo = modelo;
+        this.capaciadGrafica=capaciadGrafica;
     }// End constructor GPU
     
     //CONSTRUCTOR: CPU
     public Hardware(String idInsumo, String descripcion, double precioIns,double precioBase,String marca,int nucleoCPU,double frecCPU,String modelo) {
         super(idInsumo, descripcion, precioIns,precioBase);
+        this.precioIns = calcularPrecioCPU(nucleoCPU,frecCPU,precioBase);
         this.marca = marca;
         this.nucleoCPU = nucleoCPU;
         this.frecCPU = frecCPU;
@@ -77,6 +78,7 @@ public class Hardware extends InsumoInformatico {
     //CONSTRUCTOR: MB
     public Hardware(String idInsumo, String descripcion, double precioIns, double precioBase, boolean rgbMB) {
         super(idInsumo, descripcion, precioIns, precioBase);
+        this.precioIns = calcularPrecioMB(rgbMB,precioBase);
         this.rgbMB = rgbMB;
     }
     
@@ -265,12 +267,93 @@ public class Hardware extends InsumoInformatico {
         precioTotal=(aumentoPrecioWatts + precioBase) * 0.21;
         return precioTotal;
     }//End method
-    public double calcularPrecioGPU(short ){
+    public double calcularPrecioGPU(short memGPU, double precioBase){
         double precioTotal = 0.0;
-        double aumentoPrecioWatts = 0.0; 
+        double aumentoPrecioMem = 0.0; 
         
-        precioTotal=(aumentoPrecioWatts + precioBase) * 0.21;
+        switch (memGPU) {
+            case 1:
+                aumentoPrecioMem = 13.54;
+                break;
+            case 2:
+                aumentoPrecioMem = 18.40;
+                break;
+            case 4:
+                aumentoPrecioMem = 34.65;
+                break;
+            case 6:
+                aumentoPrecioMem = 43.88;
+                break;
+            case 8:
+                aumentoPrecioMem = 59.55;
+                break;
+            case 11:
+                aumentoPrecioMem =68.99;
+                break;
+            default:
+                aumentoPrecioMem = 13.54;
+                break;
+        }// End SW "memGPU"
+        
+        precioTotal=(aumentoPrecioMem + precioBase) * 0.21;
         return precioTotal;
     }//End method
-    
+    public double calcularPrecioCPU(int cantNucleo, double frecCPU, double precioBase){
+        double precioTotal = 0.0;
+        double aumentoPrecioNucelo = 0.0;         
+        double aumentoPrecioFrec = 0.0;    
+        
+        
+        switch (cantNucleo) {
+            case 1:
+                aumentoPrecioNucelo = 12.65;
+                break;
+            case 2:
+                aumentoPrecioNucelo = 15.10;
+                break;
+            case 4:
+                aumentoPrecioNucelo = 29.44;
+                break;
+            case 6:
+                aumentoPrecioNucelo = 30.99;
+                break;
+            case 8:
+                aumentoPrecioNucelo = 54.51;
+                break;
+            default:
+                aumentoPrecioNucelo = 12.65;
+                break;
+        }// End SW "cantNucleo"
+        
+        if (frecCPU >= 1.0 && frecCPU < 1.60) {
+            aumentoPrecioFrec = 8.77;
+        } else if (frecCPU >= 1.60 && frecCPU < 2.15) {
+            aumentoPrecioFrec = 13.67;
+        } else if (frecCPU >= 2.15 && frecCPU < 2.37) {
+            aumentoPrecioFrec = 117.97;
+        } else if (frecCPU >= 2.37 && frecCPU < 3.0) {
+            aumentoPrecioFrec = 19.17;
+        } else if (frecCPU >= 3.0 && frecCPU < 3.4) {
+            aumentoPrecioFrec = 36.17;
+        } else if (frecCPU >= 3.4 && frecCPU < 3.6) {
+            aumentoPrecioFrec = 40.55;
+        } else if (frecCPU >= 4.0) {
+            aumentoPrecioFrec = 52.99;
+        }
+        
+        precioTotal=(aumentoPrecioNucelo + aumentoPrecioFrec + precioBase) * 0.21;
+        return precioTotal;
+
+    }
+    public double calcularPrecioMB(boolean rgbMB, double precioBase){
+        double precioTotal = 0.0;
+        double aumentoPrecioRGB = 0.0;
+        
+        if (rgbMB == true) {
+            aumentoPrecioRGB = 19.80;
+        }
+        
+        precioTotal=(aumentoPrecioRGB + precioBase) * 0.21;
+        return precioTotal;
+    }
 }// End class

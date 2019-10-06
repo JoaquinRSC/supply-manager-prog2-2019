@@ -1,5 +1,5 @@
 //@authors: | Joaquin_Rossi | Yorel_Acosta | 2°BC | ESI-BUCEO
-package Logical;
+package Logica;
 
 public class ArmadoRed extends Presupuesto{
     //ATRIBUTOS:
