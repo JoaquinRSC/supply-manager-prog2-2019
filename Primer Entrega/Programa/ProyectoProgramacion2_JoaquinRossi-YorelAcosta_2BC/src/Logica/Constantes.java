@@ -7,18 +7,17 @@ public class Constantes {
     public static final String descripcion = "Componente";
     public static final double precioIns = 1.0; //USD
     public static final double precioBase = 1.0; //USD
+    public static final int cantIns = 1; //USD
 
     //---------------------------------------------------------Presupuesto:
     public static final String idPresupuesto = null;
     public static final String idCliente = null;
     public static final String nomCliente = null;
-    public static final double iva = 0.21; //No es el porcentaje
     public static final double subTotal = 0.0; //USD; Es el Precio por la cantidad 
     public static final double total = 1.0; //USD
     public static final double manoObra = 0.30; //USD
     public static final double horasTrabajadas = 0.30; //Horas: 1.30= 1H y 30M
-    public static final int cantIns = 1; //A la hora de tener un Presupuesto, al menos un insumo hay seguro.
-    
+
     //---------------------------------------------------------ArmadoRed:
     public static final String dataPlan = "Estandar"; //El cual esta asociado con los valores: ParaBajada=60 ParaSubida=10 [en Mbits/seg]
     public static final String speedUp = "10"; //Unidad en Mb/s

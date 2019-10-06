@@ -8,7 +8,8 @@ public class ArmadoPc extends Presupuesto {
     //CONSTRUCTOR SIN SO:
     public ArmadoPc(String idPresupuesto, double manoObra,double subTotal, double total, double horasTrabajadas,String idCliente, String nomCliente,String proposito) {       
         super(idPresupuesto, manoObra, subTotal, total, horasTrabajadas, idCliente, nomCliente);
-        this.manoObra =
+        //this.manoObra = calcularManoObra();
+        this.total = calcularTotal(manoObra,subTotal,horasTrabajadas,proposito);
         this.proposito = proposito;
     }// End constructor SIN SO
     
@@ -25,7 +26,10 @@ public class ArmadoPc extends Presupuesto {
 
     
     //LIBRERIA DE COMPORTAMIENTOS:
-    
+    public double calcularTotal(double manoObra, double subTotal, double horasTrabajadas, String proposito){
+        
+        return 1.0;
+    }
     
     
 }// End class

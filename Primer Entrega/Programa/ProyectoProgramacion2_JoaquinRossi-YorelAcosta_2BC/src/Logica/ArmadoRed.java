@@ -12,8 +12,8 @@ public class ArmadoRed extends Presupuesto{
     
     //CONSTRUCTOR:
 
-    public ArmadoRed(String idPresupuesto, int cantIns, double manoObra, double iva, double subTotal, double total, double horasTrabajadas, String dataPlan, String speedUp, String speedDown, String isp, int cantRouters, double tiradasCable) {
-        super(idPresupuesto, cantIns, manoObra, iva, subTotal, total, horasTrabajadas);
+    public ArmadoRed(String idPresupuesto, double manoObra, double subTotal, double total, double horasTrabajadas, String dataPlan, String speedUp, String speedDown, String isp, int cantRouters, double tiradasCable) {
+        super(idPresupuesto, manoObra, subTotal, total, horasTrabajadas);
         this.dataPlan = dataPlan;
         this.speedUp = speedUp;
         this.speedDown = speedDown;
