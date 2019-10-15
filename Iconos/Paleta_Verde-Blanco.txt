@@ -1,0 +1,4 @@
+verde: C0EB61
+negro: 485550
+grisaceo: F4F6F0
+blanco: FFFFFF
