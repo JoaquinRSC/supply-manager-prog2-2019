@@ -195,7 +195,7 @@ public class Hardware extends InsumoInformatico {
             case 160:
                 aumentoPrecioCapacidad=10.0;
                 break;
-            case 250:
+            case 260:
                 aumentoPrecioCapacidad=14.0;
                 break;
             case 360:

@@ -27,10 +27,10 @@ public class frmHome extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel4 = new javax.swing.JPanel();
-        tipoHardware = new javax.swing.ButtonGroup();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         panelOptions = new javax.swing.JPanel();
         txtResultMass = new javax.swing.JTextField();
@@ -40,16 +40,16 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass2 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txtResultMass3 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        txtResultMass4 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         txtResultMass5 = new javax.swing.JTextField();
-        txtResultMass6 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         txtResultMass7 = new javax.swing.JTextField();
+        jSpinner9 = new javax.swing.JSpinner();
+        jSpinner10 = new javax.swing.JSpinner();
         jSpinner1 = new javax.swing.JSpinner();
+        jSpinner6 = new javax.swing.JSpinner();
         panelOptions1 = new javax.swing.JPanel();
         txtResultMass8 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
@@ -58,16 +58,16 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass10 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        txtResultMass12 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         txtResultMass13 = new javax.swing.JTextField();
-        txtResultMass14 = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         txtResultMass15 = new javax.swing.JTextField();
-        jSpinner2 = new javax.swing.JSpinner();
         jLabel35 = new javax.swing.JLabel();
         txtResultMass30 = new javax.swing.JTextField();
+        jSpinner11 = new javax.swing.JSpinner();
+        jSpinner2 = new javax.swing.JSpinner();
+        jSpinner12 = new javax.swing.JSpinner();
         panelOptions2 = new javax.swing.JPanel();
         txtResultMass16 = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
@@ -125,9 +125,9 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass41 = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
         txtResultMass42 = new javax.swing.JTextField();
-        jSpinner6 = new javax.swing.JSpinner();
         txtResultMass36 = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
+        jSpinner8 = new javax.swing.JSpinner();
         panelOptions6 = new javax.swing.JPanel();
         txtResultMass43 = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
@@ -158,56 +158,47 @@ public class frmHome extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jButton11 = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 966, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 970));
-
-        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 956, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 0, 960, -1));
-
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel3.setAutoscrolls(true);
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelOptions.setBackground(new java.awt.Color(51, 51, 51));
         panelOptions.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "MEMORIA RAM", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Microsoft Sans Serif", 1, 24), new java.awt.Color(255, 255, 135))); // NOI18N
@@ -221,7 +212,7 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass.setText("1AAB");
         txtResultMass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         txtResultMass.setEnabled(false);
-        panelOptions.add(txtResultMass, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 50, -1));
+        panelOptions.add(txtResultMass, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 50, 20));
 
         jLabel7.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(142, 205, 153));
@@ -231,8 +222,9 @@ public class frmHome extends javax.swing.JFrame {
 
         txtResultMass1.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass1.setForeground(new java.awt.Color(255, 255, 255));
+        txtResultMass1.setText(" En US$");
         txtResultMass1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions.add(txtResultMass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 110, -1));
+        panelOptions.add(txtResultMass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 110, 20));
 
         jLabel8.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(142, 205, 153));
@@ -242,8 +234,9 @@ public class frmHome extends javax.swing.JFrame {
 
         txtResultMass2.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass2.setForeground(new java.awt.Color(255, 255, 255));
+        txtResultMass2.setText(" Memoria RAM");
         txtResultMass2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions.add(txtResultMass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 110, -1));
+        panelOptions.add(txtResultMass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 110, 20));
 
         jLabel9.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(142, 205, 153));
@@ -257,37 +250,23 @@ public class frmHome extends javax.swing.JFrame {
         jLabel10.setText("Frecuencia:");
         panelOptions.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, -1));
 
-        txtResultMass3.setBackground(new java.awt.Color(51, 51, 51));
-        txtResultMass3.setForeground(new java.awt.Color(255, 255, 255));
-        txtResultMass3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions.add(txtResultMass3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 110, -1));
-
         jLabel11.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(142, 205, 153));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Capacidad:");
         panelOptions.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, -1, -1));
 
-        txtResultMass4.setBackground(new java.awt.Color(51, 51, 51));
-        txtResultMass4.setForeground(new java.awt.Color(255, 255, 255));
-        txtResultMass4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions.add(txtResultMass4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 110, -1));
-
         jLabel12.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(142, 205, 153));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText(" Modelo:");
-        panelOptions.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+        panelOptions.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 190, 70, -1));
 
         txtResultMass5.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass5.setForeground(new java.awt.Color(255, 255, 255));
+        txtResultMass5.setText(" Ejemplo: X370M-VV");
         txtResultMass5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions.add(txtResultMass5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 110, -1));
-
-        txtResultMass6.setBackground(new java.awt.Color(51, 51, 51));
-        txtResultMass6.setForeground(new java.awt.Color(255, 255, 255));
-        txtResultMass6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions.add(txtResultMass6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 110, -1));
+        panelOptions.add(txtResultMass5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 110, 20));
 
         jLabel13.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(142, 205, 153));
@@ -303,11 +282,23 @@ public class frmHome extends javax.swing.JFrame {
 
         txtResultMass7.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass7.setForeground(new java.awt.Color(255, 255, 255));
+        txtResultMass7.setText(" Ejemplo: AORUS");
         txtResultMass7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions.add(txtResultMass7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 110, -1));
+        panelOptions.add(txtResultMass7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 110, 20));
 
-        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(200), Integer.valueOf(200), null, Integer.valueOf(1)));
-        panelOptions.add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 50, 20));
+        jSpinner9.setModel(new javax.swing.SpinnerListModel(new String[] {"1600 MHz", "1866 MHz", "2400 MHz", "2666 MHz", "3000 MHz"}));
+        panelOptions.add(jSpinner9, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 110, -1));
+
+        jSpinner10.setModel(new javax.swing.SpinnerListModel(new String[] {"4 GB", "8 GB", "16 GB"}));
+        panelOptions.add(jSpinner10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 110, -1));
+
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(100, 100, 199, 1));
+        panelOptions.add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 50, -1));
+
+        jSpinner6.setModel(new javax.swing.SpinnerListModel(new String[] {"DDR3", "DDR4"}));
+        panelOptions.add(jSpinner6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 110, -1));
+
+        jPanel3.add(panelOptions, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 25, 308, 241));
 
         panelOptions1.setBackground(new java.awt.Color(51, 51, 51));
         panelOptions1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ALMACENAMIENTO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Microsoft Sans Serif", 1, 24), new java.awt.Color(255, 255, 135))); // NOI18N
@@ -321,7 +312,7 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass8.setText("2ABD");
         txtResultMass8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         txtResultMass8.setEnabled(false);
-        panelOptions1.add(txtResultMass8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 50, -1));
+        panelOptions1.add(txtResultMass8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 50, 20));
 
         jLabel15.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(142, 205, 153));
@@ -331,8 +322,9 @@ public class frmHome extends javax.swing.JFrame {
 
         txtResultMass9.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass9.setForeground(new java.awt.Color(255, 255, 255));
+        txtResultMass9.setText(" En US$");
         txtResultMass9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions1.add(txtResultMass9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 110, -1));
+        panelOptions1.add(txtResultMass9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 110, 20));
 
         jLabel16.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(142, 205, 153));
@@ -342,8 +334,9 @@ public class frmHome extends javax.swing.JFrame {
 
         txtResultMass10.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass10.setForeground(new java.awt.Color(255, 255, 255));
+        txtResultMass10.setText(" Disco Duro");
         txtResultMass10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions1.add(txtResultMass10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 110, -1));
+        panelOptions1.add(txtResultMass10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 110, 20));
 
         jLabel17.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(142, 205, 153));
@@ -357,11 +350,6 @@ public class frmHome extends javax.swing.JFrame {
         jLabel19.setText("Capacidad:");
         panelOptions1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
 
-        txtResultMass12.setBackground(new java.awt.Color(51, 51, 51));
-        txtResultMass12.setForeground(new java.awt.Color(255, 255, 255));
-        txtResultMass12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions1.add(txtResultMass12, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 110, -1));
-
         jLabel20.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(142, 205, 153));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -370,13 +358,9 @@ public class frmHome extends javax.swing.JFrame {
 
         txtResultMass13.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass13.setForeground(new java.awt.Color(255, 255, 255));
+        txtResultMass13.setText(" Ejemplo: WD7200-A");
         txtResultMass13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         panelOptions1.add(txtResultMass13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 110, -1));
-
-        txtResultMass14.setBackground(new java.awt.Color(51, 51, 51));
-        txtResultMass14.setForeground(new java.awt.Color(255, 255, 255));
-        txtResultMass14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions1.add(txtResultMass14, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 110, -1));
 
         jLabel21.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(142, 205, 153));
@@ -392,11 +376,9 @@ public class frmHome extends javax.swing.JFrame {
 
         txtResultMass15.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass15.setForeground(new java.awt.Color(255, 255, 255));
+        txtResultMass15.setText(" Ejemplo: WD");
         txtResultMass15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions1.add(txtResultMass15, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 110, -1));
-
-        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(200), Integer.valueOf(200), null, Integer.valueOf(1)));
-        panelOptions1.add(jSpinner2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 50, 20));
+        panelOptions1.add(txtResultMass15, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 110, 20));
 
         jLabel35.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(142, 205, 153));
@@ -408,6 +390,17 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass30.setForeground(new java.awt.Color(255, 255, 255));
         txtResultMass30.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         panelOptions1.add(txtResultMass30, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 110, -1));
+
+        jSpinner11.setModel(new javax.swing.SpinnerNumberModel(200, 200, 299, 1));
+        panelOptions1.add(jSpinner11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 50, -1));
+
+        jSpinner2.setModel(new javax.swing.SpinnerListModel(new String[] {"160 GB", "260 GB", "360 GB", "500 GB", "1000 GB", "2000 GB", "4000 GB"}));
+        panelOptions1.add(jSpinner2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 110, -1));
+
+        jSpinner12.setModel(new javax.swing.SpinnerListModel(new String[] {"HDD", "SSD", "M2", "EXT"}));
+        panelOptions1.add(jSpinner12, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 110, -1));
+
+        jPanel3.add(panelOptions1, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 25, 306, 241));
 
         panelOptions2.setBackground(new java.awt.Color(51, 51, 51));
         panelOptions2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "GABINETE", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Microsoft Sans Serif", 1, 24), new java.awt.Color(255, 255, 135))); // NOI18N
@@ -421,7 +414,7 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass16.setText("6ULD");
         txtResultMass16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         txtResultMass16.setEnabled(false);
-        panelOptions2.add(txtResultMass16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 50, -1));
+        panelOptions2.add(txtResultMass16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 50, 20));
 
         jLabel23.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(142, 205, 153));
@@ -484,7 +477,7 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         panelOptions2.add(txtResultMass22, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 110, -1));
 
-        jSpinner3.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(200), Integer.valueOf(200), null, Integer.valueOf(1)));
+        jSpinner3.setModel(new javax.swing.SpinnerNumberModel(500, 500, 599, 1));
         panelOptions2.add(jSpinner3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 50, 20));
 
         txtResultMass23.setBackground(new java.awt.Color(51, 51, 51));
@@ -496,6 +489,8 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass24.setForeground(new java.awt.Color(255, 255, 255));
         txtResultMass24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         panelOptions2.add(txtResultMass24, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 30, -1));
+
+        jPanel3.add(panelOptions2, new org.netbeans.lib.awtextra.AbsoluteConstraints(636, 274, 306, 234));
 
         panelOptions3.setBackground(new java.awt.Color(51, 51, 51));
         panelOptions3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "FUENTE DE PODER", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Microsoft Sans Serif", 1, 24), new java.awt.Color(255, 255, 135))); // NOI18N
@@ -509,7 +504,7 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass11.setText("4ASD");
         txtResultMass11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         txtResultMass11.setEnabled(false);
-        panelOptions3.add(txtResultMass11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 50, -1));
+        panelOptions3.add(txtResultMass11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 50, 20));
 
         jLabel18.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(142, 205, 153));
@@ -572,8 +567,10 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         panelOptions3.add(txtResultMass31, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 110, -1));
 
-        jSpinner4.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(200), Integer.valueOf(200), null, Integer.valueOf(1)));
+        jSpinner4.setModel(new javax.swing.SpinnerNumberModel(600, 600, 699, 1));
         panelOptions3.add(jSpinner4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 50, 20));
+
+        jPanel3.add(panelOptions3, new org.netbeans.lib.awtextra.AbsoluteConstraints(952, 274, 308, 234));
 
         panelOptions4.setBackground(new java.awt.Color(51, 51, 51));
         panelOptions4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "GPU", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Microsoft Sans Serif", 1, 24), new java.awt.Color(255, 255, 135))); // NOI18N
@@ -587,7 +584,7 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass21.setText("5GDA");
         txtResultMass21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         txtResultMass21.setEnabled(false);
-        panelOptions4.add(txtResultMass21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 50, -1));
+        panelOptions4.add(txtResultMass21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 50, 20));
 
         txtResultMass32.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass32.setForeground(new java.awt.Color(255, 255, 255));
@@ -644,7 +641,7 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass37.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         panelOptions4.add(txtResultMass37, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 110, -1));
 
-        jSpinner5.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(200), Integer.valueOf(200), null, Integer.valueOf(1)));
+        jSpinner5.setModel(new javax.swing.SpinnerNumberModel(700, 700, 799, 1));
         panelOptions4.add(jSpinner5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 50, 20));
 
         jLabel60.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
@@ -652,6 +649,8 @@ public class frmHome extends javax.swing.JFrame {
         jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel60.setText("ID GPU:");
         panelOptions4.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        jPanel3.add(panelOptions4, new org.netbeans.lib.awtextra.AbsoluteConstraints(954, 514, 306, 275));
 
         panelOptions5.setBackground(new java.awt.Color(51, 51, 51));
         panelOptions5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CPU", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Microsoft Sans Serif", 1, 24), new java.awt.Color(255, 255, 135))); // NOI18N
@@ -665,7 +664,7 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass28.setText("3AFR");
         txtResultMass28.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         txtResultMass28.setEnabled(false);
-        panelOptions5.add(txtResultMass28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 50, -1));
+        panelOptions5.add(txtResultMass28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 50, 20));
 
         jLabel33.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(142, 205, 153));
@@ -676,7 +675,7 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass38.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass38.setForeground(new java.awt.Color(255, 255, 255));
         txtResultMass38.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions5.add(txtResultMass38, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 110, -1));
+        panelOptions5.add(txtResultMass38, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 110, 20));
 
         jLabel43.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(142, 205, 153));
@@ -687,7 +686,7 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass39.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass39.setForeground(new java.awt.Color(255, 255, 255));
         txtResultMass39.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions5.add(txtResultMass39, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 110, -1));
+        panelOptions5.add(txtResultMass39, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 110, 20));
 
         jLabel44.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(142, 205, 153));
@@ -704,7 +703,7 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass40.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass40.setForeground(new java.awt.Color(255, 255, 255));
         txtResultMass40.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions5.add(txtResultMass40, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 110, -1));
+        panelOptions5.add(txtResultMass40, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 110, 20));
 
         jLabel46.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(142, 205, 153));
@@ -715,7 +714,7 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass41.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass41.setForeground(new java.awt.Color(255, 255, 255));
         txtResultMass41.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions5.add(txtResultMass41, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 110, -1));
+        panelOptions5.add(txtResultMass41, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 110, 20));
 
         jLabel47.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(142, 205, 153));
@@ -726,10 +725,7 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass42.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass42.setForeground(new java.awt.Color(255, 255, 255));
         txtResultMass42.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions5.add(txtResultMass42, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 110, -1));
-
-        jSpinner6.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(200), Integer.valueOf(200), null, Integer.valueOf(1)));
-        panelOptions5.add(jSpinner6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 50, 20));
+        panelOptions5.add(txtResultMass42, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 110, 20));
 
         txtResultMass36.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass36.setForeground(new java.awt.Color(255, 255, 255));
@@ -741,6 +737,11 @@ public class frmHome extends javax.swing.JFrame {
         jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel41.setText("Marca:");
         panelOptions5.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+
+        jSpinner8.setModel(new javax.swing.SpinnerNumberModel(300, 300, 399, 1));
+        panelOptions5.add(jSpinner8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 50, -1));
+
+        jPanel3.add(panelOptions5, new org.netbeans.lib.awtextra.AbsoluteConstraints(636, 25, 306, 243));
 
         panelOptions6.setBackground(new java.awt.Color(51, 51, 51));
         panelOptions6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "MOTHERBOARD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Microsoft Sans Serif", 1, 24), new java.awt.Color(255, 255, 135))); // NOI18N
@@ -754,7 +755,7 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass43.setText("7TTF");
         txtResultMass43.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         txtResultMass43.setEnabled(false);
-        panelOptions6.add(txtResultMass43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 50, -1));
+        panelOptions6.add(txtResultMass43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 50, 20));
 
         jLabel48.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(142, 205, 153));
@@ -765,7 +766,7 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass44.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass44.setForeground(new java.awt.Color(255, 255, 255));
         txtResultMass44.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions6.add(txtResultMass44, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 110, -1));
+        panelOptions6.add(txtResultMass44, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 110, 20));
 
         jLabel49.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel49.setForeground(new java.awt.Color(142, 205, 153));
@@ -776,7 +777,7 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass45.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass45.setForeground(new java.awt.Color(255, 255, 255));
         txtResultMass45.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions6.add(txtResultMass45, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 110, -1));
+        panelOptions6.add(txtResultMass45, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 110, 20));
 
         jLabel50.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel50.setForeground(new java.awt.Color(142, 205, 153));
@@ -799,7 +800,7 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass47.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass47.setForeground(new java.awt.Color(255, 255, 255));
         txtResultMass47.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions6.add(txtResultMass47, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 110, -1));
+        panelOptions6.add(txtResultMass47, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 110, 20));
 
         jLabel53.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel53.setForeground(new java.awt.Color(142, 205, 153));
@@ -810,15 +811,17 @@ public class frmHome extends javax.swing.JFrame {
         txtResultMass48.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass48.setForeground(new java.awt.Color(255, 255, 255));
         txtResultMass48.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
-        panelOptions6.add(txtResultMass48, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 110, -1));
+        panelOptions6.add(txtResultMass48, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 110, 20));
 
-        jSpinner7.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(200), Integer.valueOf(200), null, Integer.valueOf(1)));
+        jSpinner7.setModel(new javax.swing.SpinnerNumberModel(400, 400, 499, 1));
         panelOptions6.add(jSpinner7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 50, 20));
 
         jCheckBox1.setBackground(new java.awt.Color(51, 51, 51));
         jCheckBox1.setForeground(new java.awt.Color(142, 205, 153));
-        jCheckBox1.setText("RGB");
+        jCheckBox1.setText(" ¿ Posee RGB ?");
         panelOptions6.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 110, -1));
+
+        jPanel3.add(panelOptions6, new org.netbeans.lib.awtextra.AbsoluteConstraints(952, 25, 308, 243));
 
         panelOptions7.setBackground(new java.awt.Color(51, 51, 51));
         panelOptions7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CONFIGURACION", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Microsoft Sans Serif", 1, 24), new java.awt.Color(255, 255, 135))); // NOI18N
@@ -828,53 +831,61 @@ public class frmHome extends javax.swing.JFrame {
         jRadioButton1.setBackground(new java.awt.Color(51, 51, 51));
         jRadioButton1.setForeground(new java.awt.Color(255, 255, 135));
         jRadioButton1.setText("Almacenamiento");
-        panelOptions7.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 130, 20));
+        jRadioButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panelOptions7.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 130, 20));
 
         jRadioButton2.setBackground(new java.awt.Color(51, 51, 51));
         jRadioButton2.setForeground(new java.awt.Color(255, 255, 135));
         jRadioButton2.setText("Memoria RAM");
-        panelOptions7.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 130, 20));
+        jRadioButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panelOptions7.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 110, 20));
 
         jRadioButton3.setBackground(new java.awt.Color(51, 51, 51));
         jRadioButton3.setForeground(new java.awt.Color(255, 255, 135));
         jRadioButton3.setText("CPU");
-        panelOptions7.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 130, 20));
+        jRadioButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panelOptions7.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 130, 20));
 
         jRadioButton4.setBackground(new java.awt.Color(51, 51, 51));
         jRadioButton4.setForeground(new java.awt.Color(255, 255, 135));
         jRadioButton4.setText("Fuente de Poder");
-        panelOptions7.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 130, 20));
+        jRadioButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panelOptions7.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 130, 20));
 
         jRadioButton5.setBackground(new java.awt.Color(51, 51, 51));
         jRadioButton5.setForeground(new java.awt.Color(255, 255, 135));
         jRadioButton5.setText("GPU");
-        panelOptions7.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 130, 20));
+        jRadioButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panelOptions7.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 130, 20));
 
         jRadioButton6.setBackground(new java.awt.Color(51, 51, 51));
         jRadioButton6.setForeground(new java.awt.Color(255, 255, 135));
         jRadioButton6.setText("Gabinete");
-        panelOptions7.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 130, 20));
+        jRadioButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panelOptions7.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 130, 20));
 
         jRadioButton7.setBackground(new java.awt.Color(51, 51, 51));
         jRadioButton7.setForeground(new java.awt.Color(255, 255, 135));
         jRadioButton7.setText("Motherboard");
-        panelOptions7.add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 130, 20));
+        jRadioButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panelOptions7.add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 130, 20));
 
         jLabel28.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(142, 205, 153));
         jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel28.setText("GESTIONAR");
-        panelOptions7.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 130, -1));
+        panelOptions7.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 130, -1));
 
         jLabel54.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
         jLabel54.setForeground(new java.awt.Color(142, 205, 153));
         jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel54.setText("CARGAR ");
-        panelOptions7.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 130, -1));
+        panelOptions7.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 90, -1));
 
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/modify_selected0_32.png"))); // NOI18N
         jButton8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
         jButton8.setContentAreaFilled(false);
+        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton8.setDefaultCapable(false);
         jButton8.setFocusPainted(false);
         jButton8.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/modify_selected1_32.png"))); // NOI18N
@@ -885,11 +896,12 @@ public class frmHome extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-        panelOptions7.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 180, 40));
+        panelOptions7.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 180, 40));
 
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/broom_selected0.png"))); // NOI18N
         jButton9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
         jButton9.setContentAreaFilled(false);
+        jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton9.setDefaultCapable(false);
         jButton9.setFocusPainted(false);
         jButton9.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/broom_selected1.png"))); // NOI18N
@@ -900,11 +912,12 @@ public class frmHome extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
-        panelOptions7.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 180, 140));
+        panelOptions7.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, 170, 160));
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/delete_selected0.png"))); // NOI18N
         jButton10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
         jButton10.setContentAreaFilled(false);
+        jButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton10.setDefaultCapable(false);
         jButton10.setFocusPainted(false);
         jButton10.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/delete_selected1_32.png"))); // NOI18N
@@ -919,11 +932,12 @@ public class frmHome extends javax.swing.JFrame {
 
         jSeparator1.setBackground(new java.awt.Color(142, 205, 153));
         jSeparator1.setForeground(new java.awt.Color(142, 205, 153));
-        panelOptions7.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 160, 10));
+        panelOptions7.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 150, 10));
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/add_selected0_32.png"))); // NOI18N
         jButton11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
         jButton11.setContentAreaFilled(false);
+        jButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton11.setDefaultCapable(false);
         jButton11.setFocusPainted(false);
         jButton11.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/add_selected1_32.png"))); // NOI18N
@@ -934,61 +948,84 @@ public class frmHome extends javax.swing.JFrame {
                 jButton11ActionPerformed(evt);
             }
         });
-        panelOptions7.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 180, 40));
+        panelOptions7.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 180, 40));
 
         jSeparator3.setBackground(new java.awt.Color(142, 205, 153));
         jSeparator3.setForeground(new java.awt.Color(142, 205, 153));
-        panelOptions7.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 370, 10));
+        panelOptions7.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 180, 10));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelOptions, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
-                    .addComponent(panelOptions3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelOptions6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(panelOptions1, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
-                            .addComponent(panelOptions4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(panelOptions5, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(panelOptions2, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(panelOptions7, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE))
-                .addContainerGap())
+        jSeparator4.setBackground(new java.awt.Color(142, 205, 153));
+        jSeparator4.setForeground(new java.awt.Color(142, 205, 153));
+        panelOptions7.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 370, 10));
+
+        jSeparator5.setBackground(new java.awt.Color(142, 205, 153));
+        jSeparator5.setForeground(new java.awt.Color(142, 205, 153));
+        panelOptions7.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 180, 10));
+
+        jSeparator2.setBackground(new java.awt.Color(142, 205, 153));
+        jSeparator2.setForeground(new java.awt.Color(142, 205, 153));
+        panelOptions7.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 150, 10));
+
+        jPanel3.add(panelOptions7, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 274, 618, 234));
+
+        jTable3.setBackground(new java.awt.Color(51, 51, 51));
+        jTable3.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 11)); // NOI18N
+        jTable3.setForeground(new java.awt.Color(255, 255, 135));
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7"
+            }
+        ));
+        jTable3.setGridColor(new java.awt.Color(142, 205, 153));
+        jTable3.setSelectionBackground(new java.awt.Color(153, 153, 153));
+        jTable3.setSelectionForeground(new java.awt.Color(102, 102, 102));
+        jScrollPane3.setViewportView(jTable3);
+
+        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 514, 928, 275));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 950, 790));
+
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 166, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(panelOptions, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
-                        .addComponent(panelOptions1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(panelOptions5, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(panelOptions4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-                        .addComponent(panelOptions2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(panelOptions3, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelOptions7, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-                    .addComponent(panelOptions6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(212, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 836, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 960, 930));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 840));
+
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 956, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 46, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 0, 960, 50));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -1018,7 +1055,7 @@ public class frmHome extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Window".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -1100,7 +1137,6 @@ public class frmHome extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
@@ -1108,15 +1144,29 @@ public class frmHome extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinner10;
+    private javax.swing.JSpinner jSpinner11;
+    private javax.swing.JSpinner jSpinner12;
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JSpinner jSpinner3;
     private javax.swing.JSpinner jSpinner4;
     private javax.swing.JSpinner jSpinner5;
     private javax.swing.JSpinner jSpinner6;
     private javax.swing.JSpinner jSpinner7;
+    private javax.swing.JSpinner jSpinner8;
+    private javax.swing.JSpinner jSpinner9;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     private javax.swing.JPanel panelOptions;
     private javax.swing.JPanel panelOptions1;
     private javax.swing.JPanel panelOptions2;
@@ -1125,14 +1175,11 @@ public class frmHome extends javax.swing.JFrame {
     private javax.swing.JPanel panelOptions5;
     private javax.swing.JPanel panelOptions6;
     private javax.swing.JPanel panelOptions7;
-    private javax.swing.ButtonGroup tipoHardware;
     private javax.swing.JTextField txtResultMass;
     private javax.swing.JTextField txtResultMass1;
     private javax.swing.JTextField txtResultMass10;
     private javax.swing.JTextField txtResultMass11;
-    private javax.swing.JTextField txtResultMass12;
     private javax.swing.JTextField txtResultMass13;
-    private javax.swing.JTextField txtResultMass14;
     private javax.swing.JTextField txtResultMass15;
     private javax.swing.JTextField txtResultMass16;
     private javax.swing.JTextField txtResultMass17;
@@ -1149,7 +1196,6 @@ public class frmHome extends javax.swing.JFrame {
     private javax.swing.JTextField txtResultMass27;
     private javax.swing.JTextField txtResultMass28;
     private javax.swing.JTextField txtResultMass29;
-    private javax.swing.JTextField txtResultMass3;
     private javax.swing.JTextField txtResultMass30;
     private javax.swing.JTextField txtResultMass31;
     private javax.swing.JTextField txtResultMass32;
@@ -1160,7 +1206,6 @@ public class frmHome extends javax.swing.JFrame {
     private javax.swing.JTextField txtResultMass37;
     private javax.swing.JTextField txtResultMass38;
     private javax.swing.JTextField txtResultMass39;
-    private javax.swing.JTextField txtResultMass4;
     private javax.swing.JTextField txtResultMass40;
     private javax.swing.JTextField txtResultMass41;
     private javax.swing.JTextField txtResultMass42;
@@ -1170,7 +1215,6 @@ public class frmHome extends javax.swing.JFrame {
     private javax.swing.JTextField txtResultMass47;
     private javax.swing.JTextField txtResultMass48;
     private javax.swing.JTextField txtResultMass5;
-    private javax.swing.JTextField txtResultMass6;
     private javax.swing.JTextField txtResultMass7;
     private javax.swing.JTextField txtResultMass8;
     private javax.swing.JTextField txtResultMass9;
