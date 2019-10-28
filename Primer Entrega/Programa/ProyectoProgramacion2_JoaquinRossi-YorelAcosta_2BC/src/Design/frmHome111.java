@@ -42,27 +42,9 @@ public class frmHome111 extends javax.swing.JFrame {
     
 //COLUMNAS DE TABLAS:    
     //INSUMO HARDWARE:
-            //Columnas para la JTable MemRAM
-            String [] colsHW1 = {
-                "ID",
-                "MARCA",
-                "MODELO",
-                "DESCRIPCIÓN",
-                "FRECUENCIA",
-                "CAPACIDAD",
-                "PRECIO"
-            }; 
 
-            //Columnas para la JTable CPU
-            String [] colsHW2 = {
-                "ID",
-                "MARCA",
-                "MODELO",
-                "DESCRIPCIÓN",
-                "FRECUENCIA",
-                "NÚCLEOS",
-                "PRECIO"
-            }; 
+
+
 
             //Columnas para la JTable Almacenamiento
             String [] colsHW3 = {
@@ -119,17 +101,9 @@ public class frmHome111 extends javax.swing.JFrame {
 
     }// End constructor
     
-/*   
-    public void cambiarPnlHW(int i, JPanel pnl){
+  
+    public void cambiarPnlHW(int i){
         //Metodo para setear img seleccionado de los btn Ins HW
-
-        //Se carga el Panel  Tipo Ins correspondiente para Agregar Eliminar y Modificar
-        //los datos de ese tipo de Ins
-        lyredPane_TipoIns.removeAll();
-        lyredPane_TipoIns.add(pnl);
-        lyredPane_TipoIns.repaint();
-        lyredPane_TipoIns.revalidate();
-        
         switch (i) {
            case 0:
                //Se pinta los botones, se selecciona el 1 y el resto se deselecciona
@@ -140,6 +114,44 @@ public class frmHome111 extends javax.swing.JFrame {
                btnMb.setIcon(new ImageIcon(getClass().getResource("/Img/mb_selected0.png")));
                btnGPU.setIcon(new ImageIcon(getClass().getResource("/Img/memG_selected0.png")));
                btnSupply.setIcon(new ImageIcon(getClass().getResource("/Img/supply_selected0.png")));
+               
+               //Visibilidad y dispocicion para las "pestanias"
+               intFrm_CPU.setVisible(false);
+               intFrm_CPU.setEnabled(false);
+               intFrm_Dsk.setVisible(false);
+               intFrm_Dsk.setEnabled(false);
+               intFrm_Gab.setVisible(false);
+               intFrm_Gab.setEnabled(false);
+               intFrm_MB.setVisible(false);
+               intFrm_MB.setEnabled(false);
+               intFrm_GPU.setVisible(false);
+               intFrm_GPU.setEnabled(false);
+               intFrm_Supply.setVisible(false);
+               intFrm_Supply.setEnabled(false);
+
+               intFrm_RAM.setVisible(true);
+               intFrm_RAM.setEnabled(true);  
+               
+               //Nombre de columnas para la JTable MemRAM
+               String [] colsHW1 = {
+                    "ID",
+                    "MARCA",
+                    "MODELO",
+                    "DESCP.",
+                    "FREC.",
+                    "CAPACIDAD",
+                    "PRECIO"
+                }; 
+               
+               ModelHW1.setColumnIdentifiers(colsHW1);
+               tblMemRAM.setModel(ModelHW1);
+               
+               //Seteo de texto por defecto
+               txtIDRAM.setText(" 0000");
+               txtTechRAM.setText(" Ejemplo: DDR3");
+               txtMarcaRAM1.setText(" Ejemplo: GSkill");
+               txtPrecioRAM.setText(" En US$");
+               txtModeloRAM.setText(" Ejemplo: H4AS");
                break;
            case 1:
                //Se pinta los botones, se selecciona el 2 y el resto se deselecciona
@@ -150,6 +162,40 @@ public class frmHome111 extends javax.swing.JFrame {
                btnMb.setIcon(new ImageIcon(getClass().getResource("/Img/mb_selected0.png")));
                btnGPU.setIcon(new ImageIcon(getClass().getResource("/Img/memG_selected0.png")));
                btnSupply.setIcon(new ImageIcon(getClass().getResource("/Img/supply_selected0.png")));
+               
+               intFrm_RAM.setVisible(false);
+               intFrm_RAM.setEnabled(false);
+               intFrm_Dsk.setVisible(false);
+               intFrm_Dsk.setEnabled(false);
+               intFrm_Gab.setVisible(false);
+               intFrm_Gab.setEnabled(false);
+               intFrm_MB.setVisible(false);
+               intFrm_MB.setEnabled(false);
+               intFrm_GPU.setVisible(false);
+               intFrm_GPU.setEnabled(false);
+               intFrm_Supply.setVisible(false);
+               intFrm_Supply.setEnabled(false);
+
+               intFrm_CPU.setVisible(true);
+               intFrm_CPU.setEnabled(true);    
+               //Columnas para la JTable CPU
+               String [] colsHW2 = {
+                   "ID",
+                   "MARCA",
+                   "MODELO",
+                   "DESCP.",
+                   "FREC.",
+                   "NÚCLEOS",
+                   "PRECIO"
+               };                
+               ModelHW1.setColumnIdentifiers(colsHW2);
+               tblCPU.setModel(ModelHW2);
+               
+               //Seteo de texto por defecto
+               txtIDCPU.setText(" 0000");
+               txtMarcaCPU.setText(" Ejemplo: GSkill");
+               txtPrecioCPU.setText(" En US$");
+               txtModeloCPU.setText(" Ejemplo: R5-1400");               
                break;    
            case 2:
                //Se pinta los botones, se selecciona el 3 y el resto se deselecciona
@@ -160,6 +206,22 @@ public class frmHome111 extends javax.swing.JFrame {
                btnMb.setIcon(new ImageIcon(getClass().getResource("/Img/mb_selected0.png")));
                btnGPU.setIcon(new ImageIcon(getClass().getResource("/Img/memG_selected0.png")));
                btnSupply.setIcon(new ImageIcon(getClass().getResource("/Img/supply_selected0.png")));
+               
+               intFrm_RAM.setVisible(false);
+               intFrm_RAM.setEnabled(false);
+               intFrm_CPU.setVisible(false);
+               intFrm_CPU.setEnabled(false);
+               intFrm_Gab.setVisible(false);
+               intFrm_Gab.setEnabled(false);
+               intFrm_MB.setVisible(false);
+               intFrm_MB.setEnabled(false);
+               intFrm_GPU.setVisible(false);
+               intFrm_GPU.setEnabled(false);
+               intFrm_Supply.setVisible(false);
+               intFrm_Supply.setEnabled(false);
+
+               intFrm_Dsk.setVisible(true);
+               intFrm_Dsk.setEnabled(true);
                break; 
            case 3:
                //Se pinta los botones, se selecciona el 4 y el resto se deselecciona
@@ -170,6 +232,22 @@ public class frmHome111 extends javax.swing.JFrame {
                btnMb.setIcon(new ImageIcon(getClass().getResource("/Img/mb_selected0.png")));
                btnGPU.setIcon(new ImageIcon(getClass().getResource("/Img/memG_selected0.png")));
                btnSupply.setIcon(new ImageIcon(getClass().getResource("/Img/supply_selected0.png")));
+               
+               intFrm_RAM.setVisible(false);
+               intFrm_RAM.setEnabled(false);
+               intFrm_CPU.setVisible(false);
+               intFrm_CPU.setEnabled(false);
+               intFrm_Dsk.setVisible(false);
+               intFrm_Dsk.setEnabled(false);
+               intFrm_MB.setVisible(false);
+               intFrm_MB.setEnabled(false);
+               intFrm_GPU.setVisible(false);
+               intFrm_GPU.setEnabled(false);
+               intFrm_Supply.setVisible(false);
+               intFrm_Supply.setEnabled(false);
+
+               intFrm_Gab.setVisible(true);
+               intFrm_Gab.setEnabled(true);
                break;     
            case 4:
                //Se pinta los botones, se selecciona el 5 y el resto se deselecciona
@@ -180,6 +258,22 @@ public class frmHome111 extends javax.swing.JFrame {
                btnMb.setIcon(new ImageIcon(getClass().getResource("/Img/mb_selected1.png")));
                btnGPU.setIcon(new ImageIcon(getClass().getResource("/Img/memG_selected0.png")));
                btnSupply.setIcon(new ImageIcon(getClass().getResource("/Img/supply_selected0.png")));
+               
+               intFrm_RAM.setVisible(false);
+               intFrm_RAM.setEnabled(false);
+               intFrm_CPU.setVisible(false);
+               intFrm_CPU.setEnabled(false);
+               intFrm_Dsk.setVisible(false);
+               intFrm_Dsk.setEnabled(false);
+               intFrm_Gab.setVisible(false);
+               intFrm_Gab.setEnabled(false);
+               intFrm_GPU.setVisible(false);
+               intFrm_GPU.setEnabled(false);
+               intFrm_Supply.setVisible(false);
+               intFrm_Supply.setEnabled(false);
+
+               intFrm_MB.setVisible(true);
+               intFrm_MB.setEnabled(true);
                break;    
            case 5:
                //Se pinta los botones, se selecciona el 6 y el resto se deselecciona
@@ -190,6 +284,22 @@ public class frmHome111 extends javax.swing.JFrame {
                btnMb.setIcon(new ImageIcon(getClass().getResource("/Img/mb_selected0.png")));
                btnGPU.setIcon(new ImageIcon(getClass().getResource("/Img/memG_selected1.png")));
                btnSupply.setIcon(new ImageIcon(getClass().getResource("/Img/supply_selected0.png")));
+               
+               intFrm_RAM.setVisible(false);
+               intFrm_RAM.setEnabled(false);
+               intFrm_CPU.setVisible(false);
+               intFrm_CPU.setEnabled(false);
+               intFrm_Dsk.setVisible(false);
+               intFrm_Dsk.setEnabled(false);
+               intFrm_Gab.setVisible(false);
+               intFrm_Gab.setEnabled(false);
+               intFrm_MB.setVisible(false);
+               intFrm_MB.setEnabled(false);
+               intFrm_Supply.setVisible(false);
+               intFrm_Supply.setEnabled(false);
+
+               intFrm_GPU.setVisible(true);
+               intFrm_GPU.setEnabled(true);
                break;                 
            case 6:
                //Se pinta los botones, se selecciona el 7 y el resto se deselecciona
@@ -200,21 +310,27 @@ public class frmHome111 extends javax.swing.JFrame {
                btnMb.setIcon(new ImageIcon(getClass().getResource("/Img/mb_selected0.png")));
                btnGPU.setIcon(new ImageIcon(getClass().getResource("/Img/memG_selected0.png")));
                btnSupply.setIcon(new ImageIcon(getClass().getResource("/Img/supply_selected1.png")));
-               break;
-            default:
-               btnMemoriaRAM.setIcon(new ImageIcon(getClass().getResource("/Img/memRAM_selected1.png")));
-               btnCPU.setIcon(new ImageIcon(getClass().getResource("/Img/cpu_selected0.png")));
-               btnDsk.setIcon(new ImageIcon(getClass().getResource("/Img/dsk_selected0.png")));
-               btnGab.setIcon(new ImageIcon(getClass().getResource("/Img/gab_selected0.png")));
-               btnMb.setIcon(new ImageIcon(getClass().getResource("/Img/mb_selected0.png")));
-               btnGPU.setIcon(new ImageIcon(getClass().getResource("/Img/memG_selected0.png")));
-               btnSupply.setIcon(new ImageIcon(getClass().getResource("/Img/supply_selected0.png")));                
+               
+               intFrm_RAM.setVisible(false);
+               intFrm_RAM.setEnabled(false);
+               intFrm_CPU.setVisible(false);
+               intFrm_CPU.setEnabled(false);
+               intFrm_Dsk.setVisible(false);
+               intFrm_Dsk.setEnabled(false);
+               intFrm_Gab.setVisible(false);
+               intFrm_Gab.setEnabled(false);
+               intFrm_MB.setVisible(false);
+               intFrm_MB.setEnabled(false);
+               intFrm_GPU.setVisible(false);
+               intFrm_GPU.setEnabled(false);
+
+               intFrm_Supply.setVisible(true);
+               intFrm_Supply.setEnabled(true);
                break;
        }            
 
         
     }// End method
-*/
     public void cambiarContexto(int i){
         //Metodo para cambiar el contexto dependiendo lo que quiera ver o hacer el user
         switch (i) {
@@ -229,13 +345,7 @@ public class frmHome111 extends javax.swing.JFrame {
                 intFrm_Red.setEnabled(false);
                 
                 intFrm_Inicio.setVisible(true);
-                intFrm_Inicio.setEnabled(true);
-                try {
-                    intFrm_Inicio.setSelected(true);
-                } catch (PropertyVetoException ex) {
-                    Logger.getLogger(frmHome111.class.getName()).log(Level.SEVERE, null, ex);
-                }
-        
+                intFrm_Inicio.setEnabled(true);     
                 break;
             case 1: // Referencia al Panel Insumo Hardware
                 intFrm_Inicio.setVisible(false);
@@ -249,6 +359,10 @@ public class frmHome111 extends javax.swing.JFrame {
                 
                 intFrm_HW.setVisible(true);
                 intFrm_HW.setEnabled(true);
+                
+                //Se llama al metodo que selecciona la pestania de ABML (Alta, Baja, Modificacion, Listado)
+                //para evitar error de superposicion de los JInternalFrame
+                cambiarPnlHW(0);
                 break;
             case 2: // Referencia al Panel Insumo Software
                 intFrm_Inicio.setVisible(false);
@@ -322,7 +436,10 @@ public class frmHome111 extends javax.swing.JFrame {
                         i++;
                         valorTxtField = valoresTxtField[i];
                     }
-
+                    
+                    //Como se recorre un texto y los indices de ese txt con la repeticion de verificacion estan defasados
+                    //(uno comienza en 0 y otro en 1) se usa Try/Catch para eludir el NullPointer, eso sucede porque 
+                    //si un txt tiene 4 caracteres y "pos" > 4, entonces se da NullPointer ya que no sabe a que caracter ir.
                     try {
                         for ( int n=0 ; n<valorTxtField.length() ; n++) {
                             char valorPos = valorTxtField.charAt(pos);
@@ -361,7 +478,7 @@ public class frmHome111 extends javax.swing.JFrame {
                     switch (valoresTxtField[i]) {
                         case " 0000":
                             error = true;
-                            txtIDRAM.setText(" ! ");
+                            txtIDRAM.setText(" !¡ ");
                             lblIntroText8.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
                             break;
                         case " Ejemplo: DDR3":
@@ -369,7 +486,7 @@ public class frmHome111 extends javax.swing.JFrame {
                             txtTechRAM.setText(" Dato inválido");
                             lblIntroText4.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
                             break;
-                        case " Ejemplo: MSI":
+                        case " Ejemplo: GSkill":
                             error = true;
                             txtMarcaRAM1.setText(" Dato inválido");
                             lblIntroText1.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
@@ -379,7 +496,7 @@ public class frmHome111 extends javax.swing.JFrame {
                             txtPrecioRAM.setText(" Dato inválido");
                             lblIntroText2.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
                             break;
-                        case " Ejemplo: X370M":
+                        case " Ejemplo: H4AS":
                             error = true;
                             txtModeloRAM.setText(" Dato inválido");
                             lblIntroText3.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
@@ -447,6 +564,48 @@ public class frmHome111 extends javax.swing.JFrame {
         btnGPU = new javax.swing.JButton();
         btnSupply = new javax.swing.JButton();
         btnAyuda1 = new javax.swing.JButton();
+        intFrm_CPU = new javax.swing.JInternalFrame();
+        pnlCPU = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        btnAyuda2 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        txtResultMass4 = new javax.swing.JTextField();
+        txtIDCPU = new javax.swing.JTextField();
+        lblIntroText9 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        lblIntroText10 = new javax.swing.JLabel();
+        txtDescripcionCPU = new javax.swing.JTextField();
+        lblIntroText11 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        spnFrecCPU = new javax.swing.JSpinner();
+        lblIntroText12 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        spnCapacidadCPU = new javax.swing.JSpinner();
+        lblIntroText13 = new javax.swing.JLabel();
+        lblIntroText14 = new javax.swing.JLabel();
+        txtModeloCPU = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        lblIntroText15 = new javax.swing.JLabel();
+        txtPrecioCPU = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        lblIntroText16 = new javax.swing.JLabel();
+        txtMarcaCPU = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        btnAddCPU = new javax.swing.JButton();
+        btnEditCPU = new javax.swing.JButton();
+        btnRmCPU = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblCPU = new javax.swing.JTable();
+        jSeparator9 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
+        jSeparator16 = new javax.swing.JSeparator();
+        jSeparator17 = new javax.swing.JSeparator();
+        jSeparator18 = new javax.swing.JSeparator();
+        jSeparator22 = new javax.swing.JSeparator();
         intFrm_RAM = new javax.swing.JInternalFrame();
         pnlRAM = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -492,7 +651,6 @@ public class frmHome111 extends javax.swing.JFrame {
         jSeparator12 = new javax.swing.JSeparator();
         jSeparator14 = new javax.swing.JSeparator();
         jSeparator15 = new javax.swing.JSeparator();
-        intFrm_CPU = new javax.swing.JInternalFrame();
         intFrm_Dsk = new javax.swing.JInternalFrame();
         intFrm_Gab = new javax.swing.JInternalFrame();
         intFrm_MB = new javax.swing.JInternalFrame();
@@ -868,6 +1026,302 @@ public class frmHome111 extends javax.swing.JFrame {
 
         pnlContextoInsHW.add(pnlHW_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 150));
 
+        intFrm_CPU.setBackground(new java.awt.Color(254, 254, 255));
+        intFrm_CPU.setBorder(null);
+        intFrm_CPU.setForeground(new java.awt.Color(254, 254, 255));
+        intFrm_CPU.setFocusable(false);
+        intFrm_CPU.setVisible(true);
+        intFrm_CPU.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnlCPU.setBackground(new java.awt.Color(254, 254, 255));
+        pnlCPU.setForeground(new java.awt.Color(254, 254, 255));
+        pnlCPU.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 59, 65));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setText("Ingreso: Unidad Central de Procesamiento.");
+        jLabel2.setToolTipText("");
+        pnlCPU.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 40));
+
+        btnAyuda2.setBackground(new java.awt.Color(229, 229, 229));
+        btnAyuda2.setForeground(new java.awt.Color(229, 229, 229));
+        btnAyuda2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/help_selected0.png"))); // NOI18N
+        btnAyuda2.setToolTipText("Los datos se mostrarán en la tabla.");
+        btnAyuda2.setBorderPainted(false);
+        btnAyuda2.setContentAreaFilled(false);
+        btnAyuda2.setDefaultCapable(false);
+        btnAyuda2.setFocusPainted(false);
+        btnAyuda2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/help_selected1.png"))); // NOI18N
+        btnAyuda2.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/help_selected0.png"))); // NOI18N
+        btnAyuda2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/help_selected0.png"))); // NOI18N
+        pnlCPU.add(btnAyuda2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 20, 30));
+
+        jLabel4.setBackground(new java.awt.Color(128, 131, 123));
+        jLabel4.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(137, 137, 137));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Carga los datos para almacenar un nuevo Insumo..png"))); // NOI18N
+        pnlCPU.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 300, 30));
+
+        jLabel19.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(70, 176, 74));
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("ID Memoria:");
+        pnlCPU.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 70, 20));
+
+        txtResultMass4.setEditable(false);
+        txtResultMass4.setBackground(new java.awt.Color(254, 254, 255));
+        txtResultMass4.setForeground(new java.awt.Color(51, 59, 65));
+        txtResultMass4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtResultMass4.setText("2BBB");
+        txtResultMass4.setBorder(null);
+        txtResultMass4.setEnabled(false);
+        pnlCPU.add(txtResultMass4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 50, 30));
+
+        txtIDCPU.setBackground(new java.awt.Color(254, 254, 255));
+        txtIDCPU.setForeground(new java.awt.Color(51, 59, 65));
+        txtIDCPU.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtIDCPU.setText(" 0000");
+        txtIDCPU.setBorder(null);
+        txtIDCPU.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtIDCPUMousePressed(evt);
+            }
+        });
+        pnlCPU.add(txtIDCPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, 30));
+
+        lblIntroText9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/introTxt_selected1.png"))); // NOI18N
+        lblIntroText9.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        pnlCPU.add(lblIntroText9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 30, 10));
+
+        jLabel15.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(70, 176, 74));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("Descripcion:");
+        pnlCPU.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 70, 20));
+
+        lblIntroText10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/introTxt_selected1.png"))); // NOI18N
+        lblIntroText10.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        pnlCPU.add(lblIntroText10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 50, 10));
+
+        txtDescripcionCPU.setEditable(false);
+        txtDescripcionCPU.setBackground(new java.awt.Color(254, 254, 255));
+        txtDescripcionCPU.setForeground(new java.awt.Color(51, 59, 65));
+        txtDescripcionCPU.setText(" C.P.U.");
+        txtDescripcionCPU.setBorder(null);
+        txtDescripcionCPU.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtDescripcionCPUMousePressed(evt);
+            }
+        });
+        pnlCPU.add(txtDescripcionCPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 90, 30));
+
+        lblIntroText11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/introTxt_selected1.png"))); // NOI18N
+        lblIntroText11.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        pnlCPU.add(lblIntroText11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 90, 10));
+
+        jLabel20.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(70, 176, 74));
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("Frecuencia:");
+        pnlCPU.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 70, 20));
+
+        spnFrecCPU.setModel(new javax.swing.SpinnerListModel(new String[] {"1600 MHz", "1866 MHz", "2400 MHz", "2666 MHz", "3000 MHz"}));
+        spnFrecCPU.setBorder(null);
+        spnFrecCPU.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                spnFrecCPUStateChanged(evt);
+            }
+        });
+        pnlCPU.add(spnFrecCPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 90, 30));
+
+        lblIntroText12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/introTxt_selected1.png"))); // NOI18N
+        lblIntroText12.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        pnlCPU.add(lblIntroText12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 90, 10));
+
+        jLabel21.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(70, 176, 74));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("Capacidad:");
+        pnlCPU.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 90, -1));
+
+        spnCapacidadCPU.setModel(new javax.swing.SpinnerListModel(new String[] {"4 GB", "8 GB", "16 GB"}));
+        spnCapacidadCPU.setBorder(null);
+        spnCapacidadCPU.setFocusable(false);
+        spnCapacidadCPU.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                spnCapacidadCPUStateChanged(evt);
+            }
+        });
+        pnlCPU.add(spnCapacidadCPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 90, 30));
+
+        lblIntroText13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/introTxt_selected1.png"))); // NOI18N
+        lblIntroText13.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        pnlCPU.add(lblIntroText13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, 90, 10));
+
+        lblIntroText14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/introTxt_selected1.png"))); // NOI18N
+        lblIntroText14.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        pnlCPU.add(lblIntroText14, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 90, 10));
+
+        txtModeloCPU.setBackground(new java.awt.Color(254, 254, 255));
+        txtModeloCPU.setForeground(new java.awt.Color(51, 59, 65));
+        txtModeloCPU.setText(" Ejemplo: R514");
+        txtModeloCPU.setBorder(null);
+        txtModeloCPU.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtModeloCPUMousePressed(evt);
+            }
+        });
+        pnlCPU.add(txtModeloCPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 90, 30));
+
+        jLabel22.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(70, 176, 74));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText(" Modelo:");
+        pnlCPU.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 60, 20));
+
+        lblIntroText15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/introTxt_selected1.png"))); // NOI18N
+        lblIntroText15.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        pnlCPU.add(lblIntroText15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 90, 10));
+
+        txtPrecioCPU.setBackground(new java.awt.Color(254, 254, 255));
+        txtPrecioCPU.setForeground(new java.awt.Color(51, 59, 65));
+        txtPrecioCPU.setText(" En US$");
+        txtPrecioCPU.setBorder(null);
+        txtPrecioCPU.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtPrecioCPUMousePressed(evt);
+            }
+        });
+        pnlCPU.add(txtPrecioCPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 90, 30));
+
+        jLabel23.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(70, 176, 74));
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setText("Precio:");
+        pnlCPU.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 40, 20));
+
+        lblIntroText16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/introTxt_selected1.png"))); // NOI18N
+        lblIntroText16.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        pnlCPU.add(lblIntroText16, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 90, 10));
+
+        txtMarcaCPU.setBackground(new java.awt.Color(254, 254, 255));
+        txtMarcaCPU.setForeground(new java.awt.Color(51, 59, 65));
+        txtMarcaCPU.setText(" Ejemplo: AMD");
+        txtMarcaCPU.setBorder(null);
+        txtMarcaCPU.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtMarcaCPUMousePressed(evt);
+            }
+        });
+        pnlCPU.add(txtMarcaCPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 90, 30));
+
+        jLabel24.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(70, 176, 74));
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("Marca:");
+        pnlCPU.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 40, 20));
+
+        btnAddCPU.setBackground(new java.awt.Color(229, 229, 229));
+        btnAddCPU.setForeground(new java.awt.Color(229, 229, 229));
+        btnAddCPU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/add_selected0_64.png"))); // NOI18N
+        btnAddCPU.setToolTipText("Insertar datos");
+        btnAddCPU.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(70, 176, 74), 2, true));
+        btnAddCPU.setBorderPainted(false);
+        btnAddCPU.setContentAreaFilled(false);
+        btnAddCPU.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAddCPU.setDefaultCapable(false);
+        btnAddCPU.setFocusPainted(false);
+        btnAddCPU.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/add_selected1_64.png"))); // NOI18N
+        btnAddCPU.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/add_selected0_64.png"))); // NOI18N
+        btnAddCPU.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/add_selected0_64.png"))); // NOI18N
+        btnAddCPU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddCPUActionPerformed(evt);
+            }
+        });
+        pnlCPU.add(btnAddCPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 60, 40));
+
+        btnEditCPU.setBackground(new java.awt.Color(229, 229, 229));
+        btnEditCPU.setForeground(new java.awt.Color(229, 229, 229));
+        btnEditCPU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/edit_64.png"))); // NOI18N
+        btnEditCPU.setToolTipText("Modificar datos.");
+        btnEditCPU.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(70, 176, 74), 2, true));
+        btnEditCPU.setBorderPainted(false);
+        btnEditCPU.setContentAreaFilled(false);
+        btnEditCPU.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEditCPU.setDefaultCapable(false);
+        btnEditCPU.setFocusPainted(false);
+        pnlCPU.add(btnEditCPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, 60, 40));
+
+        btnRmCPU.setBackground(new java.awt.Color(229, 229, 229));
+        btnRmCPU.setForeground(new java.awt.Color(229, 229, 229));
+        btnRmCPU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/rm_selected0_64.png"))); // NOI18N
+        btnRmCPU.setToolTipText("Modificar datos.");
+        btnRmCPU.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(70, 176, 74), 2, true));
+        btnRmCPU.setBorderPainted(false);
+        btnRmCPU.setContentAreaFilled(false);
+        btnRmCPU.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRmCPU.setDefaultCapable(false);
+        btnRmCPU.setFocusPainted(false);
+        btnRmCPU.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/rm_selected1_64.png"))); // NOI18N
+        btnRmCPU.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/rm_selected0_64.png"))); // NOI18N
+        btnRmCPU.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/rm_selected0_64.png"))); // NOI18N
+        pnlCPU.add(btnRmCPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, 70, 40));
+
+        jLabel26.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(51, 59, 65));
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel26.setText("Eliminar");
+        pnlCPU.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 50, 30));
+
+        jLabel27.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(51, 59, 65));
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel27.setText("Editar");
+        pnlCPU.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, 40, 30));
+
+        jLabel28.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(51, 59, 65));
+        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel28.setText("Agregar");
+        pnlCPU.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, 60, 30));
+
+        tblCPU.setBackground(new java.awt.Color(254, 254, 255));
+        tblCPU.setForeground(new java.awt.Color(51, 59, 65));
+        tblCPU.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {" ", " ", "  ", "", "", "", ""},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7"
+            }
+        ));
+        tblCPU.setCellSelectionEnabled(true);
+        tblCPU.setGridColor(new java.awt.Color(51, 59, 65));
+        tblCPU.setSelectionBackground(new java.awt.Color(70, 176, 74));
+        tblCPU.setSelectionForeground(new java.awt.Color(254, 254, 255));
+        jScrollPane2.setViewportView(tblCPU);
+
+        pnlCPU.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, 510, 380));
+
+        jSeparator9.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        pnlCPU.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 10, 380));
+        pnlCPU.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 340, 20));
+
+        jSeparator16.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        pnlCPU.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 10, 380));
+        pnlCPU.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 340, 20));
+        pnlCPU.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 340, 10));
+        pnlCPU.add(jSeparator22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 340, 10));
+
+        intFrm_CPU.getContentPane().add(pnlCPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 920, 480));
+
+        pnlContextoInsHW.add(intFrm_CPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 152, 1010, 540));
+
         intFrm_RAM.setBackground(new java.awt.Color(254, 254, 255));
         intFrm_RAM.setBorder(null);
         intFrm_RAM.setForeground(new java.awt.Color(254, 254, 255));
@@ -1008,7 +1462,7 @@ public class frmHome111 extends javax.swing.JFrame {
 
         txtModeloRAM.setBackground(new java.awt.Color(254, 254, 255));
         txtModeloRAM.setForeground(new java.awt.Color(51, 59, 65));
-        txtModeloRAM.setText(" Ejemplo: X370M");
+        txtModeloRAM.setText(" Ejemplo: H4AS");
         txtModeloRAM.setBorder(null);
         txtModeloRAM.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -1050,7 +1504,7 @@ public class frmHome111 extends javax.swing.JFrame {
 
         txtMarcaRAM1.setBackground(new java.awt.Color(254, 254, 255));
         txtMarcaRAM1.setForeground(new java.awt.Color(51, 59, 65));
-        txtMarcaRAM1.setText(" Ejemplo: MSI");
+        txtMarcaRAM1.setText(" Ejemplo: GSkill");
         txtMarcaRAM1.setBorder(null);
         txtMarcaRAM1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -1155,16 +1609,14 @@ public class frmHome111 extends javax.swing.JFrame {
         tblMemRAM.setForeground(new java.awt.Color(51, 59, 65));
         tblMemRAM.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {" ", " ", "  ", "", "", "", ""},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8"
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7"
             }
         ));
-        tblMemRAM.setCellSelectionEnabled(true);
         tblMemRAM.setGridColor(new java.awt.Color(51, 59, 65));
         tblMemRAM.setSelectionBackground(new java.awt.Color(70, 176, 74));
         tblMemRAM.setSelectionForeground(new java.awt.Color(254, 254, 255));
@@ -1185,12 +1637,6 @@ public class frmHome111 extends javax.swing.JFrame {
         intFrm_RAM.getContentPane().add(pnlRAM, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 920, 480));
 
         pnlContextoInsHW.add(intFrm_RAM, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 152, 1010, 540));
-
-        intFrm_CPU.setBackground(new java.awt.Color(254, 254, 255));
-        intFrm_CPU.setBorder(null);
-        intFrm_CPU.setVisible(true);
-        intFrm_CPU.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        pnlContextoInsHW.add(intFrm_CPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 152, 940, 520));
 
         intFrm_Dsk.setBackground(new java.awt.Color(254, 254, 255));
         intFrm_Dsk.setBorder(null);
@@ -1270,7 +1716,7 @@ public class frmHome111 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMinimizateActionPerformed
     
     private void btnMemoriaRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemoriaRAMActionPerformed
-        //cambiarPnlHW(0,pnlHW_MemRAM);
+        cambiarPnlHW(0);
     }//GEN-LAST:event_btnMemoriaRAMActionPerformed
 
     private void btnLateralRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLateralRedActionPerformed
@@ -1298,27 +1744,27 @@ public class frmHome111 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLateralInicioActionPerformed
 
     private void btnCPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCPUActionPerformed
-        //cambiarPnlHW(1,pnlHW_CPU);
+        cambiarPnlHW(1);
     }//GEN-LAST:event_btnCPUActionPerformed
 
     private void btnDskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDskActionPerformed
-        //cambiarPnlHW(2,pnlHW_Dsk);
+        cambiarPnlHW(2);
     }//GEN-LAST:event_btnDskActionPerformed
 
     private void btnGabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGabActionPerformed
-        //cambiarPnlHW(3,pnlHW_Gab);
+        cambiarPnlHW(3);
     }//GEN-LAST:event_btnGabActionPerformed
 
     private void btnMbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMbActionPerformed
-        //cambiarPnlHW(4,pnlHW_MB);
+        cambiarPnlHW(4);
     }//GEN-LAST:event_btnMbActionPerformed
 
     private void btnGPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGPUActionPerformed
-        //cambiarPnlHW(5,pnlHW_GPU);
+        cambiarPnlHW(5);
     }//GEN-LAST:event_btnGPUActionPerformed
 
     private void btnSupplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupplyActionPerformed
-        //cambiarPnlHW(6,pnlHW_Supply);
+        cambiarPnlHW(6);
     }//GEN-LAST:event_btnSupplyActionPerformed
 
     private void txtIDRAMMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIDRAMMousePressed
@@ -1392,26 +1838,8 @@ public class frmHome111 extends javax.swing.JFrame {
         if ( error == true ) {
             //No hacer nada, ya que existe un error
         } else {
-            /*
-            double precio = Logica.Hardware.calcularPrecioRAM(
-                txtTechRAM.getText(),
-                Integer.parseInt(this.valorSpnMemRAM2),
-                Integer.parseInt(this.valorSpnMemRAM1),
-                20
-            );
-            */
-            Hardware H1 = new Hardware(
-                txtIDRAM.getText(),
-                txtDescripcionRAM.getText(),
-                0.0,
-                20.0,
-                Integer.parseInt(this.valorSpnMemRAM1),
-                Integer.parseInt(this.valorSpnMemRAM2),
-                txtMarcaRAM1.getText(),
-                txtTechRAM.getText(),
-                txtModeloRAM.getText()
-            );
-
+            double precio = Double.parseDouble(txtPrecioRAM.getText());
+            InsumoInformatico RAM1 = new Hardware(txtIDRAM.getText(),txtDescripcionRAM.getText(),0.0,precio,Integer.parseInt(this.valorSpnMemRAM1),Integer.parseInt(this.valorSpnMemRAM2),txtMarcaRAM1.getText(),txtTechRAM.getText(),txtModeloRAM.getText());
             String [] datosTextField = {
                 txtIDRAM.getText(),
                 txtMarcaRAM1.getText(),
@@ -1419,12 +1847,48 @@ public class frmHome111 extends javax.swing.JFrame {
                 txtDescripcionRAM.getText(),
                 this.valorSpnMemRAM1, //Corresponde a la Frecuencia
                 this.valorSpnMemRAM2, //Corresponde a la Capacidad
-                String.valueOf(H1.getPrecioIns()) //VERIFICAR DATO EN BDD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                String.valueOf(RAM1.getPrecioIns()) //VERIFICAR DATO EN BDD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             };
             ModelHW1.addRow(datosTextField);
 
+
+
+
+
         }//End condicion
     }//GEN-LAST:event_btnAddRAMActionPerformed
+
+    private void txtIDCPUMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIDCPUMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIDCPUMousePressed
+
+    private void txtDescripcionCPUMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDescripcionCPUMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDescripcionCPUMousePressed
+
+    private void spnFrecCPUStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnFrecCPUStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_spnFrecCPUStateChanged
+
+    private void spnCapacidadCPUStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnCapacidadCPUStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_spnCapacidadCPUStateChanged
+
+    private void txtModeloCPUMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtModeloCPUMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtModeloCPUMousePressed
+
+    private void txtPrecioCPUMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPrecioCPUMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrecioCPUMousePressed
+
+    private void txtMarcaCPUMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMarcaCPUMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMarcaCPUMousePressed
+
+    private void btnAddCPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCPUActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddCPUActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1468,11 +1932,14 @@ public class frmHome111 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel EscondePestania;
     private javax.swing.JLabel EscondePestania1;
+    private javax.swing.JButton btnAddCPU;
     private javax.swing.JButton btnAddRAM;
     private javax.swing.JButton btnAyuda;
     private javax.swing.JButton btnAyuda1;
+    private javax.swing.JButton btnAyuda2;
     private javax.swing.JButton btnCPU;
     private javax.swing.JButton btnDsk;
+    private javax.swing.JButton btnEditCPU;
     private javax.swing.JButton btnEditRAM;
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnGPU;
@@ -1486,6 +1953,7 @@ public class frmHome111 extends javax.swing.JFrame {
     private javax.swing.JButton btnMb;
     private javax.swing.JButton btnMemoriaRAM;
     private javax.swing.JButton btnMinimizate;
+    private javax.swing.JButton btnRmCPU;
     private javax.swing.JButton btnRmRAM;
     private javax.swing.JButton btnSupply;
     private javax.swing.JInternalFrame intFrm_CPU;
@@ -1506,30 +1974,56 @@ public class frmHome111 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator13;
     private javax.swing.JSeparator jSeparator14;
     private javax.swing.JSeparator jSeparator15;
+    private javax.swing.JSeparator jSeparator16;
+    private javax.swing.JSeparator jSeparator17;
+    private javax.swing.JSeparator jSeparator18;
     private javax.swing.JSeparator jSeparator19;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator20;
     private javax.swing.JSeparator jSeparator21;
+    private javax.swing.JSeparator jSeparator22;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JLabel lblIns;
     private javax.swing.JLabel lblIns1;
     private javax.swing.JLabel lblIntroText0;
     private javax.swing.JLabel lblIntroText1;
+    private javax.swing.JLabel lblIntroText10;
+    private javax.swing.JLabel lblIntroText11;
+    private javax.swing.JLabel lblIntroText12;
+    private javax.swing.JLabel lblIntroText13;
+    private javax.swing.JLabel lblIntroText14;
+    private javax.swing.JLabel lblIntroText15;
+    private javax.swing.JLabel lblIntroText16;
     private javax.swing.JLabel lblIntroText2;
     private javax.swing.JLabel lblIntroText3;
     private javax.swing.JLabel lblIntroText4;
@@ -1537,11 +2031,13 @@ public class frmHome111 extends javax.swing.JFrame {
     private javax.swing.JLabel lblIntroText6;
     private javax.swing.JLabel lblIntroText7;
     private javax.swing.JLabel lblIntroText8;
+    private javax.swing.JLabel lblIntroText9;
     private javax.swing.JLabel lblMenu;
     private javax.swing.JLabel lblPresupuesto;
     private javax.swing.JLabel lblSubTituloPestania;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblTituloPestania;
+    private javax.swing.JPanel pnlCPU;
     private javax.swing.JPanel pnlContexto;
     private javax.swing.JPanel pnlContextoInicio;
     private javax.swing.JPanel pnlContextoInsHW;
@@ -1549,15 +2045,24 @@ public class frmHome111 extends javax.swing.JFrame {
     private javax.swing.JPanel pnlHW_Titulo;
     private javax.swing.JPanel pnlLateral;
     private javax.swing.JPanel pnlRAM;
+    private javax.swing.JSpinner spnCapacidadCPU;
     private javax.swing.JSpinner spnCapacidadRAM;
+    private javax.swing.JSpinner spnFrecCPU;
     private javax.swing.JSpinner spnFrecRAM;
+    private javax.swing.JTable tblCPU;
     private javax.swing.JTable tblMemRAM;
+    private javax.swing.JTextField txtDescripcionCPU;
     private javax.swing.JTextField txtDescripcionRAM;
+    private javax.swing.JTextField txtIDCPU;
     private javax.swing.JTextField txtIDRAM;
+    private javax.swing.JTextField txtMarcaCPU;
     private javax.swing.JTextField txtMarcaRAM1;
+    private javax.swing.JTextField txtModeloCPU;
     private javax.swing.JTextField txtModeloRAM;
+    private javax.swing.JTextField txtPrecioCPU;
     private javax.swing.JTextField txtPrecioRAM;
     private javax.swing.JTextField txtResultMass3;
+    private javax.swing.JTextField txtResultMass4;
     private javax.swing.JTextField txtTechRAM;
     // End of variables declaration//GEN-END:variables
 }
