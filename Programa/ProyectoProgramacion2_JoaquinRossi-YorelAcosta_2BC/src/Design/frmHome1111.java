@@ -12,15 +12,14 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerModel;
+import java.text.DecimalFormat;
 
 public class frmHome1111 extends javax.swing.JFrame {
     ArrayList <Presupuestos> presupuestos = new ArrayList<>(); //ArrayL de la coleccion de objetos Presupuesto
     ArrayList <InsumoInformatico> insumos = new ArrayList<>(); //ArrayL de la coleccion de objetos Insumo
-
-    //Variables para almacenar los valores de los Spn
-    //Consejo: Mirar metodos stateChanged de los JSpinner
-    //En elos stateChanged se toma el valor y se almacena
-    //  en estas variables para luego usarlas en otros controles
+    DecimalFormat MIFormato = new DecimalFormat("#.00");
+    
+//Variables para almacenar los valores de los Spn
     //MEMORIA RAM:
     private String valorSpnMemRAM1 = ""; //Espacio asignado para Frecuencia
     private String valorSpnMemRAM2 = ""; //Espacio asignado para Capacidad
@@ -412,7 +411,10 @@ public class frmHome1111 extends javax.swing.JFrame {
                 break;
         }//End SW (i)
     }
-    public boolean verificaErrorDato(int l){
+    public boolean verificaErrorDato(int a, boolean b){
+        //El segundo parametro indica si se debe de buscar el error de la conincidencia de 
+        //ID ya existente, si b=true se busca si se repite el ID 
+        
         /* 
            Metodo para verificar si existe algun error en los campos
            de texto. Se espera un int para indicar que tipo de
@@ -420,7 +422,7 @@ public class frmHome1111 extends javax.swing.JFrame {
            buscara errores en los campos de txt para almacenar una memoria ram
         */
         boolean error = false;
-        switch (l) {
+        switch (a) {
             case 0: //Busqueda de error en MemoriaRAM
                 String [] valoresTxtField = {
                     txtIDRAM.getText(),
@@ -432,16 +434,19 @@ public class frmHome1111 extends javax.swing.JFrame {
                 };
                 
                 //No se puede agregar una RAM cuando el ID de esta ya coincide con otra
-                for ( int i=0 ; i<insumos.size() ; i++) {
-                    InsumoInformatico H = insumos.get(i);
-                    String idRAM = "1AAA" + txtIDRAM.getText();
-                    if ( H.getIdInsumo().equals(idRAM) ) {
-                        error = true;
-                        txtIDRAM.setText(" ! ");
-                        lblIntroText8.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
-                        lblIntroText8.setToolTipText("Ya existe este ID.");
-                    }
-                }//End loop (i)
+                if (b == true){
+                    for ( int i=0 ; i<insumos.size() ; i++) {
+                        InsumoInformatico H = insumos.get(i);
+                        String idRAM = "1AAA" + txtIDRAM.getText();
+                        if ( H.getIdInsumo().equals(idRAM) ) {
+                            error = true;
+                            txtIDRAM.setText(" ! ");
+                            lblIntroText8.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
+                            lblIntroText8.setToolTipText("Ya existe este ID.");
+                        }
+                    }//End loop (i)
+                }//End condicional (b)
+
                 
                 //El ID RAM debe de ser 4 digitos mas los otros 4 del prefijo 
                 if ( txtIDRAM.getText().length() == 4) {
@@ -456,16 +461,20 @@ public class frmHome1111 extends javax.swing.JFrame {
                 switch (txtTechRAM.getText()) {
                     case "DDR3":
                         if ( spnFrecRAM.getValue().toString().equals("1600 MHz") || spnFrecRAM.getValue().toString().equals("1866 MHz") ) {
-                            //Todo bien
+                            lblIntroText4.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1.png")));
+                            lblIntroText4.setToolTipText("");   
                         } else {
+                            error = true;
                             lblIntroText4.setIcon(new ImageIcon(getClass().getResource("/Img/introText_selected1-W.png")));
                             lblIntroText4.setToolTipText("Para DDR3 ecoga entre 1600 a 1866 MHz.");   
                         }
                         break;
                     case "DDR4":
                         if ( spnFrecRAM.getValue().toString().equals("2400 MHz") || spnFrecRAM.getValue().toString().equals("2666 MHz") || spnFrecRAM.getValue().toString().equals("3000 MHz") ) {
-                            //Todo bien
+                            lblIntroText4.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1.png")));
+                            lblIntroText4.setToolTipText("");   
                         } else {
+                            error = true;
                             lblIntroText4.setIcon(new ImageIcon(getClass().getResource("/Img/introText_selected1-W.png")));
                             lblIntroText4.setToolTipText("Para DDR4 ecoga entre 2400 a 3000 MHz.");   
                         }
@@ -473,7 +482,7 @@ public class frmHome1111 extends javax.swing.JFrame {
                     default:
                         error = true;
                         txtTechRAM.setText(" Dato inválido");
-                        lblIntroText4.setIcon(new ImageIcon(getClass().getResource("/Img/introText_selected1-E.png")));
+                        lblIntroText4.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
                         lblIntroText4.setToolTipText("Tecnología desconocida.");
                         break;
                 }
@@ -1207,11 +1216,6 @@ public class frmHome1111 extends javax.swing.JFrame {
 
         spnFrecRAM.setModel(new javax.swing.SpinnerListModel(new String[] {"1600 MHz", "1866 MHz", "2400 MHz", "2666 MHz", "3000 MHz"}));
         spnFrecRAM.setBorder(null);
-        spnFrecRAM.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                spnFrecRAMStateChanged(evt);
-            }
-        });
         pnlRAM.add(spnFrecRAM, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 90, 30));
 
         lblIntroText6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/introTxt_selected1.png"))); // NOI18N
@@ -1227,11 +1231,6 @@ public class frmHome1111 extends javax.swing.JFrame {
         spnCapacidadRAM.setModel(new javax.swing.SpinnerListModel(new String[] {"4 GB", "8 GB", "16 GB"}));
         spnCapacidadRAM.setBorder(null);
         spnCapacidadRAM.setFocusable(false);
-        spnCapacidadRAM.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                spnCapacidadRAMStateChanged(evt);
-            }
-        });
         pnlRAM.add(spnCapacidadRAM, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 90, 30));
 
         lblIntroText5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/introTxt_selected1.png"))); // NOI18N
@@ -1352,6 +1351,11 @@ public class frmHome1111 extends javax.swing.JFrame {
         btnEditRAM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEditRAM.setDefaultCapable(false);
         btnEditRAM.setFocusPainted(false);
+        btnEditRAM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditRAMActionPerformed(evt);
+            }
+        });
         pnlRAM.add(btnEditRAM, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, 60, 40));
 
         btnRmRAM.setBackground(new java.awt.Color(229, 229, 229));
@@ -1844,40 +1848,6 @@ public class frmHome1111 extends javax.swing.JFrame {
         txtIDRAM.setText("");
     }//GEN-LAST:event_txtIDRAMMousePressed
 
-    private void spnFrecRAMStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnFrecRAMStateChanged
-        switch ( spnFrecRAM.getValue().toString() ) {
-            case "1600 MHz":
-            this.valorSpnMemRAM1 = "1666";
-            break;
-            case "1866 MHz":
-            this.valorSpnMemRAM1 = "1866";
-            break;
-            case "2400 MHz":
-            this.valorSpnMemRAM1 = "2400";
-            break;
-            case "2666 MHz":
-            this.valorSpnMemRAM1 = "2666";
-            break;
-            case "3000 MHz":
-            this.valorSpnMemRAM1 = "3000";
-            break;
-        }//End SW (valorSpnMemRAM1)
-    }//GEN-LAST:event_spnFrecRAMStateChanged
-
-    private void spnCapacidadRAMStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnCapacidadRAMStateChanged
-        switch ( spnCapacidadRAM.getValue().toString() ) {
-            case "4 GB":
-            this.valorSpnMemRAM2 = "4";
-            break;
-            case "8 GB":
-            this.valorSpnMemRAM2 = "8";
-            break;
-            case "16 GB":
-            this.valorSpnMemRAM2 = "16";
-            break;
-        }//End SW (valorSpnMemRAM1)
-    }//GEN-LAST:event_spnCapacidadRAMStateChanged
-
     private void txtModeloRAMMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtModeloRAMMousePressed
         lblIntroText1.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1.png")));
         lblIntroText1.setToolTipText("");
@@ -1903,12 +1873,42 @@ public class frmHome1111 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTechRAMMousePressed
 
     private void btnAddRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddRAMActionPerformed
-        boolean error = verificaErrorDato(0);
+        boolean error = verificaErrorDato(0,true);
         //En caso de que exista un error en la entrada
         //de algun dato, este no se almacenara en la tabla
         if ( error == true ) {
             //No hacer nada, ya que existe un error
         } else {
+            switch ( spnCapacidadRAM.getValue().toString() ) {
+                case "4 GB":
+                this.valorSpnMemRAM2 = "4";
+                break;
+                case "8 GB":
+                this.valorSpnMemRAM2 = "8";
+                break;
+                case "16 GB":
+                this.valorSpnMemRAM2 = "16";
+                break;
+            }//End SW (valorSpnMemRAM1)
+            
+            switch ( spnFrecRAM.getValue().toString() ) {
+                case "1600 MHz":
+                this.valorSpnMemRAM1 = "1666";
+                break;
+                case "1866 MHz":
+                this.valorSpnMemRAM1 = "1866";
+                break;
+                case "2400 MHz":
+                this.valorSpnMemRAM1 = "2400";
+                break;
+                case "2666 MHz":
+                this.valorSpnMemRAM1 = "2666";
+                break;
+                case "3000 MHz":
+                this.valorSpnMemRAM1 = "3000";
+                break;
+            }//End SW (valorSpnMemRAM1)
+        
             double precio = Double.parseDouble(txtPrecioRAM.getText());
             InsumoInformatico RAM1 = new Hardware("1AAA" + txtIDRAM.getText(),txtDescripcionRAM.getText(),0.0,precio,Integer.parseInt(this.valorSpnMemRAM1),Integer.parseInt(this.valorSpnMemRAM2),txtMarcaRAM1.getText(),txtTechRAM.getText(),txtModeloRAM.getText());
             String [] datosTextField = {
@@ -1957,6 +1957,85 @@ public class frmHome1111 extends javax.swing.JFrame {
     private void btnAddCPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCPUActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAddCPUActionPerformed
+
+    private void btnEditRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditRAMActionPerformed
+        boolean error = verificaErrorDato(0,false);
+        
+        //En caso de que exista un error en la entrada
+        //de algun dato, este no se almacenara en la tabla
+        if ( error == true ) {
+            //No hacer nada, ya que existe un error
+        } else {
+            switch ( spnCapacidadRAM.getValue().toString() ) {
+                case "4 GB":
+                this.valorSpnMemRAM2 = "4";
+                break;
+                case "8 GB":
+                this.valorSpnMemRAM2 = "8";
+                break;
+                case "16 GB":
+                this.valorSpnMemRAM2 = "16";
+                break;
+            }//End SW (valorSpnMemRAM1)
+            
+            switch ( spnFrecRAM.getValue().toString() ) {
+                case "1600 MHz":
+                this.valorSpnMemRAM1 = "1666";
+                break;
+                case "1866 MHz":
+                this.valorSpnMemRAM1 = "1866";
+                break;
+                case "2400 MHz":
+                this.valorSpnMemRAM1 = "2400";
+                break;
+                case "2666 MHz":
+                this.valorSpnMemRAM1 = "2666";
+                break;
+                case "3000 MHz":
+                this.valorSpnMemRAM1 = "3000";
+                break;
+            }//End SW (valorSpnMemRAM1)
+            
+            String idRAM;
+            InsumoInformatico H1;
+            for ( int i=0 ; i<insumos.size() ; i++) {
+                H1 = insumos.get(i);
+                idRAM = H1.getIdInsumo();
+                String idTxtField = "1AAA" + txtIDRAM.getText();
+                if ( idTxtField.equals(idRAM) ) {
+                    insumos.remove(H1);
+                    int cantFilas = ModelHW1.getRowCount(); //Me da la cant total de filas que hay
+                    String [] valoresID_Col0 = new String [cantFilas];
+                     boolean encontre = false;
+                    //Recorro las filas de la Tabla y almaceno en Array todos los valores de las filas
+                    // que correspondan con la Columna0
+                    for ( int n=0 ; n<cantFilas && encontre!=true; n++){
+                        valoresID_Col0[n] = (String) ModelHW1.getValueAt(0, n);
+                        if ( valoresID_Col0[n].equals(idRAM) ) {
+                            encontre = true;
+                            double precio = Double.parseDouble(txtPrecioRAM.getText());
+                            ModelHW1.removeRow(n);
+                            InsumoInformatico RAM1 = new Hardware("1AAA" + txtIDRAM.getText(),txtDescripcionRAM.getText(),0.0,precio,Integer.parseInt(this.valorSpnMemRAM1),Integer.parseInt(this.valorSpnMemRAM2),txtMarcaRAM1.getText(),txtTechRAM.getText(),txtModeloRAM.getText());
+                            insumos.add(RAM1);
+                            String [] nuevosDatosTextField = {
+                                "1AAA" + txtIDRAM.getText(),
+                                txtMarcaRAM1.getText(),
+                                txtModeloRAM.getText(),
+                                txtDescripcionRAM.getText(),
+                                this.valorSpnMemRAM1, //Corresponde a la Frecuencia
+                                this.valorSpnMemRAM2, //Corresponde a la Capacidad
+                                String.valueOf(RAM1.getPrecioIns()) //VERIFICAR DATO EN BDD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                            };
+                            ModelHW1.addRow(nuevosDatosTextField);
+                            
+                        }
+                    }
+                    
+                    
+                }
+            }
+        }
+    }//GEN-LAST:event_btnEditRAMActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
