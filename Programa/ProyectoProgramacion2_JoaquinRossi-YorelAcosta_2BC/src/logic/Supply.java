@@ -1,47 +1,44 @@
-//@authors: | Joaquin_Rossi | Yorel_Acosta | 2°BC | ESI-BUCEO
-package Logica;
+// @authors: Joaquin Rossi | Yorel Acosta | 2BC | ESI-BUCEO
+package logic;
 
-public abstract class InsumoInformatico {
-    //ATRIBUTOS:
-    protected String idInsumo = Constantes.idIns;
-    protected String descripcion = Constantes.descripcion;
-    protected double precioIns = Constantes.precioIns;
-    protected double precioBase = Constantes.precioBase;
+public abstract class Supply {
+    protected String id = Constants.supplyId;
+    protected String description = Constants.description;
+    protected double price = Constants.price;
+    protected double basePrice = Constants.basePrice;
 
-        
-    //CONSTRUCTOR:
-    public InsumoInformatico(String idInsumo, String descripcion, double precioIns,double precioBase) {
-    this.idInsumo = idInsumo;
-    this.descripcion = descripcion;
-    this.precioIns = precioIns;
-    this.precioBase = precioBase;
-    }// End constructor completo
-    
-    //GETTERS:
-    public String getIdInsumo() {
-        return idInsumo;
+    public Supply(String id, String description, double price, double basePrice) {
+        this.id = id;
+        this.description = description;
+        this.price = price;
+        this.basePrice = basePrice;
     }
-    public String getDescripcion() {
-        return descripcion;
-    }
-    public double getPrecioIns() {
-        return precioIns;
-    }
-   
-    //SETERS:
-    public void setIdInsumo(String idInsumo) {
-        this.idInsumo = idInsumo;
-    }
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-    public void setPrecioIns(double precioIns) {
-        this.precioIns = precioIns;
-    }
-    
-    //LIBRERIA DE COMPORTAMIENTOS:
 
-  
-    
-    
-}// End class
+    // Getters
+    public String getId() {
+        return id;
+    }
+    public String getDescription() {
+        return description;
+    }
+    public double getPrice() {
+        return price;
+    }
+    public double getBasePrice() {
+        return basePrice;
+    }
+
+    // Setters
+    public void setId(String id) {
+        this.id = id;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    public void setBasePrice(double basePrice) {
+        this.basePrice = basePrice;
+    }
+}

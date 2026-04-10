@@ -1,59 +1,38 @@
-//@authors: | Joaquin_Rossi | Yorel_Acosta | 2°BC | ESI-BUCEO
-package Logica;
+// @authors: Joaquin Rossi | Yorel Acosta | 2BC | ESI-BUCEO
+package logic;
 
-import Logica.Constantes;
+public abstract class Quote {
+    protected String quoteId = Constants.quoteId;
+    protected String clientId = Constants.clientId;
+    protected String clientName = Constants.clientName;
+    protected double laborCost = Constants.laborCost;
+    protected double subtotal = Constants.subtotal;
+    protected double total = Constants.total;
+    protected double hoursWorked = Constants.hoursWorked;
 
-public abstract class Presupuesto {
-    //ATRIBUTOS:
-    protected String idPresupuesto = Constantes.idPresupuesto;
-    protected String idCliente = Constantes.idCliente;
-    protected String nomCliente = Constantes.nomCliente;
-    protected double manoObra = Constantes.manoObra;
-    protected double subTotal = Constantes.subTotal;   
-    protected double total = Constantes.total;
-    protected double horasTrabajadas = Constantes.horasTrabajadas;
-
-    
-    //CONSTRUCTOR:    
-    public Presupuesto(String idPresupuesto, double manoObra, double subTotal, double total, double horasTrabajadas, String idCliente, String nomCliente) {
-        this.idPresupuesto = idPresupuesto;
-        this.manoObra = manoObra;
-        this.subTotal = subTotal;        
-        this.total = total;        
-        this.horasTrabajadas = horasTrabajadas;  
-        this.idCliente = idCliente;
-        this.nomCliente = nomCliente;
-    }// End constructor completo
-    
-    //GETTERS:  
-    public String getIdPresupuesto() {
-        return idPresupuesto;
-    }
-    public double getSubTotal() {
-        return subTotal;
-    }
-    public double getTotal() {
-        return total;
-    }
-    public double getHorasTrabajadas() {
-        return horasTrabajadas;
-    }
-    
-    //SETTERS:
-    public void setIdPresupuesto(String idPresupuesto) {
-        this.idPresupuesto = idPresupuesto;
-    }
-    public void setSubTotal(double subTotal) {
-        this.subTotal = subTotal;
-    }
-    public void setTotal(double total) {
+    public Quote(String quoteId, double laborCost, double subtotal, double total,
+                 double hoursWorked, String clientId, String clientName) {
+        this.quoteId = quoteId;
+        this.laborCost = laborCost;
+        this.subtotal = subtotal;
         this.total = total;
+        this.hoursWorked = hoursWorked;
+        this.clientId = clientId;
+        this.clientName = clientName;
     }
-    public void setHorasTrabajadas(double horasTrabajadas) {
-        this.horasTrabajadas = horasTrabajadas;
-    }
-    
-    //LIBRERIA DE COMPORTAMIENTOS:
-    
-    
-}// End class
+
+    // Getters
+    public String getQuoteId() { return quoteId; }
+    public double getSubtotal() { return subtotal; }
+    public double getTotal() { return total; }
+    public double getHoursWorked() { return hoursWorked; }
+    public String getClientId() { return clientId; }
+    public String getClientName() { return clientName; }
+    public double getLaborCost() { return laborCost; }
+
+    // Setters
+    public void setQuoteId(String quoteId) { this.quoteId = quoteId; }
+    public void setSubtotal(double subtotal) { this.subtotal = subtotal; }
+    public void setTotal(double total) { this.total = total; }
+    public void setHoursWorked(double hoursWorked) { this.hoursWorked = hoursWorked; }
+}

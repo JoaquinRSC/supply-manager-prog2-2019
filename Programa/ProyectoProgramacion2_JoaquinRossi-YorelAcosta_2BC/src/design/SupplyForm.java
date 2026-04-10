@@ -3,18 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Design;
+package design;
 
-/**
- *
- * @author joaqu
- */
-public class frmHome extends javax.swing.JFrame {
+public class SupplyForm extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmHome
+     * Creates new form SupplyForm
      */
-    public frmHome() {
+    public SupplyForm() {
         initComponents();
     }
 
@@ -217,72 +213,72 @@ public class frmHome extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(142, 205, 153));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("ID Memoria:");
+        jLabel7.setText("ID Memory:");
         panelOptions.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         txtResultMass1.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass1.setForeground(new java.awt.Color(255, 255, 255));
-        txtResultMass1.setText(" En US$");
+        txtResultMass1.setText(" In US$");
         txtResultMass1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         panelOptions.add(txtResultMass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 110, 20));
 
         jLabel8.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(142, 205, 153));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Precio:");
+        jLabel8.setText("Price:");
         panelOptions.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         txtResultMass2.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass2.setForeground(new java.awt.Color(255, 255, 255));
-        txtResultMass2.setText(" Memoria RAM");
+        txtResultMass2.setText(" RAM Memory");
         txtResultMass2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         panelOptions.add(txtResultMass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 110, 20));
 
         jLabel9.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(142, 205, 153));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Descripcion:");
+        jLabel9.setText("Description:");
         panelOptions.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(142, 205, 153));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Frecuencia:");
+        jLabel10.setText("Frequency:");
         panelOptions.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(142, 205, 153));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Capacidad:");
+        jLabel11.setText("Capacity:");
         panelOptions.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(142, 205, 153));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText(" Modelo:");
+        jLabel12.setText(" Model:");
         panelOptions.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 190, 70, -1));
 
         txtResultMass5.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass5.setForeground(new java.awt.Color(255, 255, 255));
-        txtResultMass5.setText(" Ejemplo: X370M-VV");
+        txtResultMass5.setText(" e.g.: X370M-VV");
         txtResultMass5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         panelOptions.add(txtResultMass5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 110, 20));
 
         jLabel13.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(142, 205, 153));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("Tecnologia:");
+        jLabel13.setText("Technology:");
         panelOptions.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(142, 205, 153));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Marca:");
+        jLabel14.setText("Brand:");
         panelOptions.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, -1, -1));
 
         txtResultMass7.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass7.setForeground(new java.awt.Color(255, 255, 255));
-        txtResultMass7.setText(" Ejemplo: AORUS");
+        txtResultMass7.setText(" e.g.: AORUS");
         txtResultMass7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         panelOptions.add(txtResultMass7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 110, 20));
 
@@ -317,73 +313,73 @@ public class frmHome extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(142, 205, 153));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("ID Almacenamiento:");
+        jLabel15.setText("ID Storage:");
         panelOptions1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         txtResultMass9.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass9.setForeground(new java.awt.Color(255, 255, 255));
-        txtResultMass9.setText(" En US$");
+        txtResultMass9.setText(" In US$");
         txtResultMass9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         panelOptions1.add(txtResultMass9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 110, 20));
 
         jLabel16.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(142, 205, 153));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("Precio:");
+        jLabel16.setText("Price:");
         panelOptions1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         txtResultMass10.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass10.setForeground(new java.awt.Color(255, 255, 255));
-        txtResultMass10.setText(" Disco Duro");
+        txtResultMass10.setText(" Hard Drive");
         txtResultMass10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         panelOptions1.add(txtResultMass10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 110, 20));
 
         jLabel17.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(142, 205, 153));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("Descripcion:");
+        jLabel17.setText("Description:");
         panelOptions1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(142, 205, 153));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("Capacidad:");
+        jLabel19.setText("Capacity:");
         panelOptions1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(142, 205, 153));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText(" Modelo:");
+        jLabel20.setText(" Model:");
         panelOptions1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         txtResultMass13.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass13.setForeground(new java.awt.Color(255, 255, 255));
-        txtResultMass13.setText(" Ejemplo: WD7200-A");
+        txtResultMass13.setText(" e.g.: WD7200-A");
         txtResultMass13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         panelOptions1.add(txtResultMass13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 110, -1));
 
         jLabel21.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(142, 205, 153));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setText("Tecnologia:");
+        jLabel21.setText("Technology:");
         panelOptions1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
 
         jLabel22.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(142, 205, 153));
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setText("Marca:");
+        jLabel22.setText("Brand:");
         panelOptions1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
 
         txtResultMass15.setBackground(new java.awt.Color(51, 51, 51));
         txtResultMass15.setForeground(new java.awt.Color(255, 255, 255));
-        txtResultMass15.setText(" Ejemplo: WD");
+        txtResultMass15.setText(" e.g.: WD");
         txtResultMass15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(142, 205, 153), 2));
         panelOptions1.add(txtResultMass15, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 110, 20));
 
         jLabel35.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(142, 205, 153));
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel35.setText("Marca:");
+        jLabel35.setText("Brand:");
         panelOptions1.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
 
         txtResultMass30.setBackground(new java.awt.Color(51, 51, 51));
@@ -419,7 +415,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel23.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(142, 205, 153));
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setText("ID Gabinete:");
+        jLabel23.setText("ID Case:");
         panelOptions2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         txtResultMass17.setBackground(new java.awt.Color(51, 51, 51));
@@ -430,7 +426,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel24.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(142, 205, 153));
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setText("Precio:");
+        jLabel24.setText("Price:");
         panelOptions2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         txtResultMass18.setBackground(new java.awt.Color(51, 51, 51));
@@ -441,13 +437,13 @@ public class frmHome extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(142, 205, 153));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("Descripcion:");
+        jLabel25.setText("Description:");
         panelOptions2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         jLabel26.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(142, 205, 153));
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel26.setText("Tamaño mm:");
+        jLabel26.setText("Form Factor:");
         panelOptions2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
 
         txtResultMass19.setBackground(new java.awt.Color(51, 51, 51));
@@ -458,7 +454,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel27.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(142, 205, 153));
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel27.setText(" Modelo:");
+        jLabel27.setText(" Model:");
         panelOptions2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
 
         txtResultMass20.setBackground(new java.awt.Color(51, 51, 51));
@@ -469,7 +465,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel29.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(142, 205, 153));
         jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel29.setText("Marca:");
+        jLabel29.setText("Brand:");
         panelOptions2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
 
         txtResultMass22.setBackground(new java.awt.Color(51, 51, 51));
@@ -509,7 +505,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(142, 205, 153));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("ID Fuente:");
+        jLabel18.setText("ID PSU:");
         panelOptions3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         txtResultMass25.setBackground(new java.awt.Color(51, 51, 51));
@@ -520,7 +516,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel30.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(142, 205, 153));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel30.setText("Precio:");
+        jLabel30.setText("Price:");
         panelOptions3.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         txtResultMass26.setBackground(new java.awt.Color(51, 51, 51));
@@ -531,7 +527,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel31.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(142, 205, 153));
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel31.setText("Descripcion:");
+        jLabel31.setText("Description:");
         panelOptions3.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         jLabel32.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
@@ -548,7 +544,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel34.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(142, 205, 153));
         jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel34.setText(" Modelo:");
+        jLabel34.setText(" Model:");
         panelOptions3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, -1, -1));
 
         txtResultMass29.setBackground(new java.awt.Color(51, 51, 51));
@@ -559,7 +555,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel36.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(142, 205, 153));
         jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel36.setText("Marca:");
+        jLabel36.setText("Brand:");
         panelOptions3.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, -1, -1));
 
         txtResultMass31.setBackground(new java.awt.Color(51, 51, 51));
@@ -594,7 +590,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel37.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(142, 205, 153));
         jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel37.setText("Precio:");
+        jLabel37.setText("Price:");
         panelOptions4.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         txtResultMass33.setBackground(new java.awt.Color(51, 51, 51));
@@ -605,13 +601,13 @@ public class frmHome extends javax.swing.JFrame {
         jLabel38.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(142, 205, 153));
         jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel38.setText("Descripcion:");
+        jLabel38.setText("Description:");
         panelOptions4.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         jLabel39.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(142, 205, 153));
         jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel39.setText("Capacidad:");
+        jLabel39.setText("Capacity:");
         panelOptions4.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
 
         txtResultMass34.setBackground(new java.awt.Color(51, 51, 51));
@@ -622,7 +618,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel40.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(142, 205, 153));
         jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel40.setText(" Modelo:");
+        jLabel40.setText(" Model:");
         panelOptions4.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
 
         txtResultMass35.setBackground(new java.awt.Color(51, 51, 51));
@@ -633,7 +629,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel42.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(142, 205, 153));
         jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel42.setText("Marca:");
+        jLabel42.setText("Brand:");
         panelOptions4.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
 
         txtResultMass37.setBackground(new java.awt.Color(51, 51, 51));
@@ -669,7 +665,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel33.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(142, 205, 153));
         jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel33.setText("ID GPU:");
+        jLabel33.setText("ID CPU:");
         panelOptions5.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         txtResultMass38.setBackground(new java.awt.Color(51, 51, 51));
@@ -680,7 +676,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel43.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(142, 205, 153));
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel43.setText("Precio:");
+        jLabel43.setText("Price:");
         panelOptions5.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         txtResultMass39.setBackground(new java.awt.Color(51, 51, 51));
@@ -691,13 +687,13 @@ public class frmHome extends javax.swing.JFrame {
         jLabel44.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(142, 205, 153));
         jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel44.setText("Descripcion:");
+        jLabel44.setText("Description:");
         panelOptions5.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         jLabel45.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(142, 205, 153));
         jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel45.setText("Cantidad Nucleos:");
+        jLabel45.setText("Core Count:");
         panelOptions5.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
 
         txtResultMass40.setBackground(new java.awt.Color(51, 51, 51));
@@ -708,7 +704,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel46.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(142, 205, 153));
         jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel46.setText(" Modelo:");
+        jLabel46.setText(" Model:");
         panelOptions5.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
 
         txtResultMass41.setBackground(new java.awt.Color(51, 51, 51));
@@ -719,7 +715,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel47.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(142, 205, 153));
         jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel47.setText("Frecuencia");
+        jLabel47.setText("Frequency");
         panelOptions5.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
 
         txtResultMass42.setBackground(new java.awt.Color(51, 51, 51));
@@ -735,7 +731,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel41.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(142, 205, 153));
         jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel41.setText("Marca:");
+        jLabel41.setText("Brand:");
         panelOptions5.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         jSpinner8.setModel(new javax.swing.SpinnerNumberModel(300, 300, 399, 1));
@@ -771,7 +767,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel49.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel49.setForeground(new java.awt.Color(142, 205, 153));
         jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel49.setText("Precio:");
+        jLabel49.setText("Price:");
         panelOptions6.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         txtResultMass45.setBackground(new java.awt.Color(51, 51, 51));
@@ -782,7 +778,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel50.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel50.setForeground(new java.awt.Color(142, 205, 153));
         jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel50.setText("Descripcion:");
+        jLabel50.setText("Description:");
         panelOptions6.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         jLabel51.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
@@ -794,7 +790,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel52.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel52.setForeground(new java.awt.Color(142, 205, 153));
         jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel52.setText(" Modelo:");
+        jLabel52.setText(" Model:");
         panelOptions6.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, -1, -1));
 
         txtResultMass47.setBackground(new java.awt.Color(51, 51, 51));
@@ -805,7 +801,7 @@ public class frmHome extends javax.swing.JFrame {
         jLabel53.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel53.setForeground(new java.awt.Color(142, 205, 153));
         jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel53.setText("Marca:");
+        jLabel53.setText("Brand:");
         panelOptions6.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, -1, -1));
 
         txtResultMass48.setBackground(new java.awt.Color(51, 51, 51));
@@ -818,7 +814,7 @@ public class frmHome extends javax.swing.JFrame {
 
         jCheckBox1.setBackground(new java.awt.Color(51, 51, 51));
         jCheckBox1.setForeground(new java.awt.Color(142, 205, 153));
-        jCheckBox1.setText(" ¿ Posee RGB ?");
+        jCheckBox1.setText(" Has RGB?");
         panelOptions6.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 110, -1));
 
         jPanel3.add(panelOptions6, new org.netbeans.lib.awtextra.AbsoluteConstraints(952, 25, 308, 243));
@@ -830,13 +826,13 @@ public class frmHome extends javax.swing.JFrame {
 
         jRadioButton1.setBackground(new java.awt.Color(51, 51, 51));
         jRadioButton1.setForeground(new java.awt.Color(255, 255, 135));
-        jRadioButton1.setText("Almacenamiento");
+        jRadioButton1.setText("Storage");
         jRadioButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         panelOptions7.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 130, 20));
 
         jRadioButton2.setBackground(new java.awt.Color(51, 51, 51));
         jRadioButton2.setForeground(new java.awt.Color(255, 255, 135));
-        jRadioButton2.setText("Memoria RAM");
+        jRadioButton2.setText("RAM Memory");
         jRadioButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         panelOptions7.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 110, 20));
 
@@ -848,7 +844,7 @@ public class frmHome extends javax.swing.JFrame {
 
         jRadioButton4.setBackground(new java.awt.Color(51, 51, 51));
         jRadioButton4.setForeground(new java.awt.Color(255, 255, 135));
-        jRadioButton4.setText("Fuente de Poder");
+        jRadioButton4.setText("Power Supply");
         jRadioButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         panelOptions7.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 130, 20));
 
@@ -860,7 +856,7 @@ public class frmHome extends javax.swing.JFrame {
 
         jRadioButton6.setBackground(new java.awt.Color(51, 51, 51));
         jRadioButton6.setForeground(new java.awt.Color(255, 255, 135));
-        jRadioButton6.setText("Gabinete");
+        jRadioButton6.setText("Case");
         jRadioButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         panelOptions7.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 130, 20));
 
@@ -873,13 +869,13 @@ public class frmHome extends javax.swing.JFrame {
         jLabel28.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(142, 205, 153));
         jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel28.setText("GESTIONAR");
+        jLabel28.setText("MANAGE");
         panelOptions7.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 130, -1));
 
         jLabel54.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
         jLabel54.setForeground(new java.awt.Color(142, 205, 153));
         jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel54.setText("CARGAR ");
+        jLabel54.setText("LOAD ");
         panelOptions7.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 90, -1));
 
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/modify_selected0_32.png"))); // NOI18N

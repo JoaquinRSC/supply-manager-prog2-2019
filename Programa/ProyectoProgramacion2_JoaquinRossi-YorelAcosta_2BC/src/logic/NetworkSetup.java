@@ -1,69 +1,40 @@
-//@authors: | Joaquin_Rossi | Yorel_Acosta | 2°BC | ESI-BUCEO
-package Logica;
+// @authors: Joaquin Rossi | Yorel Acosta | 2BC | ESI-BUCEO
+package logic;
 
-public class ArmadoRed extends Presupuesto{
-    //ATRIBUTOS:
-    private String dataPlan = Constantes.dataPlan;
-    private String speedUp = Constantes.speedUp;
-    private String speedDown = Constantes.speedDown;
-    private String isp = Constantes.isp;
-    private int cantRouters = Constantes.cantRouters;
-    private double tiradasCable = Constantes.tiradasCable;
-    
-    //CONSTRUCTOR:
+public class NetworkSetup extends Quote {
+    private String dataPlan = Constants.dataPlan;
+    private String uploadSpeed = Constants.uploadSpeed;     // Mb/s
+    private String downloadSpeed = Constants.downloadSpeed; // Mb/s
+    private String isp = Constants.isp;
+    private int routerCount = Constants.routerCount;
+    private double cableLength = Constants.cableLength;     // meters
 
-    public ArmadoRed(String idPresupuesto, double manoObra, double subTotal, double total, double horasTrabajadas, String idCliente, String nomCliente,String dataPlan, String speedUp, String speedDown, String isp, int cantRouters, double tiradasCable) {
-        super(idPresupuesto, manoObra, subTotal, total, horasTrabajadas, idCliente, nomCliente);
+    public NetworkSetup(String quoteId, double laborCost, double subtotal, double total,
+                        double hoursWorked, String clientId, String clientName,
+                        String dataPlan, String uploadSpeed, String downloadSpeed,
+                        String isp, int routerCount, double cableLength) {
+        super(quoteId, laborCost, subtotal, total, hoursWorked, clientId, clientName);
         this.dataPlan = dataPlan;
-        this.speedUp = speedUp;
-        this.speedDown = speedDown;
+        this.uploadSpeed = uploadSpeed;
+        this.downloadSpeed = downloadSpeed;
         this.isp = isp;
-        this.cantRouters = cantRouters;
-        this.tiradasCable = tiradasCable;
-    }// End constructor completo
+        this.routerCount = routerCount;
+        this.cableLength = cableLength;
+    }
 
-    //GETTERS:
-    public String getDataPlan() {
-        return dataPlan;
-    }
-    public String getSpeedUp() {
-        return speedUp;
-    }
-    public String getSpeedDown() {
-        return speedDown;
-    }
-    public String getIsp() {
-        return isp;
-    }
-    public int getCantRouters() {
-        return cantRouters;
-    }
-    public double getTiradasCable() {
-        return tiradasCable;
-    }
-    
-    //SETTERS:
-    public void setDataPlan(String dataPlan) {
-        this.dataPlan = dataPlan;
-    }
-    public void setSpeedUp(String speedUp) {
-        this.speedUp = speedUp;
-    }
-    public void setSpeedDown(String speedDown) {
-        this.speedDown = speedDown;
-    }
-    public void setIsp(String isp) {
-        this.isp = isp;
-    }
-    public void setCantRouters(int cantRouters) {
-        this.cantRouters = cantRouters;
-    }
-    public void setTiradasCable(double tiradasCable) {
-        this.tiradasCable = tiradasCable;
-    }
-    
-    //LIBRERIA DE COMPORTAMIENTOS:
-    
-            
-    
-}// End class
+    // Getters
+    public String getDataPlan() { return dataPlan; }
+    public String getUploadSpeed() { return uploadSpeed; }
+    public String getDownloadSpeed() { return downloadSpeed; }
+    public String getIsp() { return isp; }
+    public int getRouterCount() { return routerCount; }
+    public double getCableLength() { return cableLength; }
+
+    // Setters
+    public void setDataPlan(String dataPlan) { this.dataPlan = dataPlan; }
+    public void setUploadSpeed(String uploadSpeed) { this.uploadSpeed = uploadSpeed; }
+    public void setDownloadSpeed(String downloadSpeed) { this.downloadSpeed = downloadSpeed; }
+    public void setIsp(String isp) { this.isp = isp; }
+    public void setRouterCount(int routerCount) { this.routerCount = routerCount; }
+    public void setCableLength(double cableLength) { this.cableLength = cableLength; }
+}

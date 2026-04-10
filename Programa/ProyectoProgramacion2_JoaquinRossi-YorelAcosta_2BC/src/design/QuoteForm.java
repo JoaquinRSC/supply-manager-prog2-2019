@@ -1,9 +1,8 @@
 
-package Design;
-import Logica.*;
+package design;
+import logic.*;
 import java.beans.PropertyVetoException;
 import java.util.ArrayList;
-import Logica.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -13,27 +12,23 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerModel;
 import java.text.DecimalFormat;
-import sun.java2d.pipe.NullPipe;
 
-public class frmHome1111 extends javax.swing.JFrame {
-    ArrayList <Presupuestos> presupuestos = new ArrayList<>(); //ArrayL de la coleccion de objetos Presupuesto
-    ArrayList <InsumoInformatico> insumos = new ArrayList<>(); //ArrayL de la coleccion de objetos Insumo
-    DecimalFormat MIFormato = new DecimalFormat("#.00");
+public class QuoteForm extends javax.swing.JFrame {
+    ArrayList<Quotes> quotes = new ArrayList<>();
+    ArrayList<Supply> supplies = new ArrayList<>();
+    DecimalFormat numberFormat = new DecimalFormat("#.00");
     
-//Variables para almacenar los valores de los Spn
-    //MEMORIA RAM:
-    private String valorSpnMemRAM1 = ""; //Espacio asignado para Frecuencia
-    private String valorSpnMemRAM2 = ""; //Espacio asignado para Capacidad
-    //Modelos para cargar datos al spnFrecRAM dependiendo de la tech que se escoga
-    private SpinnerModel spnFrec_DDR3;
-    private SpinnerModel spnFrec_DDR4;
+    // Spinner value buffers
+    // RAM
+    private String ramFreqValue = "";
+    private String ramCapacityValue = "";
+    // Spinner models for DDR3/DDR4 frequency options
+    private SpinnerModel spnFreqDDR3;
+    private SpinnerModel spnFreqDDR4;
     
 
     
-//INSUMO HARDWARE:    
-    //Modelo para cada tabla de Ingreso y Muestra de Insumos
-    //El tipo de INS define a cada Modelo, ya que se tiene
-    //1 Modelo por Tipo Ins, o sea, 1 Tabla por tipo de Ins
+    // Hardware table models — one per component type
     DefaultTableModel ModelHW1 = new DefaultTableModel();
     DefaultTableModel ModelHW2 = new DefaultTableModel();
     DefaultTableModel ModelHW3 = new DefaultTableModel();
@@ -42,78 +37,52 @@ public class frmHome1111 extends javax.swing.JFrame {
     DefaultTableModel ModelHW6 = new DefaultTableModel();
     DefaultTableModel ModelHW7 = new DefaultTableModel();
     
-//INSUMO SOFTWARE:     
-    //Solo se requiere una tabla para agregar y modificar
-    //los datos de los Ins Software
+    // Software supply table
     DefaultTableModel ModelSO1 = new DefaultTableModel();    
     
-//COLUMNAS DE TABLAS:    
-    //INSUMO HARDWARE:
+    // Table column definitions
 
 
 
 
-            //Columnas para la JTable Almacenamiento
-            String [] colsHW3 = {
-                "ID",
-                "MARCA",
-                "MODELO",
-                "DESCRIPCIÓN",
-                "CAPACIDAD",
-                "TECNOLOGÍA",
-                "PRECIO"
-            }; 
+            // Table columns — Storage
+            String[] colsHW3 = {
+                "ID", "BRAND", "MODEL", "DESCRIPTION", "CAPACITY", "TECHNOLOGY", "PRICE"
+            };
 
-            //Columnas para la JTable Gabinete
-            String [] colsHW4 = {
-                "ID",
-                "MARCA",
-                "MODELO",
-                "DESCRIPCIÓN",
-                "DIMENSIONES",
-                "PRECIO"
-            };   
+            // Table columns — Case
+            String[] colsHW4 = {
+                "ID", "BRAND", "MODEL", "DESCRIPTION", "FORM FACTOR", "PRICE"
+            };
 
-            //Columnas para la JTable Placa Base
-            String [] colsHW5 = {
-                "ID",
-                "MARCA",
-                "MODELO",
-                "¿ RGB ?",
-                "PRECIO"
-            };   
+            // Table columns — Motherboard
+            String[] colsHW5 = {
+                "ID", "BRAND", "MODEL", "RGB", "PRICE"
+            };
 
-            //Columnas para la JTable Grafica
-            String [] colsHW6 = {
-                "ID",
-                "MARCA",
-                "MODELO",
-                "CAPACIDAD",
-                "PRECIO"
-            };    
+            // Table columns — GPU
+            String[] colsHW6 = {
+                "ID", "BRAND", "MODEL", "VRAM (GB)", "PRICE"
+            };
 
-            //Columnas para la JTable Fuente
-            String [] colsHW7 = {
-                "ID",
-                "MARCA",
-                "MODELO",
-                "CAPACIDAD",
-                "PRECIO"
+            // Table columns — PSU
+            String[] colsHW7 = {
+                "ID", "BRAND", "MODEL", "WATTS", "PRICE"
             };     
     
 
-    public frmHome1111() {
-        initComponents();           
-        cambiarContexto(0);
+    public QuoteForm() {
+        initComponents();
+        switchContext(0);
 
     }// End constructor
-    
-  
-    public void cambiarPnlHW(int i){
-        //Metodo para setear img seleccionado de los btn Ins HW
+
+
+    public void switchHardwarePanel(int i){
+        // Sets the selected icon for HW supply buttons
         switch (i) {
            case 0:
-               //Se pinta los botones, se selecciona el 1 y el resto se deselecciona
+               // Select button 1, deselect the rest
                btnMemoriaRAM.setIcon(new ImageIcon(getClass().getResource("/Img/memRAM_selected1.png")));
                btnCPU.setIcon(new ImageIcon(getClass().getResource("/Img/cpu_selected0.png")));
                btnDsk.setIcon(new ImageIcon(getClass().getResource("/Img/dsk_selected0.png")));
@@ -121,8 +90,8 @@ public class frmHome1111 extends javax.swing.JFrame {
                btnMb.setIcon(new ImageIcon(getClass().getResource("/Img/mb_selected0.png")));
                btnGPU.setIcon(new ImageIcon(getClass().getResource("/Img/memG_selected0.png")));
                btnSupply.setIcon(new ImageIcon(getClass().getResource("/Img/supply_selected0.png")));
-               
-               //Visibilidad y dispocicion para las "pestanias"
+
+               // Show/hide tabs
                intFrm_CPU.setVisible(false);
                intFrm_CPU.setEnabled(false);
                intFrm_Dsk.setVisible(false);
@@ -139,30 +108,30 @@ public class frmHome1111 extends javax.swing.JFrame {
                intFrm_RAM.setVisible(true);
                intFrm_RAM.setEnabled(true);  
                
-               //Nombre de columnas para la JTable MemRAM
+               // Column names for RAM table
                String [] colsHW1 = {
                     "ID",
-                    "MARCA",
-                    "MODELO",
-                    "DESCP.",
-                    "FREC.",
-                    "CAPACIDAD",
-                    "PRECIO",
+                    "BRAND",
+                    "MODEL",
+                    "DESCRIPTION",
+                    "FREQ.",
+                    "CAPACITY",
+                    "PRICE",
                     "TECH."
                 }; 
                
                ModelHW1.setColumnIdentifiers(colsHW1);
                tblMemRAM.setModel(ModelHW1);
                
-               //Seteo de texto por defecto
+               // Default placeholder text
                txtIDRAM.setText(" 0000");
-               txtTechRAM.setText(" Ejemplo: DDR3");
-               txtMarcaRAM1.setText(" Ejemplo: GSkill");
-               txtPrecioRAM.setText(" En US$");
-               txtModeloRAM.setText(" Ejemplo: H4AS");
+               txtTechRAM.setText(" e.g.: DDR3");
+               txtMarcaRAM1.setText(" e.g.: GSkill");
+               txtPrecioRAM.setText(" In US$");
+               txtModeloRAM.setText(" e.g.: H4AS");
                break;
            case 1:
-               //Se pinta los botones, se selecciona el 2 y el resto se deselecciona
+               // Select button 2, deselect the rest
                btnMemoriaRAM.setIcon(new ImageIcon(getClass().getResource("/Img/memRAM_selected0.png")));
                btnCPU.setIcon(new ImageIcon(getClass().getResource("/Img/cpu_selected1.png")));
                btnDsk.setIcon(new ImageIcon(getClass().getResource("/Img/dsk_selected0.png")));
@@ -185,28 +154,28 @@ public class frmHome1111 extends javax.swing.JFrame {
                intFrm_Supply.setEnabled(false);
 
                intFrm_CPU.setVisible(true);
-               intFrm_CPU.setEnabled(true);    
-               //Columnas para la JTable CPU
+               intFrm_CPU.setEnabled(true);
+               // Column names for CPU table
                String [] colsHW2 = {
                    "ID",
-                   "MARCA",
-                   "MODELO",
-                   "DESCP.",
-                   "FREC.",
-                   "NÚCLEOS",
-                   "PRECIO"
-               };                
+                   "BRAND",
+                   "MODEL",
+                   "DESCRIPTION",
+                   "FREQ.",
+                   "CORES",
+                   "PRICE"
+               };
                ModelHW1.setColumnIdentifiers(colsHW2);
 //               tblCPU.setModel(ModelHW2);
-               
-               //Seteo de texto por defecto
+
+               // Default placeholder text
 //               txtIDCPU.setText(" 0000");
-  //             txtMarcaCPU.setText(" Ejemplo: GSkill");
-  //             txtPrecioCPU.setText(" En US$");
-   //            txtModeloCPU.setText(" Ejemplo: R5-1400");               
+  //             txtMarcaCPU.setText(" e.g.: GSkill");
+  //             txtPrecioCPU.setText(" In US$");
+   //            txtModeloCPU.setText(" e.g.: R5-1400");               
                break;    
            case 2:
-               //Se pinta los botones, se selecciona el 3 y el resto se deselecciona
+               // Select button 3, deselect the rest
                btnMemoriaRAM.setIcon(new ImageIcon(getClass().getResource("/Img/memRAM_selected0.png")));
                btnCPU.setIcon(new ImageIcon(getClass().getResource("/Img/cpu_selected0.png")));
                btnDsk.setIcon(new ImageIcon(getClass().getResource("/Img/dsk_selected1.png")));
@@ -232,7 +201,7 @@ public class frmHome1111 extends javax.swing.JFrame {
                intFrm_Dsk.setEnabled(true);
                break; 
            case 3:
-               //Se pinta los botones, se selecciona el 4 y el resto se deselecciona
+               // Select button 4, deselect the rest
                btnMemoriaRAM.setIcon(new ImageIcon(getClass().getResource("/Img/memRAM_selected0.png")));
                btnCPU.setIcon(new ImageIcon(getClass().getResource("/Img/cpu_selected0.png")));
                btnDsk.setIcon(new ImageIcon(getClass().getResource("/Img/dsk_selected0.png")));
@@ -258,7 +227,7 @@ public class frmHome1111 extends javax.swing.JFrame {
                intFrm_Gab.setEnabled(true);
                break;     
            case 4:
-               //Se pinta los botones, se selecciona el 5 y el resto se deselecciona
+               // Select button 5, deselect the rest
                btnMemoriaRAM.setIcon(new ImageIcon(getClass().getResource("/Img/memRAM_selected0.png")));
                btnCPU.setIcon(new ImageIcon(getClass().getResource("/Img/cpu_selected0.png")));
                btnDsk.setIcon(new ImageIcon(getClass().getResource("/Img/dsk_selected0.png")));
@@ -284,7 +253,7 @@ public class frmHome1111 extends javax.swing.JFrame {
                intFrm_MB.setEnabled(true);
                break;    
            case 5:
-               //Se pinta los botones, se selecciona el 6 y el resto se deselecciona
+               // Select button 6, deselect the rest
                btnMemoriaRAM.setIcon(new ImageIcon(getClass().getResource("/Img/memRAM_selected0.png")));
                btnCPU.setIcon(new ImageIcon(getClass().getResource("/Img/cpu_selected0.png")));
                btnDsk.setIcon(new ImageIcon(getClass().getResource("/Img/dsk_selected0.png")));
@@ -310,7 +279,7 @@ public class frmHome1111 extends javax.swing.JFrame {
                intFrm_GPU.setEnabled(true);
                break;                 
            case 6:
-               //Se pinta los botones, se selecciona el 7 y el resto se deselecciona
+               // Select button 7, deselect the rest
                btnMemoriaRAM.setIcon(new ImageIcon(getClass().getResource("/Img/memRAM_selected0.png")));
                btnCPU.setIcon(new ImageIcon(getClass().getResource("/Img/cpu_selected0.png")));
                btnDsk.setIcon(new ImageIcon(getClass().getResource("/Img/dsk_selected0.png")));
@@ -339,10 +308,10 @@ public class frmHome1111 extends javax.swing.JFrame {
 
         
     }// End method
-    public void cambiarContexto(int i){
-        //Metodo para cambiar el contexto dependiendo lo que quiera ver o hacer el user
+    public void switchContext(int i){
+        // Changes the active panel based on user navigation
         switch (i) {
-            case 0: // Referencia al Panel Inicio
+            case 0: // Home panel
                 intFrm_HW.setVisible(false);
                 intFrm_HW.setEnabled(false);
                 intFrm_SO.setVisible(false);
@@ -355,7 +324,7 @@ public class frmHome1111 extends javax.swing.JFrame {
                 intFrm_Inicio.setVisible(true);
                 intFrm_Inicio.setEnabled(true);     
                 break;
-            case 1: // Referencia al Panel Insumo Hardware
+            case 1: // Hardware Supply panel
                 intFrm_Inicio.setVisible(false);
                 intFrm_Inicio.setEnabled(false);
                 intFrm_SO.setVisible(false);
@@ -368,11 +337,10 @@ public class frmHome1111 extends javax.swing.JFrame {
                 intFrm_HW.setVisible(true);
                 intFrm_HW.setEnabled(true);
                 
-                //Se llama al metodo que selecciona la pestania de ABML (Alta, Baja, Modificacion, Listado)
-                //para evitar error de superposicion de los JInternalFrame
-                cambiarPnlHW(0);
+                // Select the first HW sub-panel to avoid overlapping JInternalFrames
+                switchHardwarePanel(0);
                 break;
-            case 2: // Referencia al Panel Insumo Software
+            case 2: // Software Supply panel
                 intFrm_Inicio.setVisible(false);
                 intFrm_Inicio.setEnabled(false);
                 intFrm_HW.setVisible(false);
@@ -385,7 +353,7 @@ public class frmHome1111 extends javax.swing.JFrame {
                 intFrm_SO.setVisible(true);
                 intFrm_SO.setEnabled(true);
                 break;
-            case 3: // Referencia al Panel Armado PC
+            case 3: // PC Assembly panel
                 intFrm_Inicio.setVisible(false);
                 intFrm_Inicio.setEnabled(false);
                 intFrm_HW.setVisible(false);
@@ -398,7 +366,7 @@ public class frmHome1111 extends javax.swing.JFrame {
                 intFrm_PC.setVisible(true);
                 intFrm_PC.setEnabled(true);
                 break;
-            case 4: // Referencia al Panel Armado Red
+            case 4: // Network Setup panel
                 intFrm_Inicio.setVisible(false);
                 intFrm_Inicio.setEnabled(false);
                 intFrm_HW.setVisible(false);
@@ -413,19 +381,13 @@ public class frmHome1111 extends javax.swing.JFrame {
                 break;
         }//End SW (i)
     }
-    public boolean verificaErrorDato(int a, boolean b){
-        //El segundo parametro indica si se debe de buscar el error de la conincidencia de 
-        //ID ya existente, si b=true se busca si se repite el ID 
-        
-        /* 
-           Metodo para verificar si existe algun error en los campos
-           de texto. Se espera un int para indicar que tipo de
-           error tiene que buscar, si estamos en MemRAM, entonces
-           buscara errores en los campos de txt para almacenar una memoria ram
-        */
+    public boolean validateInput(int type, boolean checkDuplicateId){
+        // Validates text field input before adding/editing a supply.
+        // type selects which component fields to validate.
+        // checkDuplicateId=true also checks that the ID doesn't already exist.
         boolean error = false;
-        switch (a) {
-            case 0: //Busqueda de error en MemoriaRAM
+        switch (type) {
+            case 0: // Validate RAM fields
                 String [] valoresTxtField = {
                     txtIDRAM.getText(),
                     txtTechRAM.getText(),
@@ -435,135 +397,132 @@ public class frmHome1111 extends javax.swing.JFrame {
                     txtModeloRAM.getText()
                 };
                 
-                //No se puede agregar una RAM cuando el ID de esta ya coincide con otra
-                if (b == true){
-                    for ( int i=0 ; i<insumos.size() ; i++) {
-                        InsumoInformatico H = insumos.get(i);
+                // Cannot add a RAM if its ID already exists in the list
+                if (checkDuplicateId){
+                    for ( int i=0 ; i<supplies.size() ; i++) {
+                        Supply h = supplies.get(i);
                         String idRAM = "1AAA" + txtIDRAM.getText();
-                        if ( H.getIdInsumo().equals(idRAM) ) {
+                        if ( h.getId().equals(idRAM) ) {
                             error = true;
                             txtIDRAM.setText(" ! ");
                             lblIntroText8.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
-                            lblIntroText8.setToolTipText("Ya existe este ID.");
+                            lblIntroText8.setToolTipText("This ID already exists.");
                         }
                     }//End loop (i)
-                }//End condicional (b)
+                }
 
                 
-                //El ID RAM debe de ser 4 digitos mas los otros 4 del prefijo 
+                // RAM ID must be exactly 4 digits (prefix adds 4 more)
                 if ( txtIDRAM.getText().length() == 4) {
-                    //Todo bien
+                    // OK
                 } else {
                     error = true;
-                    txtIDRAM.setText(" !¡ ");
+                    txtIDRAM.setText(" !! ");
                     lblIntroText8.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
-                    lblIntroText8.setToolTipText("Se esperan 4 dígitos.");
+                    lblIntroText8.setToolTipText("Expected 4 digits.");
                 }
-                //Solo se admite 2 tipos de Tecnologias de MemRAM (DDR2 obsoleta)
+                // Only DDR3 and DDR4 are accepted (DDR2 is obsolete)
                 switch (txtTechRAM.getText()) {
                     case "DDR3":
                         if ( spnFrecRAM.getValue().toString().equals("1600 MHz") || spnFrecRAM.getValue().toString().equals("1866 MHz") ) {
                             lblIntroText4.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1.png")));
-                            lblIntroText4.setToolTipText("");   
+                            lblIntroText4.setToolTipText("");
                         } else {
                             error = true;
                             lblIntroText4.setIcon(new ImageIcon(getClass().getResource("/Img/introText_selected1-W.png")));
-                            lblIntroText4.setToolTipText("Para DDR3 ecoga entre 1600 a 1866 MHz.");   
+                            lblIntroText4.setToolTipText("For DDR3 choose between 1600 and 1866 MHz.");
                         }
                         break;
                     case "DDR4":
                         if ( spnFrecRAM.getValue().toString().equals("2400 MHz") || spnFrecRAM.getValue().toString().equals("2666 MHz") || spnFrecRAM.getValue().toString().equals("3000 MHz") ) {
                             lblIntroText4.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1.png")));
-                            lblIntroText4.setToolTipText("");   
+                            lblIntroText4.setToolTipText("");
                         } else {
                             error = true;
                             lblIntroText4.setIcon(new ImageIcon(getClass().getResource("/Img/introText_selected1-W.png")));
-                            lblIntroText4.setToolTipText("Para DDR4 ecoga entre 2400 a 3000 MHz.");   
+                            lblIntroText4.setToolTipText("For DDR4 choose between 2400 and 3000 MHz.");
                         }
                         break;
                     default:
                         error = true;
-                        txtTechRAM.setText(" Dato inválido.");
+                        txtTechRAM.setText(" Invalid.");
                         lblIntroText4.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
-                        lblIntroText4.setToolTipText("Tecnología desconocida.");
+                        lblIntroText4.setToolTipText("Unknown technology.");
                         break;
                 }
                 
-                //LEA BIEN! valorTxtField != valoresTxtField
-                //             VARIABLE   !=     ARRAY
-                
-                
+                // NOTE: valorTxtField (single value) != valoresTxtField (array)
+
                 for ( int i=0 ; i<valoresTxtField.length ; i++) {
                     String valorTxtField = valoresTxtField[i];
                     int pos = 1;
                     if (i == 4 || i == 1) {
-                    //El 4 en "i" indica el precio de la memRAM y 1 en "i" indica la Descripcion
-                    //El precio es un valor double, por lo tanto se puede esperar un punto, entonces se omite la búsqueda de error en este caso
-                    //La descripcion no se puede cambiar, y por defecto no tiene error, por esto se omite
+                    // i==4 is the price (a double, so dots are allowed — skip)
+                    // i==1 is the description (read-only, always valid — skip)
                         i++;
                         valorTxtField = valoresTxtField[i];
                     }
-                    
-                    //Como se recorre un texto y los indices de ese txt con la repeticion de verificacion estan defasados
-                    //(uno comienza en 0 y otro en 1) se usa Try/Catch para eludir el NullPointer, eso sucede porque 
-                    //si un txt tiene 4 caracteres y "pos" > 4, entonces se da NullPointer ya que no sabe a que caracter ir.
+
+                    // Indices are offset by 1 between text traversal and loop counter,
+                    // so a try/catch is used to absorb the NullPointerException when
+                    // pos exceeds the string length.
                     try {
                         for ( int n=0 ; n<valorTxtField.length() ; n++) {
                             char valorPos = valorTxtField.charAt(pos);
-                            if ( valorPos == '.' || valorPos == ',' ) {                      
+                            if ( valorPos == '.' || valorPos == ',' ) {
                                 error = true;
                                 switch (i) {
                                     case 0:
-                                       txtIDRAM.setText(" !¡ ");
+                                       txtIDRAM.setText(" !! ");
                                        lblIntroText8.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
-                                       lblIntroText8.setToolTipText("No se esperaba ',' '.'");
+                                       lblIntroText8.setToolTipText("Unexpected ',' or '.'");
                                        break;
                                     case 2:
-                                        txtTechRAM.setText(" Dato inválido.");
+                                        txtTechRAM.setText(" Invalid.");
                                         lblIntroText4.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
-                                        lblIntroText4.setToolTipText("No se esperaba ',' '.'");
-                                        break;                                
+                                        lblIntroText4.setToolTipText("Unexpected ',' or '.'");
+                                        break;
                                     case 3:
-                                        txtModeloRAM.setText(" Dato inválido.");
+                                        txtModeloRAM.setText(" Invalid.");
                                         lblIntroText3.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
-                                        lblIntroText3.setToolTipText("No se esperaba ',' '.'");
+                                        lblIntroText3.setToolTipText("Unexpected ',' or '.'");
                                         break;
                                     case 5:
-                                        txtMarcaRAM1.setText(" Dato inválido.");
+                                        txtMarcaRAM1.setText(" Invalid.");
                                         lblIntroText1.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
-                                        lblIntroText1.setToolTipText("No se esperaba ',' '.'");
+                                        lblIntroText1.setToolTipText("Unexpected ',' or '.'");
                                         break;
                                 }//End SW (i)
-                            }//End Condicional 
-                            pos = pos + 1;                                    
+                            }
+                            pos = pos + 1;
                         } //End Loop (n)
                     } catch (Exception e) {
                     }
                 } //End Loop (i)
                 
-                if ( txtIDRAM.getText().equals("") || txtIDRAM.getText().equals(" !¡ ") ){
+                if ( txtIDRAM.getText().equals("") || txtIDRAM.getText().equals(" !! ") ){
                     error = true;
-                    txtIDRAM.setText(" !¡ ");
+                    txtIDRAM.setText(" !! ");
                     lblIntroText8.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
-                } 
-                if ( txtTechRAM.getText().equals("") || txtTechRAM.getText().equals(" Dato inválido.") ) {
+                }
+                if ( txtTechRAM.getText().equals("") || txtTechRAM.getText().equals(" Invalid.") ) {
                     error = true;
-                    txtTechRAM.setText(" Dato inválido.");
+                    txtTechRAM.setText(" Invalid.");
                     lblIntroText4.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
-                } 
-                if ( txtMarcaRAM1.getText().equals("") || txtMarcaRAM1.getText().equals(" Dato inválido.") ) {
+                }
+                if ( txtMarcaRAM1.getText().equals("") || txtMarcaRAM1.getText().equals(" Invalid.") ) {
                     error = true;
-                    txtMarcaRAM1.setText(" Dato inválido.");
+                    txtMarcaRAM1.setText(" Invalid.");
                     lblIntroText1.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
-                } 
-                if ( txtModeloRAM.getText().equals("") || txtModeloRAM.getText().equals(" Dato inválido.") ) {
+                }
+                if ( txtModeloRAM.getText().equals("") || txtModeloRAM.getText().equals(" Invalid.") ) {
                     error = true;
-                    txtModeloRAM.setText(" Dato inválido.");
+                    txtModeloRAM.setText(" Invalid.");
                     lblIntroText3.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
-                } 
-                if ( txtPrecioRAM.getText().equals("") || txtPrecioRAM.getText().equals(" Dato inválido.") ) {
+                }
+                if ( txtPrecioRAM.getText().equals("") || txtPrecioRAM.getText().equals(" Invalid.") ) {
                     error = true;
-                    txtPrecioRAM.setText(" Dato inválido.");
+                    txtPrecioRAM.setText(" Invalid.");
                     lblIntroText2.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
                 }
                 
@@ -572,51 +531,50 @@ public class frmHome1111 extends javax.swing.JFrame {
                     switch (valoresTxtField[i]) {
                         case " 0000":
                             error = true;
-                            txtIDRAM.setText(" !¡ ");
+                            txtIDRAM.setText(" !! ");
                             lblIntroText8.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
-                            lblIntroText8.setToolTipText("Ingrese un ID.");
+                            lblIntroText8.setToolTipText("Enter an ID.");
                             break;
-                        case " Ejemplo: DDR3":
+                        case " e.g.: DDR3":
                             error = true;
-                            txtTechRAM.setText(" Dato inválido.");
+                            txtTechRAM.setText(" Invalid.");
                             lblIntroText4.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
-                            lblIntroText4.setToolTipText("Ingrese una Tecnología.");
+                            lblIntroText4.setToolTipText("Enter a technology.");
                             break;
-                        case " Ejemplo: GSkill":
+                        case " e.g.: GSkill":
                             error = true;
-                            txtMarcaRAM1.setText(" Dato inválido.");
+                            txtMarcaRAM1.setText(" Invalid.");
                             lblIntroText1.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
-                            lblIntroText1.setToolTipText("Indique una Marca.");
+                            lblIntroText1.setToolTipText("Enter a brand.");
                             break;
-                        case " En US$":
+                        case " In US$":
                             error = true;
-                            txtPrecioRAM.setText(" Dato inválido.");
+                            txtPrecioRAM.setText(" Invalid.");
                             lblIntroText2.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
-                            lblIntroText2.setToolTipText("Indique el Precio.");
+                            lblIntroText2.setToolTipText("Enter the price.");
                             break;
-                        case " Ejemplo: H4AS":
+                        case " e.g.: H4AS":
                             error = true;
-                            txtModeloRAM.setText(" Dato inválido.");
+                            txtModeloRAM.setText(" Invalid.");
                             lblIntroText3.setIcon(new ImageIcon(getClass().getResource("/Img/introTxt_selected1-E.png")));
-                            lblIntroText3.setToolTipText("Indique un Modelo.");
+                            lblIntroText3.setToolTipText("Enter a model.");
                             break;                                       
                     }//End SW (valoresTxtField[i])
                 }//End Loop (i)
                 break;
-            case 1: //Busqueda de error en CPU
-                
+            case 1: // Validate CPU fields
                 break;
-            case 2: //Busqueda de error en Almacenamiento
+            case 2: // Validate Storage fields
                 break;
-            case 3: //Busqueda de error en Gabinetes
+            case 3: // Validate Case fields
                 break;
-            case 4: //Busqueda de error en Placa Base
+            case 4: // Validate Motherboard fields
                 break;
-            case 5: //Busqueda de error en Tarjeta Grafica
+            case 5: // Validate GPU fields
                 break;
-            case 6: //Busqueda de error en Fuente de Poder
-                break;                
-        }// End SW (l)
+            case 6: // Validate PSU fields
+                break;
+        }// End SW (type)
 
         
         return error;
@@ -732,7 +690,7 @@ public class frmHome1111 extends javax.swing.JFrame {
         lblPresupuesto.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 13)); // NOI18N
         lblPresupuesto.setForeground(new java.awt.Color(130, 134, 125));
         lblPresupuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPresupuesto.setText("PRESUPUESTO");
+        lblPresupuesto.setText("QUOTE");
         pnlLateral.add(lblPresupuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, 30));
 
         lblMenu.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 13)); // NOI18N
@@ -744,7 +702,7 @@ public class frmHome1111 extends javax.swing.JFrame {
         lblIns.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 13)); // NOI18N
         lblIns.setForeground(new java.awt.Color(130, 134, 125));
         lblIns.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIns.setText("CERRAR");
+        lblIns.setText("EXIT");
         pnlLateral.add(lblIns, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, -1, 30));
 
         btnLateralInicio.setBackground(new java.awt.Color(254, 254, 254));
@@ -861,7 +819,7 @@ public class frmHome1111 extends javax.swing.JFrame {
         lblIns1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 13)); // NOI18N
         lblIns1.setForeground(new java.awt.Color(130, 134, 125));
         lblIns1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIns1.setText("INSUMO");
+        lblIns1.setText("SUPPLY");
         pnlLateral.add(lblIns1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, 30));
 
         getContentPane().add(pnlLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 260, 700));
@@ -872,7 +830,7 @@ public class frmHome1111 extends javax.swing.JFrame {
         lblTitulo.setFont(new java.awt.Font("Malgun Gothic", 1, 23)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(105, 105, 105));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("GESTOR DE INSUMOS");
+        lblTitulo.setText("SUPPLY MANAGER");
         lblTitulo.setToolTipText("");
         pnlEstado.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 50));
 
@@ -949,7 +907,7 @@ public class frmHome1111 extends javax.swing.JFrame {
         lblTituloPestania.setFont(new java.awt.Font("Lucida Sans", 0, 36)); // NOI18N
         lblTituloPestania.setForeground(new java.awt.Color(51, 59, 65));
         lblTituloPestania.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTituloPestania.setText(" Insumos: Hardware");
+        lblTituloPestania.setText(" Supplies: Hardware");
         lblTituloPestania.setToolTipText("");
         pnlHW_Titulo.add(lblTituloPestania, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 370, 60));
 
@@ -1068,7 +1026,7 @@ public class frmHome1111 extends javax.swing.JFrame {
         btnAyuda1.setBackground(new java.awt.Color(229, 229, 229));
         btnAyuda1.setForeground(new java.awt.Color(229, 229, 229));
         btnAyuda1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/help_selected0.png"))); // NOI18N
-        btnAyuda1.setToolTipText("Pulsa uno de los botones");
+        btnAyuda1.setToolTipText("Press one of the buttons above.");
         btnAyuda1.setBorderPainted(false);
         btnAyuda1.setContentAreaFilled(false);
         btnAyuda1.setDefaultCapable(false);
@@ -1094,14 +1052,14 @@ public class frmHome1111 extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 59, 65));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel1.setText("Ingreso: Memoria R.A.M.");
+        jLabel1.setText("Add: RAM Memory");
         jLabel1.setToolTipText("");
         pnlRAM.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 300, 40));
 
         btnAyuda.setBackground(new java.awt.Color(229, 229, 229));
         btnAyuda.setForeground(new java.awt.Color(229, 229, 229));
         btnAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/help_selected0.png"))); // NOI18N
-        btnAyuda.setToolTipText("Los datos se mostrarán en la tabla.");
+        btnAyuda.setToolTipText("Data will be shown in the table.");
         btnAyuda.setBorderPainted(false);
         btnAyuda.setContentAreaFilled(false);
         btnAyuda.setDefaultCapable(false);
@@ -1121,7 +1079,7 @@ public class frmHome1111 extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(70, 176, 74));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("ID Memoria:");
+        jLabel18.setText("ID Memory:");
         pnlRAM.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 70, 20));
 
         txtResultMass3.setEditable(false);
@@ -1152,7 +1110,7 @@ public class frmHome1111 extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(70, 176, 74));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Descripcion:");
+        jLabel9.setText("Description:");
         pnlRAM.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 70, 20));
 
         lblIntroText0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/introTxt_selected1.png"))); // NOI18N
@@ -1162,7 +1120,7 @@ public class frmHome1111 extends javax.swing.JFrame {
         txtDescripcionRAM.setEditable(false);
         txtDescripcionRAM.setBackground(new java.awt.Color(254, 254, 255));
         txtDescripcionRAM.setForeground(new java.awt.Color(51, 59, 65));
-        txtDescripcionRAM.setText(" Memoria RAM");
+        txtDescripcionRAM.setText(" RAM Memory");
         txtDescripcionRAM.setBorder(null);
         pnlRAM.add(txtDescripcionRAM, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 90, 30));
 
@@ -1173,7 +1131,7 @@ public class frmHome1111 extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(70, 176, 74));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Frecuencia:");
+        jLabel10.setText("Frequency:");
         pnlRAM.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 70, 20));
 
         spnFrecRAM.setModel(new javax.swing.SpinnerListModel(new String[] {"1600 MHz", "1866 MHz", "2400 MHz", "2666 MHz", "3000 MHz"}));
@@ -1187,7 +1145,7 @@ public class frmHome1111 extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(70, 176, 74));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Capacidad:");
+        jLabel11.setText("Capacity:");
         pnlRAM.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 90, -1));
 
         spnCapacidadRAM.setModel(new javax.swing.SpinnerListModel(new String[] {"4 GB", "8 GB", "16 GB"}));
@@ -1217,7 +1175,7 @@ public class frmHome1111 extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(70, 176, 74));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText(" Modelo:");
+        jLabel12.setText(" Model:");
         pnlRAM.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 60, 20));
 
         lblIntroText2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/introTxt_selected1.png"))); // NOI18N
@@ -1238,7 +1196,7 @@ public class frmHome1111 extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(70, 176, 74));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Precio:");
+        jLabel8.setText("Price:");
         pnlRAM.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 40, 20));
 
         lblIntroText3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/introTxt_selected1.png"))); // NOI18N
@@ -1259,7 +1217,7 @@ public class frmHome1111 extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(70, 176, 74));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Marca:");
+        jLabel14.setText("Brand:");
         pnlRAM.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 40, 20));
 
         lblIntroText4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/introTxt_selected1.png"))); // NOI18N
@@ -1280,7 +1238,7 @@ public class frmHome1111 extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(70, 176, 74));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("Tecnologia:");
+        jLabel13.setText("Technology:");
         pnlRAM.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 70, 20));
 
         btnAddRAM.setBackground(new java.awt.Color(229, 229, 229));
@@ -1470,19 +1428,19 @@ public class frmHome1111 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnMinimizateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizateActionPerformed
-        this.setState(frmHome.ICONIFIED);
+        this.setState(javax.swing.JFrame.ICONIFIED);
     }//GEN-LAST:event_btnMinimizateActionPerformed
   
     private void btnMemoriaRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemoriaRAMActionPerformed
-        cambiarPnlHW(0);
+        switchHardwarePanel(0);
     }//GEN-LAST:event_btnMemoriaRAMActionPerformed
 
     private void btnLateralRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLateralRedActionPerformed
-        cambiarContexto(4);
+        switchContext(4);
     }//GEN-LAST:event_btnLateralRedActionPerformed
 
     private void btnLateralArmadoPCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLateralArmadoPCActionPerformed
-        cambiarContexto(3);
+        switchContext(3);
     }//GEN-LAST:event_btnLateralArmadoPCActionPerformed
 
     private void btnLateralSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLateralSalirActionPerformed
@@ -1490,39 +1448,39 @@ public class frmHome1111 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLateralSalirActionPerformed
 
     private void btnLateralHWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLateralHWActionPerformed
-        cambiarContexto(1);
+        switchContext(1);
     }//GEN-LAST:event_btnLateralHWActionPerformed
 
     private void btnLateralSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLateralSOActionPerformed
-        cambiarContexto(2);
+        switchContext(2);
     }//GEN-LAST:event_btnLateralSOActionPerformed
 
     private void btnLateralInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLateralInicioActionPerformed
-        cambiarContexto(0);
+        switchContext(0);
     }//GEN-LAST:event_btnLateralInicioActionPerformed
 
     private void btnCPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCPUActionPerformed
-        cambiarPnlHW(1);
+        switchHardwarePanel(1);
     }//GEN-LAST:event_btnCPUActionPerformed
 
     private void btnDskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDskActionPerformed
-        cambiarPnlHW(2);
+        switchHardwarePanel(2);
     }//GEN-LAST:event_btnDskActionPerformed
 
     private void btnGabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGabActionPerformed
-        cambiarPnlHW(3);
+        switchHardwarePanel(3);
     }//GEN-LAST:event_btnGabActionPerformed
 
     private void btnMbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMbActionPerformed
-        cambiarPnlHW(4);
+        switchHardwarePanel(4);
     }//GEN-LAST:event_btnMbActionPerformed
 
     private void btnGPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGPUActionPerformed
-        cambiarPnlHW(5);
+        switchHardwarePanel(5);
     }//GEN-LAST:event_btnGPUActionPerformed
 
     private void btnSupplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupplyActionPerformed
-        cambiarPnlHW(6);
+        switchHardwarePanel(6);
     }//GEN-LAST:event_btnSupplyActionPerformed
 
     private void txtIDRAMMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIDRAMMousePressed
@@ -1556,145 +1514,140 @@ public class frmHome1111 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTechRAMMousePressed
 
     private void btnAddRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddRAMActionPerformed
-        boolean error = verificaErrorDato(0,true);
-        //En caso de que exista un error en la entrada
-        //de algun dato, este no se almacenara en la tabla
+        boolean error = validateInput(0, true);
+        // If any field has an error, don't save to the table
         if ( error == true ) {
-            //No hacer nada, ya que existe un error
+            // Do nothing — error markers already set
         } else {
             switch ( spnCapacidadRAM.getValue().toString() ) {
                 case "4 GB":
-                this.valorSpnMemRAM2 = "4";
+                this.ramCapacityValue = "4";
                 break;
                 case "8 GB":
-                this.valorSpnMemRAM2 = "8";
+                this.ramCapacityValue = "8";
                 break;
                 case "16 GB":
-                this.valorSpnMemRAM2 = "16";
+                this.ramCapacityValue = "16";
                 break;
-            }//End SW (valorSpnMemRAM1)
+            }//End SW (ramFreqValue)
             
             switch ( spnFrecRAM.getValue().toString() ) {
                 case "1600 MHz":
-                this.valorSpnMemRAM1 = "1666";
+                this.ramFreqValue = "1666";
                 break;
                 case "1866 MHz":
-                this.valorSpnMemRAM1 = "1866";
+                this.ramFreqValue = "1866";
                 break;
                 case "2400 MHz":
-                this.valorSpnMemRAM1 = "2400";
+                this.ramFreqValue = "2400";
                 break;
                 case "2666 MHz":
-                this.valorSpnMemRAM1 = "2666";
+                this.ramFreqValue = "2666";
                 break;
                 case "3000 MHz":
-                this.valorSpnMemRAM1 = "3000";
+                this.ramFreqValue = "3000";
                 break;
-            }//End SW (valorSpnMemRAM1)
+            }//End SW (ramFreqValue)
         
-            double precio = Double.parseDouble(txtPrecioRAM.getText());
-            InsumoInformatico RAM1 = new Hardware("1AAA" + txtIDRAM.getText(),txtDescripcionRAM.getText(),0.0,precio,Integer.parseInt(this.valorSpnMemRAM1),Integer.parseInt(this.valorSpnMemRAM2),txtMarcaRAM1.getText(),txtTechRAM.getText(),txtModeloRAM.getText());
+            double price = Double.parseDouble(txtPrecioRAM.getText());
+            Supply ram1 = new Hardware("1AAA" + txtIDRAM.getText(),txtDescripcionRAM.getText(),0.0,price,Integer.parseInt(this.ramFreqValue),Integer.parseInt(this.ramCapacityValue),txtMarcaRAM1.getText(),txtTechRAM.getText(),txtModeloRAM.getText());
             String [] datosTextField = {
                 "1AAA" + txtIDRAM.getText(),
                 txtMarcaRAM1.getText(),
                 txtModeloRAM.getText(),
                 txtDescripcionRAM.getText(),
-                this.valorSpnMemRAM1, //Corresponde a la Frecuencia
-                this.valorSpnMemRAM2, //Corresponde a la Capacidad
-                String.valueOf(RAM1.getPrecioIns()), //VERIFICAR DATO EN BDD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                
-                txtTechRAM.getText()
+                this.ramFreqValue, // Frequency
+                this.ramCapacityValue, // Capacity
+                String.valueOf(ram1.getPrice()),                 txtTechRAM.getText()
             };
-            insumos.add(RAM1);
+            supplies.add(ram1);
             ModelHW1.addRow(datosTextField);
 
 
 
 
 
-        }//End condicion
+        }// End condition
     }//GEN-LAST:event_btnAddRAMActionPerformed
 
     private void btnEditRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditRAMActionPerformed
-        boolean error = verificaErrorDato(0,false);
+        boolean error = validateInput(0, false);
         
-        //En caso de que exista un error en la entrada
-        //de algun dato, este no se almacenara en la tabla
+        // If any field has an error, don't save to the table
         if ( error == true ) {
-            //No hacer nada, ya que existe un error
+            // Do nothing — error markers already set
         } else {
             switch ( spnCapacidadRAM.getValue().toString() ) {
                 case "4 GB":
-                this.valorSpnMemRAM2 = "4";
+                this.ramCapacityValue = "4";
                 break;
                 case "8 GB":
-                this.valorSpnMemRAM2 = "8";
+                this.ramCapacityValue = "8";
                 break;
                 case "16 GB":
-                this.valorSpnMemRAM2 = "16";
+                this.ramCapacityValue = "16";
                 break;
-            }//End SW (valorSpnMemRAM1)
+            }//End SW (ramFreqValue)
             
             switch ( spnFrecRAM.getValue().toString() ) {
                 case "1600 MHz":
-                this.valorSpnMemRAM1 = "1666";
+                this.ramFreqValue = "1666";
                 break;
                 case "1866 MHz":
-                this.valorSpnMemRAM1 = "1866";
+                this.ramFreqValue = "1866";
                 break;
                 case "2400 MHz":
-                this.valorSpnMemRAM1 = "2400";
+                this.ramFreqValue = "2400";
                 break;
                 case "2666 MHz":
-                this.valorSpnMemRAM1 = "2666";
+                this.ramFreqValue = "2666";
                 break;
                 case "3000 MHz":
-                this.valorSpnMemRAM1 = "3000";
+                this.ramFreqValue = "3000";
                 break;
-            }//End SW (valorSpnMemRAM1)
+            }//End SW (ramFreqValue)
             
             String idRAM;   
-            InsumoInformatico H1;
-            for ( int i=0 ; i<insumos.size() ; i++) {
-                H1 = insumos.get(i);
-                idRAM = H1.getIdInsumo();
+            Supply h1;
+            for ( int i=0 ; i<supplies.size() ; i++) {
+                h1 = supplies.get(i);
+                idRAM = h1.getId();
                 String idTxtField = "1AAA" + txtIDRAM.getText();
                 
                 
                         if ( idTxtField.equals(idRAM) ) {
-                            insumos.remove(H1);
-                            int cantFilas = ModelHW1.getRowCount(); //Me da la cant total de filas que hay
-                            String [] valoresID_Col0 = new String [cantFilas];
-                             boolean encontre = false;
-                             
-                            //Recorro las filas de la Tabla y almaceno en Array todos los valores de las filas
-                            // que correspondan con la Columna0
-                            for ( int n=0 ; n<cantFilas && encontre!=true; n++){
-                                valoresID_Col0[n] = (String) ModelHW1.getValueAt(n, 0);
-                                
-                                if ( valoresID_Col0[n].equals(idRAM) ) {
-                                    encontre = true;
-                                    double precio = Double.parseDouble(txtPrecioRAM.getText());
+                            supplies.remove(h1);
+                            int rowCount = ModelHW1.getRowCount();
+                            String [] col0Values = new String [rowCount];
+                            boolean found = false;
+
+                            // Scan table rows and store column-0 values until the matching ID is found
+                            for ( int n=0 ; n<rowCount && found!=true; n++){
+                                col0Values[n] = (String) ModelHW1.getValueAt(n, 0);
+
+                                if ( col0Values[n].equals(idRAM) ) {
+                                    found = true;
+                                    double price = Double.parseDouble(txtPrecioRAM.getText());
                                     ModelHW1.removeRow(n);
-                                    InsumoInformatico RAM1 = new Hardware("1AAA" + txtIDRAM.getText(),txtDescripcionRAM.getText(),0.0,precio,Integer.parseInt(this.valorSpnMemRAM1),Integer.parseInt(this.valorSpnMemRAM2),txtMarcaRAM1.getText(),txtTechRAM.getText(),txtModeloRAM.getText());
-                                    insumos.add(RAM1);
+                                    Supply ram1 = new Hardware("1AAA" + txtIDRAM.getText(),txtDescripcionRAM.getText(),0.0,price,Integer.parseInt(this.ramFreqValue),Integer.parseInt(this.ramCapacityValue),txtMarcaRAM1.getText(),txtTechRAM.getText(),txtModeloRAM.getText());
+                                    supplies.add(ram1);
                                     String [] nuevosDatosTextField = {
                                         "1AAA" + txtIDRAM.getText(),
                                         txtMarcaRAM1.getText(),
                                         txtModeloRAM.getText(),
                                         txtDescripcionRAM.getText(),
-                                        this.valorSpnMemRAM1, //Corresponde a la Frecuencia
-                                        this.valorSpnMemRAM2, //Corresponde a la Capacidad
-                                        String.valueOf(RAM1.getPrecioIns()), //VERIFICAR DATO EN BDD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                                        txtTechRAM.getText()
+                                        this.ramFreqValue, // Frequency
+                                        this.ramCapacityValue, // Capacity
+                                        String.valueOf(ram1.getPrice()),                                         txtTechRAM.getText()
                                     };
                                     ModelHW1.addRow(nuevosDatosTextField);
 
-                                }// End condicional
+                                }// End condition
                             }// end for (n)
 
-                    }// End condicional 
+                    }// End condition 
             }// end for (i)
-        }//End condicional Error
+        }// End conditional Error
     }//GEN-LAST:event_btnEditRAMActionPerformed
 
     private void btnObtRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObtRAMActionPerformed
@@ -1716,7 +1669,7 @@ public class frmHome1111 extends javax.swing.JFrame {
 
         } else {
             
-        }//End condicional
+        }// End conditional
     }//GEN-LAST:event_btnObtRAMActionPerformed
 
     private void btnRmRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRmRAMActionPerformed
@@ -1725,16 +1678,16 @@ public class frmHome1111 extends javax.swing.JFrame {
             String IDTabla = (String) ModelHW1.getValueAt(fila, 0);
             ModelHW1.removeRow(fila);
 
-            for ( int i=0 ; i<insumos.size() ; i++) {
-                InsumoInformatico H1 = insumos.get(i);
-                if ( H1.equals(IDTabla) ) {
-                    insumos.remove(H1);
-                }//End condicion
+            for ( int i=0 ; i<supplies.size() ; i++) {
+                Supply h1 = supplies.get(i);
+                if ( h1.equals(IDTabla) ) {
+                    supplies.remove(h1);
+                }// End condition
             }// End loop (i)
 
         } else {
 
-        }//End condicional
+        }// End conditional
     }//GEN-LAST:event_btnRmRAMActionPerformed
 
     public static void main(String args[]) {
@@ -1751,19 +1704,19 @@ public class frmHome1111 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmHome1111.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(QuoteForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmHome1111.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(QuoteForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmHome1111.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(QuoteForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmHome1111.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(QuoteForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmHome1111().setVisible(true);
+                new QuoteForm().setVisible(true);
             }
         });
     }

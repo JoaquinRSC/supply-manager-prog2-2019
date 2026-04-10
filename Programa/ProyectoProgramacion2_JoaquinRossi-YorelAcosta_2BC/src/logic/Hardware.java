@@ -1,359 +1,241 @@
-//@authors: | Joaquin_Rossi | Yorel_Acosta | 2°BC | ESI-BUCEO
-package Logica;
+// @authors: Joaquin Rossi | Yorel Acosta | 2BC | ESI-BUCEO
+package logic;
 
-public class Hardware extends InsumoInformatico {
-    //ATRIBUTOS:
-    private String marca = Constantes.fabricante;
-    private String modelo = Constantes.modelo;
-    private String techRAM = Constantes.techRAM;
-    private short fromFactorCase = Constantes.fromFactorCase;
-    private int frecRAM = Constantes.frecRAM;
-    private int capacidadRAM = Constantes.capacidadRAM;
-    private int wattsFuente = Constantes.wattsFuente;
-    private int capacidadHDD = Constantes.capacidadHDD;
-    private String techHDD = Constantes.techHDD;
-    private short capaciadGrafica = Constantes.capaciadGrafica;
-    private int nucleoCPU = Constantes.nucleoCPU;
-    private double frecCPU = Constantes.frecCPU;
-    private boolean rgbMB = Constantes.rgbMB;
+public class Hardware extends Supply {
+    private String brand = Constants.manufacturer;
+    private String model = Constants.model;
+    private String ramTech = Constants.ramTech;
+    private short caseFormFactor = Constants.caseFormFactor;
+    private int ramFreq = Constants.ramFreq;
+    private int ramCapacity = Constants.ramCapacity;
+    private int psuWatts = Constants.psuWatts;
+    private int storageCapacity = Constants.storageCapacity;
+    private String storageTech = Constants.storageTech;
+    private short gpuMemory = Constants.gpuMemory;
+    private int cpuCores = Constants.cpuCores;
+    private double cpuFreq = Constants.cpuFreq;
+    private boolean mbRgb = Constants.mbRgb;
 
-    //CONSTRUCTOR: MEMORIA RAM
-    public Hardware(String idInsumo, String descripcion, double precioIns,double precioBase,int frecRAM,int capacidadRAM,String marca,String techRAM, String modelo) {
-        super(idInsumo, descripcion, precioIns,precioBase);
-        this.precioIns=calcularPrecioRAM(techRAM,capacidadRAM,frecRAM,precioBase);
-        this.frecRAM = frecRAM;
-        this.capacidadRAM = capacidadRAM;
-        this.marca = marca;
-        this.techRAM = techRAM;
-        this.modelo = modelo;
-    }// End constructor MEMORAIA RAM
-    
-    //CONSTRUCTOR: MEMORIA HDD
-    public Hardware(String idInsumo, String descripcion, double precioIns,double precioBase,int capacidadHDD, String techHDD,String marca, String modelo) {
-        super(idInsumo, descripcion, precioIns,precioBase);
-        this.precioIns=calcularPrecioHDD(capacidadHDD,techHDD,precioBase);
-        this.techHDD = techHDD;
-        this.capacidadHDD = capacidadHDD;
-        this.marca = marca;
-        this.modelo = modelo;
-    }// End constructor MEMORIA HDD
-
-    //CONSTRUCTOR: CASE
-    public Hardware(String idInsumo, String descripcion, double precioIns,double precioBase,String modelo,short fromFactorCase, String marca ) {
-        super(idInsumo, descripcion, precioIns,precioBase);
-        this.precioIns = calcularPrecioCASE(fromFactorCase,precioBase);
-        this.modelo = modelo;
-        this.fromFactorCase = fromFactorCase;
-        this.marca = marca;
-    }// End constructor CASE
-    
-    //CONSTRUCTOR: FUENTE
-    public Hardware(String idInsumo, String descripcion, double precioIns,double precioBase,String marca, String modelo, int wattsFuente) {
-        super(idInsumo, descripcion, precioIns,precioBase);
-        this.precioIns = calcularPrecioFUENTE(wattsFuente,precioBase);
-        this.marca = marca;
-        this.modelo = modelo;
-        this.wattsFuente = wattsFuente;
-    }// End constructor FUENTE
-    
-    //CONSTRUCTOR: GPU
-    public Hardware(String idInsumo, String descripcion, double precioIns,double precioBase,String marca,String modelo,short capaciadGrafica) {
-        super(idInsumo, descripcion, precioIns,precioBase);
-        this.precioIns = calcularPrecioGPU(capaciadGrafica,precioBase);
-        this.marca = marca;
-        this.modelo = modelo;
-        this.capaciadGrafica=capaciadGrafica;
-    }// End constructor GPU
-    
-    //CONSTRUCTOR: CPU
-    public Hardware(String idInsumo, String descripcion, double precioIns,double precioBase,String marca,int nucleoCPU,double frecCPU,String modelo) {
-        super(idInsumo, descripcion, precioIns,precioBase);
-        this.precioIns = calcularPrecioCPU(nucleoCPU,frecCPU,precioBase);
-        this.marca = marca;
-        this.nucleoCPU = nucleoCPU;
-        this.frecCPU = frecCPU;
-        this.modelo = modelo;
-    }// End constructor CPU
-    
-    //CONSTRUCTOR: MB
-    public Hardware(String idInsumo, String descripcion, double precioIns, double precioBase, boolean rgbMB) {
-        super(idInsumo, descripcion, precioIns, precioBase);
-        this.precioIns = calcularPrecioMB(rgbMB,precioBase);
-        this.rgbMB = rgbMB;
-    }
-    
-    
-    //GETTERS:
-    public String getMarca() {
-        return marca;
-    }
-    public String getModelo() {
-        return modelo;
+    // Constructor: RAM
+    public Hardware(String id, String description, double price, double basePrice,
+                    int ramFreq, int ramCapacity, String brand, String ramTech, String model) {
+        super(id, description, price, basePrice);
+        this.price = calcRamPrice(ramTech, ramCapacity, ramFreq, basePrice);
+        this.ramFreq = ramFreq;
+        this.ramCapacity = ramCapacity;
+        this.brand = brand;
+        this.ramTech = ramTech;
+        this.model = model;
     }
 
-    //SETTERS:
-    public void setMarca(String marca) {
-        this.marca = marca;
+    // Constructor: Storage (HDD/SSD/M2/EXT)
+    public Hardware(String id, String description, double price, double basePrice,
+                    int storageCapacity, String storageTech, String brand, String model) {
+        super(id, description, price, basePrice);
+        this.price = calcStoragePrice(storageCapacity, storageTech, basePrice);
+        this.storageTech = storageTech;
+        this.storageCapacity = storageCapacity;
+        this.brand = brand;
+        this.model = model;
     }
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
+
+    // Constructor: Case
+    public Hardware(String id, String description, double price, double basePrice,
+                    String model, short caseFormFactor, String brand) {
+        super(id, description, price, basePrice);
+        this.price = calcCasePrice(caseFormFactor, basePrice);
+        this.model = model;
+        this.caseFormFactor = caseFormFactor;
+        this.brand = brand;
     }
-    
-    //LIBRERIA DE COMPORTAMIENTOS:
 
-    //METODOS PARA INDICAR EL VALOR DE UN INSUMO EN FUNCION A SUS VALORES DE LOS ATRIBUTOS
-        //EJEMPLO: RAM (x1) DDR3|2GB|1333Mhz|
-        //                  +11 |+4 |  +14  | = 29USD (Valores caracteristicas) + precioBase de una [x1] RAM = 40USD
-        //         TOTAL= (29 + 40) * IVA
+    // Constructor: PSU (Power Supply Unit)
+    public Hardware(String id, String description, double price, double basePrice,
+                    String brand, String model, int psuWatts) {
+        super(id, description, price, basePrice);
+        this.price = calcPsuPrice(psuWatts, basePrice);
+        this.brand = brand;
+        this.model = model;
+        this.psuWatts = psuWatts;
+    }
 
-    
-    public double calcularPrecioRAM(String techRAM, int capacidadRAM, int frecRAM, double precioBase) {
-        double precioTotal = 0.0;
-        double aumentoPrecioTech = 0.0;
-        double aumentoPrecioCapacidad = 0.0;
-        double aumentoPrecioFrec = 0.0;
+    // Constructor: GPU
+    public Hardware(String id, String description, double price, double basePrice,
+                    String brand, String model, short gpuMemory) {
+        super(id, description, price, basePrice);
+        this.price = calcGpuPrice(gpuMemory, basePrice);
+        this.brand = brand;
+        this.model = model;
+        this.gpuMemory = gpuMemory;
+    }
 
-        //SEGUN LA TECNOLOGIA:
-        switch (techRAM) {
-            case "DDR3":
-                aumentoPrecioTech=18.0;
-                break;
-            case "DDR4":
-                aumentoPrecioTech=25.0;
-                break;
-            default:
-                aumentoPrecioTech=18.0;
-                break;
-        }// End SW "techRAM"
-        
-        //SEGUN LA CAPACIDAD:
-        switch (capacidadRAM) {
-            case 4:
-                aumentoPrecioCapacidad=14.0;
-                break;
-            case 8:
-                aumentoPrecioCapacidad=18.0;
-                break;
-            case 16:
-                aumentoPrecioCapacidad=36.0;
-                break;
-                
-            default:
-                aumentoPrecioCapacidad=14.0;
-                break;
-        }// End SW "capacidadRAM"        
-        
-         //SEGUN LA FRECUENCIA:
-        switch (frecRAM) {
-            case 1600:
-                aumentoPrecioFrec=9.0;
-                break;
-            case 1866:
-                aumentoPrecioFrec=12.0;
-                break;
-            case 2400:
-                aumentoPrecioFrec=20.0;
-                break;
-            case 2666:
-                aumentoPrecioFrec=25.0;
-                break;    
-            case 3000:
-                aumentoPrecioFrec=36.0;
-                break;               
-            default:
-                if (techRAM.equals("DDR3"))aumentoPrecioFrec=9.0;
-                if (techRAM.equals("DDR4"))aumentoPrecioFrec=20.0;
-                break;
-        }// End SW "frecRAM"         
-        precioTotal= (aumentoPrecioTech + aumentoPrecioCapacidad + aumentoPrecioFrec + precioBase) * 0.21;
-        return precioTotal;
-    }// End method
-    public double calcularPrecioHDD(int capacidadHDD,String techHDD,double precioBase) {
-        double precioTotal = 0.0;
-        double aumentoPrecioTech = 0.0;
-        double aumentoPrecioCapacidad = 0.0;
-        //SEGUN LA TECNOLOGIA:
-        switch (techHDD) {
-            case "HDD":
-                aumentoPrecioTech=8.0;
-                break;
-            case "SSD":
-                aumentoPrecioTech=12.0;
-                break;
-            case "M2":
-                aumentoPrecioTech=18.0;
-                break;
-            case "EXT":
-                aumentoPrecioTech=22.0;
-                break;
-            default:
-                aumentoPrecioTech=8;
-        }// End SW "techHDD"
+    // Constructor: CPU
+    public Hardware(String id, String description, double price, double basePrice,
+                    String brand, int cpuCores, double cpuFreq, String model) {
+        super(id, description, price, basePrice);
+        this.price = calcCpuPrice(cpuCores, cpuFreq, basePrice);
+        this.brand = brand;
+        this.cpuCores = cpuCores;
+        this.cpuFreq = cpuFreq;
+        this.model = model;
+    }
 
-        //SEGUN LA CAPACIDAD:
-        switch (capacidadHDD) {
-            case 160:
-                aumentoPrecioCapacidad=10.0;
-                break;
-            case 260:
-                aumentoPrecioCapacidad=14.0;
-                break;
-            case 360:
-                aumentoPrecioCapacidad=20.0;
-                break;
-            case 500:
-                aumentoPrecioCapacidad=22.0;
-                break;
-            case 1000:
-                aumentoPrecioCapacidad=35.0;
-                break;
-            case 2000:
-                aumentoPrecioCapacidad=42.0;
-                break;
-            case 4000:
-                aumentoPrecioCapacidad=48.0;
-                break;
-            default:
-                aumentoPrecioCapacidad=10.0;
-                break;
-        }// End SW "capacidadHDD"
-        
-        precioTotal=(aumentoPrecioTech + aumentoPrecioCapacidad + precioBase) * 0.21;
-        return precioTotal;
-    }// End method
-    public double calcularPrecioCASE(short fromFactorCase, double precioBase) {
-        double precioTotal = 0.0;
-        double aumentoPrecioFromF = 0.0;    
-        switch (fromFactorCase) {
-            case 1://Sobremesa
-                aumentoPrecioFromF = 19.0;  
-                break;
-            case 2://Modding
-                aumentoPrecioFromF = 24.99;  
-                break;
-            case 3://Rack
-                aumentoPrecioFromF = 17.89;  
-                break;
-            case 4://Minitorre
-                aumentoPrecioFromF = 11.19;  
-                break;                
-        }//End SW "fromFactorCase"
-                
-        precioTotal=(aumentoPrecioFromF + precioBase) * 0.21;
-        return precioTotal;
-    }// End method
-    public double calcularPrecioFUENTE(int wattsFuente, double precioBase){
-        double precioTotal = 0.0;
-        double aumentoPrecioWatts = 0.0; 
-        
-        //SEGUN EL WATAJE:
-        switch (wattsFuente) {
-            case 500:
-                aumentoPrecioWatts = 15.0;
-                break;
-            case 650:
-                aumentoPrecioWatts = 18.0;
-                break;
-            case 850:
-                aumentoPrecioWatts = 33.0;
-                break;
-            case 1000:
-                aumentoPrecioWatts = 49.0;
-                break;
-            default:
-                aumentoPrecioWatts = 15.0;
-                break;
-        }// End SW "wattsFuente"
-        precioTotal=(aumentoPrecioWatts + precioBase) * 0.21;
-        return precioTotal;
-    }//End method
-    public double calcularPrecioGPU(short memGPU, double precioBase){
-        double precioTotal = 0.0;
-        double aumentoPrecioMem = 0.0; 
-        
-        switch (memGPU) {
-            case 1:
-                aumentoPrecioMem = 13.54;
-                break;
-            case 2:
-                aumentoPrecioMem = 18.40;
-                break;
-            case 4:
-                aumentoPrecioMem = 34.65;
-                break;
-            case 6:
-                aumentoPrecioMem = 43.88;
-                break;
-            case 8:
-                aumentoPrecioMem = 59.55;
-                break;
-            case 11:
-                aumentoPrecioMem =68.99;
-                break;
-            default:
-                aumentoPrecioMem = 13.54;
-                break;
-        }// End SW "memGPU"
-        
-        precioTotal=(aumentoPrecioMem + precioBase) * 0.21;
-        return precioTotal;
-    }//End method
-    public double calcularPrecioCPU(int cantNucleo, double frecCPU, double precioBase){
-        double precioTotal = 0.0;
-        double aumentoPrecioNucelo = 0.0;         
-        double aumentoPrecioFrec = 0.0;    
-        
-        
-        switch (cantNucleo) {
-            case 1:
-                aumentoPrecioNucelo = 12.65;
-                break;
-            case 2:
-                aumentoPrecioNucelo = 15.10;
-                break;
-            case 4:
-                aumentoPrecioNucelo = 29.44;
-                break;
-            case 6:
-                aumentoPrecioNucelo = 30.99;
-                break;
-            case 8:
-                aumentoPrecioNucelo = 54.51;
-                break;
-            default:
-                aumentoPrecioNucelo = 12.65;
-                break;
-        }// End SW "cantNucleo"
-        
-        if (frecCPU >= 1.0 && frecCPU < 1.60) {
-            aumentoPrecioFrec = 8.77;
-        } else if (frecCPU >= 1.60 && frecCPU < 2.15) {
-            aumentoPrecioFrec = 13.67;
-        } else if (frecCPU >= 2.15 && frecCPU < 2.37) {
-            aumentoPrecioFrec = 117.97;
-        } else if (frecCPU >= 2.37 && frecCPU < 3.0) {
-            aumentoPrecioFrec = 19.17;
-        } else if (frecCPU >= 3.0 && frecCPU < 3.4) {
-            aumentoPrecioFrec = 36.17;
-        } else if (frecCPU >= 3.4 && frecCPU < 3.6) {
-            aumentoPrecioFrec = 40.55;
-        } else if (frecCPU >= 4.0) {
-            aumentoPrecioFrec = 52.99;
+    // Constructor: Motherboard
+    public Hardware(String id, String description, double price, double basePrice, boolean mbRgb) {
+        super(id, description, price, basePrice);
+        this.price = calcMotherboardPrice(mbRgb, basePrice);
+        this.mbRgb = mbRgb;
+    }
+
+    // Getters
+    public String getBrand() { return brand; }
+    public String getModel() { return model; }
+    public String getRamTech() { return ramTech; }
+    public int getRamFreq() { return ramFreq; }
+    public int getRamCapacity() { return ramCapacity; }
+    public short getCaseFormFactor() { return caseFormFactor; }
+    public int getPsuWatts() { return psuWatts; }
+    public int getStorageCapacity() { return storageCapacity; }
+    public String getStorageTech() { return storageTech; }
+    public short getGpuMemory() { return gpuMemory; }
+    public int getCpuCores() { return cpuCores; }
+    public double getCpuFreq() { return cpuFreq; }
+    public boolean isMbRgb() { return mbRgb; }
+
+    // Setters
+    public void setBrand(String brand) { this.brand = brand; }
+    public void setModel(String model) { this.model = model; }
+
+    // Price calculation methods
+    // Formula: (basePrice + attribute bonuses) * 0.21 (IVA tax factor)
+
+    public double calcRamPrice(String ramTech, int ramCapacity, int ramFreq, double basePrice) {
+        double techBonus = 0.0;
+        double capacityBonus = 0.0;
+        double freqBonus = 0.0;
+
+        switch (ramTech) {
+            case "DDR3": techBonus = 18.0; break;
+            case "DDR4": techBonus = 25.0; break;
+            default:     techBonus = 18.0; break;
         }
-        
-        precioTotal=(aumentoPrecioNucelo + aumentoPrecioFrec + precioBase) * 0.21;
-        return precioTotal;
 
-    }
-    public double calcularPrecioMB(boolean rgbMB, double precioBase){
-        double precioTotal = 0.0;
-        double aumentoPrecioRGB = 0.0;
-        
-        if (rgbMB == true) {
-            aumentoPrecioRGB = 19.80;
+        switch (ramCapacity) {
+            case 4:  capacityBonus = 14.0; break;
+            case 8:  capacityBonus = 18.0; break;
+            case 16: capacityBonus = 36.0; break;
+            default: capacityBonus = 14.0; break;
         }
-        
-        precioTotal=(aumentoPrecioRGB + precioBase) * 0.21;
-        return precioTotal;
+
+        switch (ramFreq) {
+            case 1600: freqBonus = 9.0;  break;
+            case 1866: freqBonus = 12.0; break;
+            case 2400: freqBonus = 20.0; break;
+            case 2666: freqBonus = 25.0; break;
+            case 3000: freqBonus = 36.0; break;
+            default:
+                freqBonus = ramTech.equals("DDR3") ? 9.0 : 20.0;
+                break;
+        }
+
+        return (techBonus + capacityBonus + freqBonus + basePrice) * 0.21;
     }
-}// End class
+
+    public double calcStoragePrice(int storageCapacity, String storageTech, double basePrice) {
+        double techBonus = 0.0;
+        double capacityBonus = 0.0;
+
+        switch (storageTech) {
+            case "HDD": techBonus = 8.0;  break;
+            case "SSD": techBonus = 12.0; break;
+            case "M2":  techBonus = 18.0; break;
+            case "EXT": techBonus = 22.0; break;
+            default:    techBonus = 8.0;  break;
+        }
+
+        switch (storageCapacity) {
+            case 160:  capacityBonus = 10.0; break;
+            case 260:  capacityBonus = 14.0; break;
+            case 360:  capacityBonus = 20.0; break;
+            case 500:  capacityBonus = 22.0; break;
+            case 1000: capacityBonus = 35.0; break;
+            case 2000: capacityBonus = 42.0; break;
+            case 4000: capacityBonus = 48.0; break;
+            default:   capacityBonus = 10.0; break;
+        }
+
+        return (techBonus + capacityBonus + basePrice) * 0.21;
+    }
+
+    public double calcCasePrice(short caseFormFactor, double basePrice) {
+        double formFactorBonus = 0.0;
+
+        switch (caseFormFactor) {
+            case 1: formFactorBonus = 19.0;  break; // Desktop
+            case 2: formFactorBonus = 24.99; break; // Modding
+            case 3: formFactorBonus = 17.89; break; // Rack
+            case 4: formFactorBonus = 11.19; break; // Mini Tower
+        }
+
+        return (formFactorBonus + basePrice) * 0.21;
+    }
+
+    public double calcPsuPrice(int psuWatts, double basePrice) {
+        double wattsBonus = 0.0;
+
+        switch (psuWatts) {
+            case 500:  wattsBonus = 15.0; break;
+            case 650:  wattsBonus = 18.0; break;
+            case 850:  wattsBonus = 33.0; break;
+            case 1000: wattsBonus = 49.0; break;
+            default:   wattsBonus = 15.0; break;
+        }
+
+        return (wattsBonus + basePrice) * 0.21;
+    }
+
+    public double calcGpuPrice(short gpuMemory, double basePrice) {
+        double memoryBonus = 0.0;
+
+        switch (gpuMemory) {
+            case 1:  memoryBonus = 13.54; break;
+            case 2:  memoryBonus = 18.40; break;
+            case 4:  memoryBonus = 34.65; break;
+            case 6:  memoryBonus = 43.88; break;
+            case 8:  memoryBonus = 59.55; break;
+            case 11: memoryBonus = 68.99; break;
+            default: memoryBonus = 13.54; break;
+        }
+
+        return (memoryBonus + basePrice) * 0.21;
+    }
+
+    public double calcCpuPrice(int cpuCores, double cpuFreq, double basePrice) {
+        double coresBonus = 0.0;
+        double freqBonus = 0.0;
+
+        switch (cpuCores) {
+            case 1: coresBonus = 12.65; break;
+            case 2: coresBonus = 15.10; break;
+            case 4: coresBonus = 29.44; break;
+            case 6: coresBonus = 30.99; break;
+            case 8: coresBonus = 54.51; break;
+            default: coresBonus = 12.65; break;
+        }
+
+        if      (cpuFreq >= 1.0  && cpuFreq < 1.60) freqBonus = 8.77;
+        else if (cpuFreq >= 1.60 && cpuFreq < 2.15) freqBonus = 13.67;
+        else if (cpuFreq >= 2.15 && cpuFreq < 2.37) freqBonus = 117.97;
+        else if (cpuFreq >= 2.37 && cpuFreq < 3.0)  freqBonus = 19.17;
+        else if (cpuFreq >= 3.0  && cpuFreq < 3.4)  freqBonus = 36.17;
+        else if (cpuFreq >= 3.4  && cpuFreq < 3.6)  freqBonus = 40.55;
+        else if (cpuFreq >= 4.0)                     freqBonus = 52.99;
+
+        return (coresBonus + freqBonus + basePrice) * 0.21;
+    }
+
+    public double calcMotherboardPrice(boolean mbRgb, double basePrice) {
+        double rgbBonus = mbRgb ? 19.80 : 0.0;
+        return (rgbBonus + basePrice) * 0.21;
+    }
+}

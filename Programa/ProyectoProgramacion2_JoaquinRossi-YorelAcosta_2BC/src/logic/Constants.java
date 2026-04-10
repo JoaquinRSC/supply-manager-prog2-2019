@@ -1,55 +1,51 @@
-//@authors: | Joaquin_Rossi | Yorel_Acosta | 2°BC | ESI-BUCEO
-package Logica;
+// @authors: Joaquin Rossi | Yorel Acosta | 2BC | ESI-BUCEO
+package logic;
 
-public class Constantes {
-    //---------------------------------------------------------Insumo:
-    public static final String idIns = "A0";
-    public static final String descripcion = "Componente";
-    public static final double precioIns = 1.0; //USD
-    public static final double precioBase = 1.0; //USD
-    public static final int cantIns = 1; //USD
+public class Constants {
+    // Supply defaults
+    public static final String supplyId = "A0";
+    public static final String description = "Component";
+    public static final double price = 1.0;       // USD
+    public static final double basePrice = 1.0;   // USD
+    public static final int quantity = 1;
 
-    //---------------------------------------------------------Presupuesto:
-    public static final String idPresupuesto = null;
-    public static final String idCliente = null;
-    public static final String nomCliente = null;
-    public static final double subTotal = 0.0; //USD; Es el Precio por la cantidad 
-    public static final double total = 1.0; //USD
-    public static final double manoObra = 0.30; //USD
-    public static final double horasTrabajadas = 0.30; //Horas: 1.30= 1H y 30M
+    // Quote defaults
+    public static final String quoteId = null;
+    public static final String clientId = null;
+    public static final String clientName = null;
+    public static final double subtotal = 0.0;    // USD — price times quantity
+    public static final double total = 1.0;       // USD
+    public static final double laborCost = 0.30;  // USD/hour
+    public static final double hoursWorked = 0.30;
 
-    //---------------------------------------------------------ArmadoRed:
-    public static final String dataPlan = "Estandar"; //El cual esta asociado con los valores: ParaBajada=60 ParaSubida=10 [en Mbits/seg]
-    public static final String speedUp = "10"; //Unidad en Mb/s
-    public static final String speedDown = "60"; //Unidad en Mb/s
-    public static final String isp = "Antel"; //ISP = Proveedor de la coneccion al Internet
-    public static final int cantRouters = 1;
-    public static final double tiradasCable = 1.0; //Unidad en metros
-    
-    //---------------------------------------------------------ArmadoPc:
-    public static final String proposito = "Workstation"; //Puede ser [Gaming;Standar]
-    
-    //---------------------------------------------------------Hardware:
-    public static final String modelo = null;
-    public static final String fabricante = null;
-    public static final String techRAM = "DDR3"; //Tambien puede ser DDR4
-    public static final int capacidadRAM = 512; //Unidad en MB
-    public static final int frecRAM = 1333; //Unidad en MHz
-    public static final short fromFactorCase = 3; //Puede ser [1=Rack;2=Modding;3=Sobremesa;4=Mini Torre]
-    public static final int wattsFuente = 500; //Unidad en watts
-    public static final int capacidadHDD = 1000; //Unidad en GB 1TB = 1000GB
-    public static final String techHDD = "HDD";
-    public static final short capaciadGrafica = 1; //Unidad en GB
-    public static final int nucleoCPU = 1; //Es la cantidad de nucleos que pude tener un CPU
-    public static final double frecCPU = 1.0; //Es la frecuencaia de un CPU medidad en GHz
-    public static final boolean rgbMB = false;
-            
-    
-    //---------------------------------------------------------Software:
-    public static final boolean pago = true;
+    // Network setup defaults
+    public static final String dataPlan = "Standard"; // download=60 Mb/s, upload=10 Mb/s
+    public static final String uploadSpeed = "10";    // Mb/s
+    public static final String downloadSpeed = "60";  // Mb/s
+    public static final String isp = "Antel";         // internet service provider
+    public static final int routerCount = 1;
+    public static final double cableLength = 1.0;     // meters
+
+    // PC assembly defaults
+    public static final String purpose = "Workstation"; // Gaming | Standard | Workstation
+
+    // Hardware defaults
+    public static final String model = null;
+    public static final String manufacturer = null;
+    public static final String ramTech = "DDR3";         // DDR3 | DDR4
+    public static final int ramCapacity = 512;           // MB
+    public static final int ramFreq = 1333;              // MHz
+    public static final short caseFormFactor = 3;        // 1=Desktop 2=Modding 3=Rack 4=Mini Tower
+    public static final int psuWatts = 500;              // W
+    public static final int storageCapacity = 1000;      // GB (1TB = 1000GB)
+    public static final String storageTech = "HDD";      // HDD | SSD | M2 | EXT
+    public static final short gpuMemory = 1;             // GB
+    public static final int cpuCores = 1;
+    public static final double cpuFreq = 1.0;            // GHz
+    public static final boolean mbRgb = false;
+
+    // Software defaults
+    public static final boolean paid = true;
     public static final String version = "10:Pro";
-    public static final String desarrollador = "Windows";
-    
-    
-
-}// End class
+    public static final String developer = "Windows";
+}

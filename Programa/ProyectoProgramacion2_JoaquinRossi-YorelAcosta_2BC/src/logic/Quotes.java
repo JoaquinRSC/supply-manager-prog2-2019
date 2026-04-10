@@ -1,41 +1,37 @@
-//@authors: | Joaquin_Rossi | Yorel_Acosta | 2°BC | ESI-BUCEO 
-package Logica;
+// @authors: Joaquin Rossi | Yorel Acosta | 2BC | ESI-BUCEO
+package logic;
+
 import java.util.ArrayList;
 
-public class Presupuestos {
-    //COLECCION:
-    private ArrayList <Presupuesto> presupuestos;
-    
-    //CONSTRUCTOR
-    public Presupuestos () {
-        presupuestos = new ArrayList<>();
-    }// End constructor
-    
-    //GETTER & SETTER:
-    public ArrayList<Presupuesto> getPresupuestos() {
-        return presupuestos;
+public class Quotes {
+    private ArrayList<Quote> quotes;
+
+    public Quotes() {
+        quotes = new ArrayList<>();
     }
-    public void setPresupuestos(ArrayList <Presupuesto> presupuestos) {
-        this.presupuestos = presupuestos;
+
+    // Getters / Setters
+    public ArrayList<Quote> getQuotes() { return quotes; }
+    public void setQuotes(ArrayList<Quote> quotes) { this.quotes = quotes; }
+
+    // Methods
+    public Quote get(int index) {
+        return quotes.get(index);
     }
-    
-    //LIBRERIA DE COMPORTAMIENTOS:
-    public Presupuesto obtenerObjetoP (int posicion) {
-        Presupuesto P1_Aux = presupuestos.get(posicion);
-        return P1_Aux;
-    }// End method
-    public int obtenerCantidadP(){
-        return presupuestos.size();
-    }// End method
-    public String obtenerIDPre(int posicion){
-        Presupuesto P1_Aux = presupuestos.get(posicion);
-        return P1_Aux.getIdPresupuesto();
+
+    public int size() {
+        return quotes.size();
     }
-    public void elimiarPre(int posicion){
-        presupuestos.remove(posicion);
+
+    public String getId(int index) {
+        return quotes.get(index).getQuoteId();
     }
-    public void insertarPre(Presupuesto P1_Aux){
-        presupuestos.add(P1_Aux);
-    }    
-    
-}// End class
+
+    public void remove(int index) {
+        quotes.remove(index);
+    }
+
+    public void add(Quote quote) {
+        quotes.add(quote);
+    }
+}
